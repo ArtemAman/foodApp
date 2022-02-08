@@ -11,13 +11,22 @@ class MainPresenter {
     
     weak var view: MainViewInput?
     
+    let mainService = MainServices()
+    
 }
 
 // MARK: - Public
 extension MainPresenter: MainViewOutput {
     
     func viewLoaded() {
-        
+        mainService.getRecipesList { result in
+            switch result {
+            case .success(let data):
+                print(data)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
 }
