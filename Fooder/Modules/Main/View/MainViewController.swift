@@ -15,6 +15,12 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         presenter?.viewLoaded()
+        
+        setupView()
+    }
+    
+    private func setupView() {
+        view.backgroundColor = .white
     }
 }
 
