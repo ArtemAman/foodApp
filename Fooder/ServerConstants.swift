@@ -8,11 +8,11 @@
 import Foundation
 
 enum ServerConstants {
-    static let baseUrl = URL(string: "")!
+    static let baseUrl = URL(string: "https://hotels4.p.rapidapi.com")!
     static let requestHeader: [String: String] = [
-        "MobileHeaderName": "",
-        "appVersion": "",
-        "Content-Type": "application/json"
+        "x-rapidapi-host" : "hotels4.p.rapidapi.com",
+        "x-rapidapi-key" : apiKey
     ]
+    static let apiKey = "2c56ed9c53mshcf9fdeca17c2e41p128a8fjsne1acb4412108"
 }
 

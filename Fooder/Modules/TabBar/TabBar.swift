@@ -9,6 +9,8 @@ import UIKit
 
 class TabBar: UITabBarController {
     
+    private let mainModule = MainModuleConfigurator().configure()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -16,9 +18,11 @@ class TabBar: UITabBarController {
     }
     
     func setupVCs() {
+        let mainViewController = mainModule.0
+        
         viewControllers = [
-            MainViewController().createNavController(title: "Главная",
-                                                     image: UIImage(systemName: "house.circle")!)
+            mainViewController.createNavController(title: "Главная",
+                                                   image: UIImage(systemName: "house.circle")!)
         ]
     }
     

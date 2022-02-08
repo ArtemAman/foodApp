@@ -19,7 +19,7 @@ class MainPresenter {
 extension MainPresenter: MainViewOutput {
     
     func viewLoaded() {
-        mainService.getRecipesList { result in
+        mainService.getRecipesList(query: "new york") { result in
             switch result {
             case .success(let data):
                 print(data)

@@ -12,8 +12,8 @@ class MainServices {
     
     let provider = MoyaProvider<MainAPI>()
     
-    func getRecipesList(completion: @escaping (Result<Response, MoyaError>) -> Void) {
-        provider.request(.recipes, completion: completion)
+    func getRecipesList(query: String, completion: @escaping (Result<Response, MoyaError>) -> Void) {
+        provider.request(.recipes(query: query), completion: completion)
     }
     
 }
