@@ -10,7 +10,7 @@ import CoreText
 
 
 
-struct ReceiptResponse: Decodable {
+struct RecipeResponse: Decodable {
     
     var from:Int?
     var to:Int?

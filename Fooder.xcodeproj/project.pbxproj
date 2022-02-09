@@ -24,6 +24,7 @@
 		CF0982766C1EFF73AC87D030 /* Pods_Fooder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E06ED0BC4FE0550FCFC3572 /* Pods_Fooder.framework */; };
 		F0164A9827B3E02B008CBA53 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164A9727B3E02B008CBA53 /* DataFetcher.swift */; };
 		F0164A9A27B3E1E8008CBA53 /* ResponseReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164A9927B3E1E8008CBA53 /* ResponseReceipt.swift */; };
+		F0164A9C27B44444008CBA53 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164A9B27B44444008CBA53 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		4E06ED0BC4FE0550FCFC3572 /* Pods_Fooder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fooder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0164A9727B3E02B008CBA53 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		F0164A9927B3E1E8008CBA53 /* ResponseReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseReceipt.swift; sourceTree = "<group>"; };
+		F0164A9B27B44444008CBA53 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewModel.swift; path = Fooder/BusinessLogic/DataAccess/Network/MainViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		1C470B1627B2EB23000B3EF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F0164A9B27B44444008CBA53 /* MainViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				F0164A9A27B3E1E8008CBA53 /* ResponseReceipt.swift in Sources */,
 				1C470B1A27B2EB5E000B3EF9 /* MainModuleConfigurator.swift in Sources */,
 				1C470B1C27B2EBBB000B3EF9 /* MainPresenter.swift in Sources */,
+				F0164A9C27B44444008CBA53 /* MainViewModel.swift in Sources */,
 				1C470B2C27B2FE80000B3EF9 /* MainServices.swift in Sources */,
 				1C470B3027B2FF14000B3EF9 /* MainAPI.swift in Sources */,
 				1C470B3227B2FF80000B3EF9 /* ServerConstants.swift in Sources */,

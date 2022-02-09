@@ -11,7 +11,7 @@ class MainPresenter {
     
     weak var view: MainViewInput?
     private var responseFetcher = ResponseFetcher()
-    var listOfReceips: ReceiptResponse?
+    var listOfReceips: RecipeResponse?
     
     
     
@@ -21,11 +21,15 @@ class MainPresenter {
 extension MainPresenter: MainViewOutput {
     
     func viewLoaded() {
-        responseFetcher.fetchListOfRecipes(completion: { listOfRecieps in
-            guard let myListOfRecieps = listOfRecieps else { return }
+        
+        responseFetcher.fetchListOfRecipes(completion: { result in
+            guard let myListOfRecieps = listOfRecipes else { return }
             self.listOfReceips = myListOfRecieps
+            
             print(self.listOfReceips!)
         })
+        
+        print(self.listOfReceips)
         
     }
 }
