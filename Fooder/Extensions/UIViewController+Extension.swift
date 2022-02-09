@@ -13,7 +13,6 @@ extension UIViewController {
         let navController = UINavigationController(rootViewController: self)
         navController.tabBarItem.title = title
         navController.tabBarItem.image = image
-        navController.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = title
         
         return navController

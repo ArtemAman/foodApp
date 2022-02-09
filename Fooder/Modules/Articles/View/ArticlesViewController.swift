@@ -11,6 +11,17 @@ class ArticlesViewController: UIViewController {
     
     var presenter: ArticlesPresenter?
     
+    private lazy var tableView: UITableView = {
+        let table = UITableView()
+        table.delegate = self
+        table.dataSource = self
+        table.translatesAutoresizingMaskIntoConstraints = false
+//        table.separatorStyle = .none
+        table.backgroundColor = .clear
+        table.contentInset.top = 8
+        return table
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,10 +31,46 @@ class ArticlesViewController: UIViewController {
     
     private func setupView() {
         view.backgroundColor = .white
+        view.addSubview(tableView)
+        setupConstraints()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell2")
+    }
+    
+    private func setupConstraints() {
+        
+        NSLayoutConstraint.activate([
+            
+            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            
+            ])
+    
     }
 }
 
 extension ArticlesViewController: ArticlesViewInput {
+    
+}
+
+extension ArticlesViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        5
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell2", for: indexPath)
+        cell.backgroundColor = .lightGray
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        145
+    }
+    
     
 }
 

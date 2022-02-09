@@ -25,7 +25,7 @@ class TabBar: UITabBarController {
         viewControllers = [
             mainViewController.createNavController(title: "Main",
                                                    image: UIImage(systemName: "house.circle")!),
-            articleViewController.createNavController(title: "Articles",
+            articleViewController.createNavController(title: "Everything about recipes",
                                                    image: UIImage(systemName: "book.circle")!)
         ]
     }
