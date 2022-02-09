@@ -58,40 +58,40 @@ struct Recipe: Decodable {
     var healthLabels:[String]?
     var cautions:[String]?
     var ingredientLines:[String]?
-//    var ingredients:[Ingredient]
+    var ingredients:[Ingredient]
     var totalWeight:Float
     var cuisineType:[String]
     var mealType:[String]
     var dishType:[String]
     var totalNutrients:Nutrients
-//    var totalDaily:Nutrients
+    var totalDaily:Nutrients
 
 }
 
 struct Ingredient: Decodable {
 
     var text:String
-    var quantity:Int
-    var measure:String
-    var food:[String]
+    var quantity:Float
+    var measure:String?
+    var food:String
     var weight:Float
-    var foodCategory:String
+    var foodCategory:String?
     var foodId:String
-    var image:String
+    var image:String?
 
 }
 
 struct Nutrients: Decodable {
 
-    var enercKcal:Nutrient
+    var energy:Nutrient?
     var fat:Nutrient
     var chocdf:Nutrient
-    var sugar:Nutrient
+    var sugar:Nutrient?
     var procnt:Nutrient
     
     enum CodingKeys: String, CodingKey {
         
-       case enercKcal
+       case energy = "ENERC_KCAL" // smth wrong with json for key totalDaily
        case fat = "FAT"
        case chocdf = "CHOCDF"
        case sugar = "SUGAR"
