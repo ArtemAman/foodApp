@@ -20,11 +20,9 @@ extension MainPresenter: MainViewOutput {
     func viewLoaded() {
 
         MainServices().getRecipesList(query: "k") { [weak self] result in
-            guard let self = self else { return }
-            
             switch result {
             case .success(let succes):
-                self.listOfReceips = Parser<RecipeResponse>().parce(data: succes.data)
+                self?.listOfReceips = Parser<RecipeResponse>().parce(data: succes.data)
             case .failure(let erorr):
                 print(erorr.localizedDescription)
                 /// view?.showError(error: error)
