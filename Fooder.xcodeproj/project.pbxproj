@@ -21,6 +21,7 @@
 		1C470B2C27B2FE80000B3EF9 /* MainServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C470B2B27B2FE80000B3EF9 /* MainServices.swift */; };
 		1C470B3027B2FF14000B3EF9 /* MainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C470B2F27B2FF14000B3EF9 /* MainAPI.swift */; };
 		1C470B3227B2FF80000B3EF9 /* ServerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C470B3127B2FF80000B3EF9 /* ServerConstants.swift */; };
+		1CDACF9627B45A4000081F3C /* Parcer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDACF9527B45A4000081F3C /* Parcer.swift */; };
 		CF0982766C1EFF73AC87D030 /* Pods_Fooder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E06ED0BC4FE0550FCFC3572 /* Pods_Fooder.framework */; };
 		F0164A9827B3E02B008CBA53 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164A9727B3E02B008CBA53 /* DataFetcher.swift */; };
 		F0164A9A27B3E1E8008CBA53 /* ResponseReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164A9927B3E1E8008CBA53 /* ResponseReceipt.swift */; };
@@ -44,6 +45,7 @@
 		1C470B2B27B2FE80000B3EF9 /* MainServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainServices.swift; sourceTree = "<group>"; };
 		1C470B2F27B2FF14000B3EF9 /* MainAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPI.swift; sourceTree = "<group>"; };
 		1C470B3127B2FF80000B3EF9 /* ServerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConstants.swift; sourceTree = "<group>"; };
+		1CDACF9527B45A4000081F3C /* Parcer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parcer.swift; sourceTree = "<group>"; };
 		229128F2EC312DABBDFCADA5 /* Pods-Fooder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fooder.release.xcconfig"; path = "Target Support Files/Pods-Fooder/Pods-Fooder.release.xcconfig"; sourceTree = "<group>"; };
 		4E06ED0BC4FE0550FCFC3572 /* Pods_Fooder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fooder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0164A9727B3E02B008CBA53 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				1C470B2F27B2FF14000B3EF9 /* MainAPI.swift */,
 				F0164A9727B3E02B008CBA53 /* DataFetcher.swift */,
 				F0164A9927B3E1E8008CBA53 /* ResponseReceipt.swift */,
+				1CDACF9527B45A4000081F3C /* Parcer.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				F0164A9827B3E02B008CBA53 /* DataFetcher.swift in Sources */,
 				1C470B0027B2E296000B3EF9 /* AppDelegate.swift in Sources */,
 				1C470B0227B2E296000B3EF9 /* SceneDelegate.swift in Sources */,
+				1CDACF9627B45A4000081F3C /* Parcer.swift in Sources */,
 				1C470B2027B2EC61000B3EF9 /* MainViewInput.swift in Sources */,
 				1C470B2427B2F14E000B3EF9 /* TabBar.swift in Sources */,
 				F0164A9A27B3E1E8008CBA53 /* ResponseReceipt.swift in Sources */,

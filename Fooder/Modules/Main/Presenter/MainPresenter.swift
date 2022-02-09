@@ -10,10 +10,7 @@ import Foundation
 class MainPresenter {
     
     weak var view: MainViewInput?
-    private var responseFetcher = ResponseFetcher()
     var listOfReceips: ReceiptResponse?
-    
-    
     
 }
 
@@ -21,12 +18,17 @@ class MainPresenter {
 extension MainPresenter: MainViewOutput {
     
     func viewLoaded() {
-        responseFetcher.fetchListOfRecipes(completion: { listOfRecieps in
-            guard let myListOfRecieps = listOfRecieps else { return }
-            self.listOfReceips = myListOfRecieps
-            print(self.listOfReceips!)
-        })
-        
+        MainServices().getRecipesList(query: "k") { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let succes):
+                self.listOfReceips = Parser<ReceiptResponse>().parce(data: succes.data)
+            case .failure(let erorr):
+                print(erorr.localizedDescription)
+                /// view?.showError(error: error)
+            }
+        }
     }
 }
 
