@@ -5,4 +5,18 @@
 //  Created by Artyom Amankeldiev on 10.02.2022.
 //
 
-import Foundation
+import UIKit
+
+final class ArticlesModuleConfigurator {
+
+    // MARK: - Internal methods
+    func configure() -> (ArticlesViewController, ArticlesPresenter) {
+        let view = ArticlesViewController()
+        let presenter = ArticlesPresenter()
+
+        presenter.view = view
+        view.presenter = presenter
+
+        return (view, presenter)
+    }
+}

@@ -10,6 +10,7 @@ import UIKit
 class TabBar: UITabBarController {
     
     private let mainModule = MainModuleConfigurator().configure()
+    private let articleModule = ArticlesModuleConfigurator().configure()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +20,13 @@ class TabBar: UITabBarController {
     
     func setupVCs() {
         let mainViewController = mainModule.0
+        let articleViewController = articleModule.0
         
         viewControllers = [
-            mainViewController.createNavController(title: "Главная",
-                                                   image: UIImage(systemName: "house.circle")!)
+            mainViewController.createNavController(title: "Main",
+                                                   image: UIImage(systemName: "house.circle")!),
+            articleViewController.createNavController(title: "Articles",
+                                                   image: UIImage(systemName: "book.circle")!)
         ]
     }
     

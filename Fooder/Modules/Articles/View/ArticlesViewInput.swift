@@ -5,4 +5,7 @@
 //  Created by Artyom Amankeldiev on 10.02.2022.
 //
 
-import Foundation
+import UIKit
+protocol ArticlesViewInput: AnyObject {
+    
+}
