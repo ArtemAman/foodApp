@@ -8,11 +8,12 @@
 import Foundation
 
 enum ServerConstants {
-    static let baseUrl = URL(string: "https://hotels4.p.rapidapi.com")!
-    static let requestHeader: [String: String] = [
-        "x-rapidapi-host" : "hotels4.p.rapidapi.com",
-        "x-rapidapi-key" : apiKey
-    ]
-    static let apiKey = "2c56ed9c53mshcf9fdeca17c2e41p128a8fjsne1acb4412108"
+    
+    static let baseUrl = URL(string: "https://api.edamam.com/api/recipes/v2")!
+    static let appKey = "56a0c228add3a72b212930f86b5657cb"
+    static let appId = "081de56d"
+    static let type = "public"
+
+    
 }
 

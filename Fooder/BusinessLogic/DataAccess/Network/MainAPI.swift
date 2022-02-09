@@ -9,10 +9,12 @@ import Foundation
 import Moya
 
 enum MainAPI {
-    case recipes(query: String)
+    case recipes(q: String)
+
 }
 
 extension MainAPI: TargetType {
+    
     var baseURL: URL {
         return ServerConstants.baseUrl
     }
@@ -20,7 +22,7 @@ extension MainAPI: TargetType {
     var path: String {
         switch self {
         case .recipes:
-            return "/locations/v2/search"
+            return ""
         }
     }
     
@@ -33,14 +35,24 @@ extension MainAPI: TargetType {
     
     var task: Task {
         switch self {
-        case .recipes(let query):
-            return .requestParameters(parameters: ["query" : query], encoding: URLEncoding.queryString)
+        case .recipes(let q):
+            return .requestParameters(
+                parameters:
+                    ["q" : q,
+                     "type" : ServerConstants.type,
+                     "app_key": ServerConstants.appKey,
+                     "app_id": ServerConstants.appId],
+                encoding: URLEncoding.queryString)
         }
     }
     
     var headers: [String : String]? {
-        return ServerConstants.requestHeader
+        switch self {
+        case .recipes:
+            return nil
+        }
     }
+    
     
     var sampleData: Data {
         return Data()

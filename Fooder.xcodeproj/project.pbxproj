@@ -79,6 +79,7 @@
 		1C470AFE27B2E296000B3EF9 /* Fooder */ = {
 			isa = PBXGroup;
 			children = (
+				1C470B0D27B2E299000B3EF9 /* Info.plist */,
 				1C470B3127B2FF80000B3EF9 /* ServerConstants.swift */,
 				1C470B1327B2EAF0000B3EF9 /* App */,
 				1C470B2927B2FE3D000B3EF9 /* BusinessLogic */,
@@ -95,7 +96,6 @@
 				1C470B0127B2E296000B3EF9 /* SceneDelegate.swift */,
 				1C470B0827B2E299000B3EF9 /* Assets.xcassets */,
 				1C470B0A27B2E299000B3EF9 /* LaunchScreen.storyboard */,
-				1C470B0D27B2E299000B3EF9 /* Info.plist */,
 			);
 			path = App;
 			sourceTree = "<group>";

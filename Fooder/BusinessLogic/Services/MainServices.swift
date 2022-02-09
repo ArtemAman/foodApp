@@ -13,7 +13,7 @@ class MainServices {
     let provider = MoyaProvider<MainAPI>()
     
     func getRecipesList(query: String, completion: @escaping (Result<Response, MoyaError>) -> Void) {
-        provider.request(.recipes(query: query), completion: completion)
+        provider.request(.recipes(q: query), completion: completion)
     }
     
 }
