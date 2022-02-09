@@ -23,6 +23,10 @@ extension MainPresenter: MainViewOutput {
             switch result {
             case .success(let data):
                 print(data)
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let info = try? decoder.decode(ReceiptResponse.self, from: data.data)
+            print(info)
             case .failure(let error):
                 print(error)
             }
