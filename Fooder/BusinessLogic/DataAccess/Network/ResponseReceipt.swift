@@ -12,11 +12,11 @@ import CoreText
 
 struct ReceiptResponse: Decodable {
     
-    var from:Int
-    var to:Int
-    var count:Int
-    var _links: Links
-    var hits: [Hit]
+    var from:Int?
+    var to:Int?
+    var count:Int?
+    var _links: Links?
+    var hits: [Hit]?
     
 }
 
@@ -32,51 +32,48 @@ struct Links: Decodable {
     }
 }
 
-
-
-
 struct Link: Decodable {
 
-    var href:String
-    var title:String
+    var href:String?
+    var title:String?
 
 }
 
 struct Hit: Decodable {
 
-    var recipe:Recipe
-    var _links:Links
+    var recipe:Recipe?
+    var _links:Links?
 
 }
 
 struct Recipe: Decodable {
 
-    var label:String
-    var image:String
-    var source:String
+    var label:String?
+    var image:String?
+    var source:String?
     var dietLabels:[String]?
     var healthLabels:[String]?
     var cautions:[String]?
     var ingredientLines:[String]?
-    var ingredients:[Ingredient]
-    var totalWeight:Float
-    var cuisineType:[String]
-    var mealType:[String]
-    var dishType:[String]
-    var totalNutrients:Nutrients
-    var totalDaily:Nutrients
+    var ingredients:[Ingredient]?
+    var totalWeight:Float?
+    var cuisineType:[String]?
+    var mealType:[String]?
+    var dishType:[String]?
+    var totalNutrients:Nutrients?
+    var totalDaily:Nutrients?
 
 }
 
 struct Ingredient: Decodable {
 
-    var text:String
-    var quantity:Float
+    var text:String?
+    var quantity:Float?
     var measure:String?
-    var food:String
-    var weight:Float
+    var food:String?
+    var weight:Float?
     var foodCategory:String?
-    var foodId:String
+    var foodId:String?
     var image:String?
 
 }
@@ -84,10 +81,10 @@ struct Ingredient: Decodable {
 struct Nutrients: Decodable {
 
     var energy:Nutrient?
-    var fat:Nutrient
-    var chocdf:Nutrient
+    var fat:Nutrient?
+    var chocdf:Nutrient?
     var sugar:Nutrient?
-    var procnt:Nutrient
+    var procnt:Nutrient?
     
     enum CodingKeys: String, CodingKey {
         

@@ -49,7 +49,7 @@ extension MainAPI: TargetType {
     var headers: [String : String]? {
         switch self {
         case .recipes:
-            return ["Accept": "application/json"]
+            return nil
         }
     }
     

@@ -10,8 +10,10 @@ import Foundation
 class MainPresenter {
     
     weak var view: MainViewInput?
+    private var responseFetcher = ResponseFetcher()
+    var listOfReceips: ReceiptResponse?
     
-    let mainService = MainServices()
+    
     
 }
 
@@ -19,18 +21,14 @@ class MainPresenter {
 extension MainPresenter: MainViewOutput {
     
     func viewLoaded() {
-        mainService.getRecipesList(query: "chicken") { result in
-            switch result {
-            case .success(let data):
-                print(data)
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let info = try? decoder.decode(ReceiptResponse.self, from: data.data)
-            print(info)
-            case .failure(let error):
-                print(error)
-            }
-        }
+        responseFetcher.fetchListOfRecipes(completion: { listOfRecieps in
+            guard let myListOfRecieps = listOfRecieps else { return }
+            self.listOfReceips = myListOfRecieps
+            print(self.listOfReceips!)
+        })
+        
     }
-    
 }
+
+
+
