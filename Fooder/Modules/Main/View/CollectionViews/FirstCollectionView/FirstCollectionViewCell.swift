@@ -11,7 +11,7 @@ class FirstCollectionViewCell: UICollectionViewCell {
     
     static let reuseId: String = "firstCollectionViewCell"
     
-    
+
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -23,6 +23,7 @@ class FirstCollectionViewCell: UICollectionViewCell {
     let botLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
         label.font = MainVewControllerConstants.firstVClabelfont
         return label
     } ()
@@ -38,16 +39,18 @@ class FirstCollectionViewCell: UICollectionViewCell {
 
     private func setConstraints() {
         NSLayoutConstraint.activate([
+            
+ 
 
             imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-            imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
             imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
             imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
             
-            botLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 5),
-            botLabel.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -5),
-//            botLabel.heightAnchor.constraint(equalToConstant: 14),
-//            botLabel.widthAnchor.constraint(equalTo: imageView.widthAnchor),
+            botLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 10),
+            botLabel.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -10),
+            botLabel.heightAnchor.constraint(equalToConstant: 16),
+            botLabel.widthAnchor.constraint(equalTo: imageView.widthAnchor),
             
             
           ])
@@ -61,7 +64,7 @@ class FirstCollectionViewCell: UICollectionViewCell {
         
         layer.shadowRadius = 3
         layer.shadowOpacity = 0.4
-        layer.shadowOffset = CGSize(width: 2.5, height: 4)
+        layer.shadowOffset = CGSize(width: 1.5, height: 2)
         
     }
     

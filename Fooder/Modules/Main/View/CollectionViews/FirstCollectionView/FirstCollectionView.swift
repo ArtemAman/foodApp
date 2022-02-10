@@ -9,32 +9,25 @@ import UIKit
 
 class FirstCollectionView: UICollectionView {
     
-    let numberOfItems:Int
+    let cells: PreSetupedTabletsFirst = PreSetupedTabletsFirst()
+
     
-    init(itemSize:CGSize, minimumLineSpacing: CGFloat, numberOfItems: Int) {
-        self.numberOfItems = numberOfItems
-        let collectionFrame = FirstCollectionView.dimentionsCalculator(itemSize: itemSize)
-        
+    init() {
+        let frame = MainDimensionsCalculator.calculateCVFrame()
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = itemSize
-        flowLayout.minimumLineSpacing = minimumLineSpacing
+        flowLayout.itemSize = MainVewControllerConstants.firstCollectionAtributes.itemSize
+        flowLayout.minimumLineSpacing = MainVewControllerConstants.firstCollectionAtributes.minimumLineSpacing
 
-        super .init(frame: collectionFrame, collectionViewLayout: flowLayout)
+        super .init(frame:frame, collectionViewLayout: flowLayout)
         delegate = self
         dataSource = self
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
         register(FirstCollectionViewCell.self, forCellWithReuseIdentifier: FirstCollectionViewCell.reuseId)
+
     }
     
-    static func dimentionsCalculator(itemSize:CGSize) -> CGRect {
-        
-        let collectionFrameWidth = UIScreen.main.bounds.width - (MainVewControllerConstants.collectionInsets.top + MainVewControllerConstants.collectionInsets.bottom)
-        let collectionFrame = CGRect(x: 0, y: 0, width: collectionFrameWidth, height: itemSize.height + MainVewControllerConstants.collectionInsets.top + MainVewControllerConstants.collectionInsets.bottom)
-        
-        return collectionFrame
-    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -45,13 +38,14 @@ class FirstCollectionView: UICollectionView {
 extension FirstCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.numberOfItems
+        cells.requestString.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: FirstCollectionViewCell.reuseId, for: indexPath) as! FirstCollectionViewCell
-        cell.setCell(imageName:"asian", labelText: "Asian")
+        
+        cell.setCell(imageName:cells.requestString[indexPath.row], labelText: cells.requestString[indexPath.row])
         return cell
     }
     

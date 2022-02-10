@@ -10,17 +10,20 @@ import UIKit
 class MainViewController: UIViewController {
     
     var presenter: MainViewOutput?
-    let firstCollection = FirstCollectionView(
-        itemSize: MainVewControllerConstants.firstCollectionAtributes.itemSize,
-        minimumLineSpacing: MainVewControllerConstants.firstCollectionAtributes.minimumLineSpacing,
-         numberOfItems: MainVewControllerConstants.numberOfItemsFirstCollection)
+    
+   
+    let firstCollection = FirstCollectionView()
+    let secondCollection = SecondCollectionView()
+      
+
+    var cells: CellsModel?
     
     private lazy var tableView: UITableView = {
         let table = UITableView()
         table.delegate = self
         table.dataSource = self
         table.translatesAutoresizingMaskIntoConstraints = false
-        table.separatorStyle = .none
+//        table.separatorStyle = .none
         table.backgroundColor = .clear
         return table
     }()
@@ -30,11 +33,14 @@ class MainViewController: UIViewController {
         
 //        presenter?.viewLoaded()
 
-        
+        let firstHeight = MainDimensionsCalculator.cellHeightCalculator(height: MainVewControllerConstants.firstCollectionAtributes.itemSize.height)
+        let secondHeight = MainDimensionsCalculator.cellHeightCalculator(height: MainVewControllerConstants.secondCollectionAtributes.itemSize.height)
+        cells = CellsModel(collection: [firstCollection, secondCollection], height:[firstHeight, secondHeight])
         setupView()
     }
     
     private func setupView() {
+        
         view.backgroundColor = .white
         view.addSubview(tableView)
         setupConstraints()
@@ -63,18 +69,19 @@ extension MainViewController: MainViewInput {
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        (cells?.collection.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainVCTableViewCell.reuseId, for: indexPath) as! MainVCTableViewCell
-        cell.backgroundColor = .lightGray
-        cell.cellSet(collection: firstCollection)
+        cell.backgroundColor = .green
+        cell.cellSet(collection: (cells?.collection[indexPath.row])!)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+        let cellSize = (cells?.height[indexPath.row])!
+        return cellSize
     }
     
     

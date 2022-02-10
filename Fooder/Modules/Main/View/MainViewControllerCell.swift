@@ -15,8 +15,30 @@ class MainVCTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
     
+    let topLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
+        label.text = "Ololo"
+        label.font = MainVewControllerConstants.headersFont
+        return label
+    } ()
+    
     func cellSet(collection: UICollectionView) {
+        self.addSubview(topLabel)
         self.addSubview(collection)
+        setConstraints(collection: collection)
+    }
+    
+    private func setConstraints(collection: UICollectionView) {
+        NSLayoutConstraint.activate([
+
+            topLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            topLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            topLabel.heightAnchor.constraint(equalToConstant: 20),
+            topLabel.widthAnchor.constraint(equalTo: self.widthAnchor),
+
+          ])
     }
     
     
