@@ -21,6 +21,7 @@ struct MainVewControllerConstants {
     static let thirdViewLabelFont = UIFont.systemFont(ofSize: 14, weight: .regular)
     static let numberOfItemsFirstCollection = 8
     
+    // change smth with insets
     static let collectionInsets = UIEdgeInsets(top: 20,
                                                left: 0,
                                                bottom: 5,
@@ -39,6 +40,7 @@ struct MainVewControllerConstants {
         itemSize: CGSize(width: UIScreen.main.bounds.height / 4, height: UIScreen.main.bounds.height / 5),
         minimumLineSpacing: 15)
     
+    static let fifthViewHeight: CGFloat = 50
     
     
     

@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
     let secondCollection = SecondCollectionView()
     let thirdCollection = ThirdCollectionView()
     let fourthCollection = FourthCollectionView()
+    let fifthCollection = FifthView(frame: MainDimensionsCalculator.calculateCVFrame(height: MainVewControllerConstants.fifthViewHeight))
       
 
     var cells: CellsModel?
@@ -44,12 +45,15 @@ class MainViewController: UIViewController {
         cells = CellsModel(collection: [firstCollection,
                                         secondCollection,
                                         thirdCollection,
-                                        fourthCollection],
+                                        fourthCollection,
+                                        fifthCollection],
                            
                            height:[firstHeight,
                                    secondHeight,
                                    thirdHeight,
-                                   fourthHeight])
+                                   fourthHeight,
+                                   MainVewControllerConstants.fifthViewHeight,
+                                  ])
         setupView()
     }
     

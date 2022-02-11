@@ -11,6 +11,7 @@ class MainVCTableViewCell: UITableViewCell {
     
     static let reuseId = "MainCell"
     
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -24,13 +25,22 @@ class MainVCTableViewCell: UITableViewCell {
         return label
     } ()
     
-    func cellSet(collection: UICollectionView) {
-        self.addSubview(topLabel)
+    func cellSet(collection: UIView) {
+        
         self.addSubview(collection)
-        setConstraints(collection: collection)
+        
+        if collection is UICollectionView {
+            self.addSubview(topLabel)
+            setConstraints()
+        } else {
+        
+        }
+        
+        
+        
     }
-    
-    private func setConstraints(collection: UICollectionView) {
+
+    private func setConstraints() {
         NSLayoutConstraint.activate([
 
             topLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),

@@ -9,7 +9,7 @@ import UIKit
 
 struct CellsModel {
     
-    var collection: [UICollectionView]
+    var collection: [UIView]
     var height: [CGFloat]
 }
 

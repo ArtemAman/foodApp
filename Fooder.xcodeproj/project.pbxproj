@@ -42,6 +42,7 @@
 		F0164AD327B6760D008CBA53 /* ThirdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164AD227B6760D008CBA53 /* ThirdCollectionViewCell.swift */; };
 		F0164AD627B678BA008CBA53 /* FourthCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164AD527B678BA008CBA53 /* FourthCollectionView.swift */; };
 		F0164AD827B678C7008CBA53 /* FourthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164AD727B678C7008CBA53 /* FourthCollectionViewCell.swift */; };
+		F0164ADB27B67CBF008CBA53 /* FiffthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164ADA27B67CBF008CBA53 /* FiffthView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		F0164AD227B6760D008CBA53 /* ThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdCollectionViewCell.swift; sourceTree = "<group>"; };
 		F0164AD527B678BA008CBA53 /* FourthCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthCollectionView.swift; sourceTree = "<group>"; };
 		F0164AD727B678C7008CBA53 /* FourthCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthCollectionViewCell.swift; sourceTree = "<group>"; };
+		F0164ADA27B67CBF008CBA53 /* FiffthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiffthView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -371,6 +373,7 @@
 		F0164AB727B526F4008CBA53 /* CollectionViews */ = {
 			isa = PBXGroup;
 			children = (
+				F0164AD927B67CA5008CBA53 /* FifthView */,
 				F0164AD427B67886008CBA53 /* FourthCollectionView */,
 				F0164ACF27B675D5008CBA53 /* ThirdCollectionView */,
 				F0164AC827B57FDC008CBA53 /* SecondCollectionView */,
@@ -413,6 +416,14 @@
 				F0164AD727B678C7008CBA53 /* FourthCollectionViewCell.swift */,
 			);
 			path = FourthCollectionView;
+			sourceTree = "<group>";
+		};
+		F0164AD927B67CA5008CBA53 /* FifthView */ = {
+			isa = PBXGroup;
+			children = (
+				F0164ADA27B67CBF008CBA53 /* FiffthView.swift */,
+			);
+			path = FifthView;
 			sourceTree = "<group>";
 		};
 		FE24AF3DC40732788836EB5F /* Frameworks */ = {
@@ -567,6 +578,7 @@
 				F0164AD627B678BA008CBA53 /* FourthCollectionView.swift in Sources */,
 				1C470B1E27B2EBDC000B3EF9 /* MainViewController.swift in Sources */,
 				F0164AC727B56C89008CBA53 /* MainModels.swift in Sources */,
+				F0164ADB27B67CBF008CBA53 /* FiffthView.swift in Sources */,
 				F0164AAF27B466AD008CBA53 /* ArticlesViewInput.swift in Sources */,
 				1C470B2727B2F20D000B3EF9 /* UIViewController+Extension.swift in Sources */,
 			);
