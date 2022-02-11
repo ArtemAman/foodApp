@@ -13,7 +13,7 @@ class FirstCollectionView: UICollectionView {
 
     
     init() {
-        let frame = MainDimensionsCalculator.calculateCVFrame()
+        let frame = MainDimensionsCalculator.calculateCVFrame(height: MainVewControllerConstants.firstCollectionAtributes.itemSize.height)
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         flowLayout.itemSize = MainVewControllerConstants.firstCollectionAtributes.itemSize

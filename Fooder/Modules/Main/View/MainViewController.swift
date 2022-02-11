@@ -14,6 +14,8 @@ class MainViewController: UIViewController {
    
     let firstCollection = FirstCollectionView()
     let secondCollection = SecondCollectionView()
+    let thirdCollection = ThirdCollectionView()
+    let fourthCollection = FourthCollectionView()
       
 
     var cells: CellsModel?
@@ -35,7 +37,19 @@ class MainViewController: UIViewController {
 
         let firstHeight = MainDimensionsCalculator.cellHeightCalculator(height: MainVewControllerConstants.firstCollectionAtributes.itemSize.height)
         let secondHeight = MainDimensionsCalculator.cellHeightCalculator(height: MainVewControllerConstants.secondCollectionAtributes.itemSize.height)
-        cells = CellsModel(collection: [firstCollection, secondCollection], height:[firstHeight, secondHeight])
+        let thirdHeight = MainDimensionsCalculator.cellHeightCalculator(height: MainVewControllerConstants.thirdCollectionAtributes.itemSize.height)
+        let fourthHeight = MainDimensionsCalculator.cellHeightCalculator(height: MainVewControllerConstants.thirdCollectionAtributes.itemSize.height)
+        
+        
+        cells = CellsModel(collection: [firstCollection,
+                                        secondCollection,
+                                        thirdCollection,
+                                        fourthCollection],
+                           
+                           height:[firstHeight,
+                                   secondHeight,
+                                   thirdHeight,
+                                   fourthHeight])
         setupView()
     }
     

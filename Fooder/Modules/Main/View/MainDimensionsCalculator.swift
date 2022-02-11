@@ -12,10 +12,10 @@ class MainDimensionsCalculator {
     
 
     
-    static func calculateCVFrame() -> CGRect {
+    static func calculateCVFrame(height: CGFloat) -> CGRect {
         
         let collectionFrameWidth = UIScreen.main.bounds.width - (MainVewControllerConstants.collectionInsets.top + MainVewControllerConstants.collectionInsets.bottom)
-        let collectionFrame = CGRect(x: 0, y: MainVewControllerConstants.collectionInsets.top, width: collectionFrameWidth, height: MainVewControllerConstants.firstCollectionAtributes.itemSize.height + MainVewControllerConstants.collectionInsets.bottom + MainVewControllerConstants.collectionInsets.bottom)
+        let collectionFrame = CGRect(x: 0, y: MainVewControllerConstants.collectionInsets.top, width: collectionFrameWidth, height: height + MainVewControllerConstants.collectionInsets.bottom + MainVewControllerConstants.collectionInsets.bottom)
         
         return collectionFrame
     }

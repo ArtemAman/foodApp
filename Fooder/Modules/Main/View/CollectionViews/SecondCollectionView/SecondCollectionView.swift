@@ -19,7 +19,7 @@ class SecondCollectionView: UICollectionView {
     
     
     init() {
-        let collectionFrame = MainDimensionsCalculator.calculateCVFrame()
+        let collectionFrame = MainDimensionsCalculator.calculateCVFrame(height: MainVewControllerConstants.secondCollectionAtributes.itemSize.height)
         
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal

@@ -38,6 +38,10 @@
 		F0164ACA27B57FEF008CBA53 /* SecondCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164AC927B57FEF008CBA53 /* SecondCollectionView.swift */; };
 		F0164ACC27B5800E008CBA53 /* SeconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164ACB27B5800E008CBA53 /* SeconCollectionViewCell.swift */; };
 		F0164ACE27B58DDA008CBA53 /* MainDimensionsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164ACD27B58DDA008CBA53 /* MainDimensionsCalculator.swift */; };
+		F0164AD127B675F3008CBA53 /* ThirdCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164AD027B675F3008CBA53 /* ThirdCollectionView.swift */; };
+		F0164AD327B6760D008CBA53 /* ThirdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164AD227B6760D008CBA53 /* ThirdCollectionViewCell.swift */; };
+		F0164AD627B678BA008CBA53 /* FourthCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164AD527B678BA008CBA53 /* FourthCollectionView.swift */; };
+		F0164AD827B678C7008CBA53 /* FourthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164AD727B678C7008CBA53 /* FourthCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +80,10 @@
 		F0164AC927B57FEF008CBA53 /* SecondCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionView.swift; sourceTree = "<group>"; };
 		F0164ACB27B5800E008CBA53 /* SeconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeconCollectionViewCell.swift; sourceTree = "<group>"; };
 		F0164ACD27B58DDA008CBA53 /* MainDimensionsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDimensionsCalculator.swift; sourceTree = "<group>"; };
+		F0164AD027B675F3008CBA53 /* ThirdCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdCollectionView.swift; sourceTree = "<group>"; };
+		F0164AD227B6760D008CBA53 /* ThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdCollectionViewCell.swift; sourceTree = "<group>"; };
+		F0164AD527B678BA008CBA53 /* FourthCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthCollectionView.swift; sourceTree = "<group>"; };
+		F0164AD727B678C7008CBA53 /* FourthCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,6 +371,8 @@
 		F0164AB727B526F4008CBA53 /* CollectionViews */ = {
 			isa = PBXGroup;
 			children = (
+				F0164AD427B67886008CBA53 /* FourthCollectionView */,
+				F0164ACF27B675D5008CBA53 /* ThirdCollectionView */,
 				F0164AC827B57FDC008CBA53 /* SecondCollectionView */,
 				F0164AB827B52886008CBA53 /* FirstCollectionView */,
 			);
@@ -385,6 +395,24 @@
 				F0164ACB27B5800E008CBA53 /* SeconCollectionViewCell.swift */,
 			);
 			path = SecondCollectionView;
+			sourceTree = "<group>";
+		};
+		F0164ACF27B675D5008CBA53 /* ThirdCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F0164AD027B675F3008CBA53 /* ThirdCollectionView.swift */,
+				F0164AD227B6760D008CBA53 /* ThirdCollectionViewCell.swift */,
+			);
+			path = ThirdCollectionView;
+			sourceTree = "<group>";
+		};
+		F0164AD427B67886008CBA53 /* FourthCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F0164AD527B678BA008CBA53 /* FourthCollectionView.swift */,
+				F0164AD727B678C7008CBA53 /* FourthCollectionViewCell.swift */,
+			);
+			path = FourthCollectionView;
 			sourceTree = "<group>";
 		};
 		FE24AF3DC40732788836EB5F /* Frameworks */ = {
@@ -514,12 +542,14 @@
 				F0164ACA27B57FEF008CBA53 /* SecondCollectionView.swift in Sources */,
 				1C470B0227B2E296000B3EF9 /* SceneDelegate.swift in Sources */,
 				1CDACF9627B45A4000081F3C /* Parcer.swift in Sources */,
+				F0164AD127B675F3008CBA53 /* ThirdCollectionView.swift in Sources */,
 				1C470B2027B2EC61000B3EF9 /* MainViewInput.swift in Sources */,
 				1C470B2427B2F14E000B3EF9 /* TabBar.swift in Sources */,
 				F0164A9A27B3E1E8008CBA53 /* ResponseReceipt.swift in Sources */,
 				1C470B1A27B2EB5E000B3EF9 /* MainModuleConfigurator.swift in Sources */,
 				F0164ACE27B58DDA008CBA53 /* MainDimensionsCalculator.swift in Sources */,
 				1C470B1C27B2EBBB000B3EF9 /* MainPresenter.swift in Sources */,
+				F0164AD327B6760D008CBA53 /* ThirdCollectionViewCell.swift in Sources */,
 				F0164A9C27B44444008CBA53 /* MainViewModel.swift in Sources */,
 				F0164AAD27B46694008CBA53 /* ArticlesPresenter.swift in Sources */,
 				1C470B2C27B2FE80000B3EF9 /* MainServices.swift in Sources */,
@@ -531,8 +561,10 @@
 				1C470B3227B2FF80000B3EF9 /* ServerConstants.swift in Sources */,
 				F0164ACC27B5800E008CBA53 /* SeconCollectionViewCell.swift in Sources */,
 				1C470B2227B2EC76000B3EF9 /* MainViewOutput.swift in Sources */,
+				F0164AD827B678C7008CBA53 /* FourthCollectionViewCell.swift in Sources */,
 				F0164AC527B53964008CBA53 /* MainViewControllerCell.swift in Sources */,
 				F0164AAB27B46683008CBA53 /* ArticlesViewController.swift in Sources */,
+				F0164AD627B678BA008CBA53 /* FourthCollectionView.swift in Sources */,
 				1C470B1E27B2EBDC000B3EF9 /* MainViewController.swift in Sources */,
 				F0164AC727B56C89008CBA53 /* MainModels.swift in Sources */,
 				F0164AAF27B466AD008CBA53 /* ArticlesViewInput.swift in Sources */,

@@ -18,19 +18,28 @@ struct MainVewControllerConstants {
     static let firstVClabelfont = UIFont.systemFont(ofSize: 14, weight: .bold)
     static let headersFont = UIFont.systemFont(ofSize: 24, weight: .bold)
     static let secondViewLabelFont = UIFont.systemFont(ofSize: 18, weight: .semibold)
+    static let thirdViewLabelFont = UIFont.systemFont(ofSize: 14, weight: .regular)
     static let numberOfItemsFirstCollection = 8
-    static let firstCollectionAtributes = CollectionAttribute(
-        itemSize: CGSize(width: UIScreen.main.bounds.height / 6, height: UIScreen.main.bounds.height / 6),
-        minimumLineSpacing: 15)
-    
-    static let secondCollectionAtributes = CollectionAttribute(
-        itemSize: CGSize(width: UIScreen.main.bounds.height / 5, height: 20),
-        minimumLineSpacing: 15)
     
     static let collectionInsets = UIEdgeInsets(top: 20,
                                                left: 0,
                                                bottom: 5,
                                                right: 0)
+    
+    // collection atributes
+    static let firstCollectionAtributes = CollectionAttribute(
+        itemSize: CGSize(width: UIScreen.main.bounds.height / 7, height: UIScreen.main.bounds.height / 7),
+        minimumLineSpacing: 15)
+    
+    static let secondCollectionAtributes = CollectionAttribute(
+        itemSize: CGSize(width: UIScreen.main.bounds.height / 5, height: 30),
+        minimumLineSpacing: 15)
+    
+    static let thirdCollectionAtributes = CollectionAttribute(
+        itemSize: CGSize(width: UIScreen.main.bounds.height / 4, height: UIScreen.main.bounds.height / 5),
+        minimumLineSpacing: 15)
+    
+    
     
     
     

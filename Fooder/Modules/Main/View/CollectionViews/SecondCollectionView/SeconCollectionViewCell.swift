@@ -22,8 +22,8 @@ class SecondCollectionViewCell: UICollectionViewCell {
     let botLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .white
-        label.font = MainVewControllerConstants.firstVClabelfont
+        label.textColor = .black
+        label.font = MainVewControllerConstants.secondViewLabelFont
         return label
     } ()
     
@@ -45,7 +45,7 @@ class SecondCollectionViewCell: UICollectionViewCell {
             layerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
             
             botLabel.leadingAnchor.constraint(equalTo: layerView.leadingAnchor, constant: 0),
-            botLabel.topAnchor.constraint(equalTo: layerView.topAnchor, constant: 5),
+            botLabel.topAnchor.constraint(equalTo: layerView.topAnchor, constant: 0),
             botLabel.trailingAnchor.constraint(equalTo: layerView.trailingAnchor, constant: 0),
             botLabel.bottomAnchor.constraint(equalTo: layerView.bottomAnchor, constant: 0),
             
