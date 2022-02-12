@@ -9,5 +9,6 @@ target 'Fooder' do
   pod 'Alamofire'
   pod 'Moya'
   pod 'PKHUD'
-
+  pod 'Kingfisher'
+  
 end

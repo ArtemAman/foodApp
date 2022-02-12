@@ -6,12 +6,12 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FirstCollectionViewCell: UICollectionViewCell {
     
     static let reuseId: String = "firstCollectionViewCell"
     
-
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +28,6 @@ class FirstCollectionViewCell: UICollectionViewCell {
         return label
     } ()
     
-    
     override init(frame:CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .clear
@@ -36,12 +35,9 @@ class FirstCollectionViewCell: UICollectionViewCell {
         imageView.addSubview(botLabel)
         setConstraints()
     }
-
+    
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            
- 
-
             imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
             imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
@@ -51,9 +47,7 @@ class FirstCollectionViewCell: UICollectionViewCell {
             botLabel.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -10),
             botLabel.heightAnchor.constraint(equalToConstant: 16),
             botLabel.widthAnchor.constraint(equalTo: imageView.widthAnchor),
-            
-            
-          ])
+        ])
     }
     
     override func layoutSubviews() {
@@ -68,12 +62,11 @@ class FirstCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func setCell(imageName:String?, labelText:String?) {
-        guard let imageName = imageName else { return }
-        imageView.image = UIImage(named: imageName)
+    func setCell(imageName: String?, labelText: String?) {
+        guard let imageName = imageName, let url = URL(string: imageName) else { return }
+        imageView.kf.setImage(with: url)
         guard let labelText = labelText else { return }
         botLabel.text = labelText
-        
     }
     
     required init?(coder: NSCoder) {

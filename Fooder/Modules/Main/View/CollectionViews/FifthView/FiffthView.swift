@@ -9,8 +9,7 @@ import UIKit
 
 class FifthView: UIView {
     
-    
-    let imageView: UIImageView = {
+    private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
@@ -18,8 +17,7 @@ class FifthView: UIView {
         return imageView
     } ()
     
-    
-    let topLabel: UILabel = {
+    private lazy var topLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
@@ -28,7 +26,7 @@ class FifthView: UIView {
         return label
     } ()
     
-    let botLabel: UILabel = {
+    private lazy var botLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
@@ -37,9 +35,9 @@ class FifthView: UIView {
         return label
     } ()
     
-    
-    override init(frame:CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
+        
         self.backgroundColor = .clear
         self.addSubview(imageView)
         self.addSubview(topLabel)
@@ -67,9 +65,9 @@ class FifthView: UIView {
             botLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
             botLabel.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 0),
             botLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 15),
-            botLabel.heightAnchor.constraint(equalToConstant: 20),
-        
-          ])
+            botLabel.heightAnchor.constraint(equalToConstant: 20)
+            
+        ])
     }
 }
 

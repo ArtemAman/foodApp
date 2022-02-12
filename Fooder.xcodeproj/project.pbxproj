@@ -24,7 +24,7 @@
 		1CDACF9627B45A4000081F3C /* Parcer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDACF9527B45A4000081F3C /* Parcer.swift */; };
 		CF0982766C1EFF73AC87D030 /* Pods_Fooder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E06ED0BC4FE0550FCFC3572 /* Pods_Fooder.framework */; };
 		F0164A9A27B3E1E8008CBA53 /* ResponseReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164A9927B3E1E8008CBA53 /* ResponseReceipt.swift */; };
-		F0164A9C27B44444008CBA53 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164A9B27B44444008CBA53 /* MainViewModel.swift */; };
+		F0164A9C27B44444008CBA53 /* ReceipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164A9B27B44444008CBA53 /* ReceipViewModel.swift */; };
 		F0164AAB27B46683008CBA53 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164AAA27B46683008CBA53 /* ArticlesViewController.swift */; };
 		F0164AAD27B46694008CBA53 /* ArticlesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164AAC27B46694008CBA53 /* ArticlesPresenter.swift */; };
 		F0164AAF27B466AD008CBA53 /* ArticlesViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164AAE27B466AD008CBA53 /* ArticlesViewInput.swift */; };
@@ -67,7 +67,7 @@
 		229128F2EC312DABBDFCADA5 /* Pods-Fooder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fooder.release.xcconfig"; path = "Target Support Files/Pods-Fooder/Pods-Fooder.release.xcconfig"; sourceTree = "<group>"; };
 		4E06ED0BC4FE0550FCFC3572 /* Pods_Fooder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fooder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0164A9927B3E1E8008CBA53 /* ResponseReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseReceipt.swift; sourceTree = "<group>"; };
-		F0164A9B27B44444008CBA53 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewModel.swift; path = Fooder/Modules/Main/Model/MainViewModel.swift; sourceTree = SOURCE_ROOT; };
+		F0164A9B27B44444008CBA53 /* ReceipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReceipViewModel.swift; path = Fooder/Modules/Main/Model/ReceipViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F0164AAA27B46683008CBA53 /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 		F0164AAC27B46694008CBA53 /* ArticlesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesPresenter.swift; sourceTree = "<group>"; };
 		F0164AAE27B466AD008CBA53 /* ArticlesViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewInput.swift; sourceTree = "<group>"; };
@@ -289,7 +289,7 @@
 		F0164AA027B463AA008CBA53 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F0164A9B27B44444008CBA53 /* MainViewModel.swift */,
+				F0164A9B27B44444008CBA53 /* ReceipViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -561,7 +561,7 @@
 				F0164ACE27B58DDA008CBA53 /* MainDimensionsCalculator.swift in Sources */,
 				1C470B1C27B2EBBB000B3EF9 /* MainPresenter.swift in Sources */,
 				F0164AD327B6760D008CBA53 /* ThirdCollectionViewCell.swift in Sources */,
-				F0164A9C27B44444008CBA53 /* MainViewModel.swift in Sources */,
+				F0164A9C27B44444008CBA53 /* ReceipViewModel.swift in Sources */,
 				F0164AAD27B46694008CBA53 /* ArticlesPresenter.swift in Sources */,
 				1C470B2C27B2FE80000B3EF9 /* MainServices.swift in Sources */,
 				F0164AB127B466BB008CBA53 /* ArticlesViewOutput.swift in Sources */,

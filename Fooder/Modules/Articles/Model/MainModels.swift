@@ -7,10 +7,10 @@
 
 import UIKit
 
-struct CellsModel {
+struct TableViewModel {
     
-    var collection: [UIView]
-    var height: [CGFloat]
+    var collections: [UIView]
+    var heights: [CGFloat]
 }
 
 struct PreSetupedTabletsFirst {

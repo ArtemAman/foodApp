@@ -8,5 +8,6 @@
 import Foundation
 
 protocol MainViewOutput: AnyObject {
+    var firstViewModel: ReceipViewModel? { get set }
     func viewLoaded()
 }

@@ -10,24 +10,32 @@ import Foundation
 class MainPresenter {
     
     weak var view: MainViewInput?
-    var listOfReceips: RecipeResponse?
-
     
-}
+    var firstViewModel: ReceipViewModel?
 
-// MARK: - Public
-extension MainPresenter: MainViewOutput {
-    func viewLoaded() {
-
-        MainServices().getRecipesList(query: "k") { [weak self] result in
+    private func getRecipesList() {
+        MainServices().getRecipesList(query: "Asia") { [weak self] result in
             switch result {
             case .success(let succes):
-                self?.listOfReceips = Parser<RecipeResponse>().parce(data: succes.data)
+                let listOfReceips = Parser<RecipeResponse>().parce(data: succes.data)
+                self?.prepareViewModel(listOfReceips: listOfReceips)
             case .failure(let erorr):
                 print(erorr.localizedDescription)
                 /// view?.showError(error: error)
             }
         }
+    }
+    
+    private func prepareViewModel(listOfReceips: RecipeResponse?) {
+        firstViewModel = ReceipViewModel(list: listOfReceips)
+        self.view?.updateTable()
+    }
+}
+
+// MARK: - Public
+extension MainPresenter: MainViewOutput {
+    func viewLoaded() {
+        getRecipesList()
     }
 }
 

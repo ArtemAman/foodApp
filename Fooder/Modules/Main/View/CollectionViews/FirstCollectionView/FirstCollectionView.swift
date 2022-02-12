@@ -9,8 +9,7 @@ import UIKit
 
 class FirstCollectionView: UICollectionView {
     
-    let cells: PreSetupedTabletsFirst = PreSetupedTabletsFirst()
-
+    var cells: ReceipViewModel?
     
     init() {
         let frame = MainDimensionsCalculator.calculateCVFrame(height: MainVewControllerConstants.firstCollectionAtributes.itemSize.height)
@@ -19,15 +18,16 @@ class FirstCollectionView: UICollectionView {
         flowLayout.itemSize = MainVewControllerConstants.firstCollectionAtributes.itemSize
         flowLayout.minimumLineSpacing = MainVewControllerConstants.firstCollectionAtributes.minimumLineSpacing
 
-        super .init(frame:frame, collectionViewLayout: flowLayout)
+        super .init(frame: frame, collectionViewLayout: flowLayout)
+        
         delegate = self
         dataSource = self
+        
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
+        
         register(FirstCollectionViewCell.self, forCellWithReuseIdentifier: FirstCollectionViewCell.reuseId)
-
     }
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -38,16 +38,15 @@ class FirstCollectionView: UICollectionView {
 extension FirstCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        cells.requestString.count
-        
+        cells?.cells.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: FirstCollectionViewCell.reuseId, for: indexPath) as! FirstCollectionViewCell
-        
-        cell.setCell(imageName:cells.requestString[indexPath.row], labelText: cells.requestString[indexPath.row])
+        let model = cells?.cells[indexPath.row]
+        cell.setCell(imageName: model?.imageUrlString,
+                     labelText: model?.name)
         return cell
     }
-    
     
 }
