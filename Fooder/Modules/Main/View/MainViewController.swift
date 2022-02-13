@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     private lazy var secondCollection = SecondCollectionView()
     private lazy var thirdCollection = ThirdCollectionView()
     private lazy var fourthCollection = FourthCollectionView()
-    private lazy var fifthCollection = FifthView(frame: MainDimensionsCalculator.calculateCVFrame(height: MainVewControllerConstants.fifthViewHeight))
+    private lazy var fifthCollection = FifthView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 20, height: MainVewControllerConstants.fifthViewHeight))
     
     var cells: TableViewModel?
     
@@ -36,21 +36,16 @@ class MainViewController: UIViewController {
         
         presenter?.viewLoaded()
         
-        let firstHeight = MainDimensionsCalculator.cellHeightCalculator(height: MainVewControllerConstants.firstCollectionAtributes.itemSize.height)
-        let secondHeight = MainDimensionsCalculator.cellHeightCalculator(height: MainVewControllerConstants.secondCollectionAtributes.itemSize.height)
-        let thirdHeight = MainDimensionsCalculator.cellHeightCalculator(height: MainVewControllerConstants.thirdCollectionAtributes.itemSize.height)
-        let fourthHeight = MainDimensionsCalculator.cellHeightCalculator(height: MainVewControllerConstants.thirdCollectionAtributes.itemSize.height)
-        
         let collections = [firstCollection,
                            secondCollection,
                            thirdCollection,
                            fourthCollection,
                            fifthCollection]
         
-        let collectionHeights = [firstHeight,
-                                 secondHeight,
-                                 thirdHeight,
-                                 fourthHeight,
+        let collectionHeights = [MainVewControllerConstants.firstHeight,
+                                 MainVewControllerConstants.secondHeight,
+                                 MainVewControllerConstants.thirdHeight,
+                                 MainVewControllerConstants.fourthHeight,
                                  MainVewControllerConstants.fifthViewHeight]
         
         cells = TableViewModel(collections: collections, heights: collectionHeights)

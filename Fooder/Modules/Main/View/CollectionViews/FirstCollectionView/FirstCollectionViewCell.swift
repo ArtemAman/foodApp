@@ -41,7 +41,7 @@ class FirstCollectionViewCell: UICollectionViewCell {
             imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
             imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
-            imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
+            imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
             
             botLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 10),
             botLabel.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -10),

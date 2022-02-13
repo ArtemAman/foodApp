@@ -42,7 +42,7 @@ class SecondCollectionViewCell: UICollectionViewCell {
             layerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             layerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
             layerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
-            layerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
+            layerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
             
             botLabel.leadingAnchor.constraint(equalTo: layerView.leadingAnchor, constant: 0),
             botLabel.topAnchor.constraint(equalTo: layerView.topAnchor, constant: 0),

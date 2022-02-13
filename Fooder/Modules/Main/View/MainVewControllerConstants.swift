@@ -22,11 +22,7 @@ struct MainVewControllerConstants {
     static let numberOfItemsFirstCollection = 8
     
     // change smth with insets
-    static let collectionInsets = UIEdgeInsets(top: 20,
-                                               left: 0,
-                                               bottom: 5,
-                                               right: 0)
-    
+                                               
     // collection atributes
     static let firstCollectionAtributes = CollectionAttribute(
         itemSize: CGSize(width: UIScreen.main.bounds.height / 7, height: UIScreen.main.bounds.height / 7),
@@ -40,6 +36,13 @@ struct MainVewControllerConstants {
         itemSize: CGSize(width: UIScreen.main.bounds.height / 4, height: UIScreen.main.bounds.height / 5),
         minimumLineSpacing: 15)
     
+    
+    // heights
+    
+    static let firstHeight = MainVewControllerConstants.firstCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight
+    static let secondHeight = MainVewControllerConstants.secondCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight
+    static let thirdHeight = MainVewControllerConstants.thirdCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight
+    static let fourthHeight = MainVewControllerConstants.thirdCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight
     static let fifthViewHeight: CGFloat = 50
     
     
