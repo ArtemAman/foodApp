@@ -32,11 +32,7 @@ class MainVCTableViewCell: UITableViewCell {
         if collection is UICollectionView {
             self.addSubview(topLabel)
             setConstraints()
-        } else {
-        
-        }
-        
-        
+        } 
         
     }
 

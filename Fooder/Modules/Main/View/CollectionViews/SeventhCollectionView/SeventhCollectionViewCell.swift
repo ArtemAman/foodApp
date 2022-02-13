@@ -1,15 +1,15 @@
 //
-//  ThirdCollectionViewCell.swift
+//  SeventhCollectionViewCell.swift
 //  Fooder
 //
-//  Created by Artyom Amankeldiev on 11.02.2022.
+//  Created by Artyom Amankeldiev on 14.02.2022.
 //
 
 import UIKit
 
-class ThirdCollectionViewCell: UICollectionViewCell {
+class SeventhCollectionViewCell: UICollectionViewCell {
     
-    static let reuseId: String = "thirdCollectionViewCell"
+    static let reuseId: String = "seventhCollectionViewCell"
     
 
     let imageView: UIImageView = {
@@ -24,8 +24,7 @@ class ThirdCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.text = "Article name topppppppppppppppppppppppppppppppppppp"
-        label.textAlignment = .left
+        label.text = "Article name top"
         label.numberOfLines = 2
         label.font = MainVewControllerConstants.thirdViewLabelFontTop
         return label
@@ -49,7 +48,7 @@ class ThirdCollectionViewCell: UICollectionViewCell {
             imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
             imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
 //            imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
-            imageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.65),
+            imageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.7),
             
             botLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             botLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),

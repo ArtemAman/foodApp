@@ -18,7 +18,8 @@ struct MainVewControllerConstants {
     static let firstVClabelfont = UIFont.systemFont(ofSize: 14, weight: .bold)
     static let headersFont = UIFont.systemFont(ofSize: 24, weight: .bold)
     static let secondViewLabelFont = UIFont.systemFont(ofSize: 18, weight: .semibold)
-    static let thirdViewLabelFont = UIFont.systemFont(ofSize: 14, weight: .regular)
+    static let thirdViewLabelFontTop = UIFont.systemFont(ofSize: 14, weight: .semibold)
+    static let thirdViewLabelFontBottom = UIFont.systemFont(ofSize: 14, weight: .light)
     static let numberOfItemsFirstCollection = 8
     
     // change smth with insets
@@ -33,7 +34,7 @@ struct MainVewControllerConstants {
         minimumLineSpacing: 15)
     
     static let thirdCollectionAtributes = CollectionAttribute(
-        itemSize: CGSize(width: UIScreen.main.bounds.height / 4, height: UIScreen.main.bounds.height / 5),
+        itemSize: CGSize(width: UIScreen.main.bounds.height / 4, height: UIScreen.main.bounds.height / 4.5),
         minimumLineSpacing: 15)
     
     
@@ -43,7 +44,9 @@ struct MainVewControllerConstants {
     static let secondHeight = MainVewControllerConstants.secondCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight
     static let thirdHeight = MainVewControllerConstants.thirdCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight
     static let fourthHeight = MainVewControllerConstants.thirdCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight
-    static let fifthViewHeight: CGFloat = 50
+    static let fifthViewHeight: CGFloat = 60
+    static let sixthHeight = MainVewControllerConstants.firstCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight
+    static let seventhHeight = MainVewControllerConstants.thirdCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight
     
     
     

@@ -25,7 +25,8 @@ class FourthCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.text = "Article name bot"
-        label.font = MainVewControllerConstants.thirdViewLabelFont
+        label.numberOfLines = 2
+        label.font = MainVewControllerConstants.thirdViewLabelFontTop
         return label
     } ()
     

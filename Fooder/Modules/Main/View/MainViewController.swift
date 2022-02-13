@@ -17,6 +17,8 @@ class MainViewController: UIViewController {
     private lazy var thirdCollection = ThirdCollectionView()
     private lazy var fourthCollection = FourthCollectionView()
     private lazy var fifthCollection = FifthView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 20, height: MainVewControllerConstants.fifthViewHeight))
+    private lazy var sixthCollection = SixthCollectionView()
+    private lazy var seventhCollection = SeventhCollectionView()
     
     var cells: TableViewModel?
     
@@ -40,13 +42,17 @@ class MainViewController: UIViewController {
                            secondCollection,
                            thirdCollection,
                            fourthCollection,
-                           fifthCollection]
+                           fifthCollection,
+                           sixthCollection,
+                           seventhCollection]
         
         let collectionHeights = [MainVewControllerConstants.firstHeight,
                                  MainVewControllerConstants.secondHeight,
                                  MainVewControllerConstants.thirdHeight,
                                  MainVewControllerConstants.fourthHeight,
-                                 MainVewControllerConstants.fifthViewHeight]
+                                 MainVewControllerConstants.fifthViewHeight,
+                                 MainVewControllerConstants.sixthHeight,
+                                 MainVewControllerConstants.seventhHeight]
         
         cells = TableViewModel(collections: collections, heights: collectionHeights)
         
@@ -80,6 +86,9 @@ extension MainViewController: MainViewInput {
     func updateTable() {
         firstCollection.cells = presenter?.firstViewModel
         firstCollection.reloadData()
+        
+        sixthCollection.cells = presenter?.firstViewModel
+        sixthCollection.reloadData()
         
         HUD.show(.labeledSuccess(title: "Загрузка", subtitle: "завершена"), onView: self.view)
         HUD.hide(afterDelay: 1, completion: nil)

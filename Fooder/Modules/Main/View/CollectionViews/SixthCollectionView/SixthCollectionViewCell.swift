@@ -1,17 +1,18 @@
 //
-//  ThirdCollectionViewCell.swift
+//  SixthCollectionViewCell.swift
 //  Fooder
 //
-//  Created by Artyom Amankeldiev on 11.02.2022.
+//  Created by Artyom Amankeldiev on 14.02.2022.
 //
 
+
 import UIKit
+import Kingfisher
 
-class ThirdCollectionViewCell: UICollectionViewCell {
+class SixthCollectionViewCell: UICollectionViewCell {
     
-    static let reuseId: String = "thirdCollectionViewCell"
+    static let reuseId: String = "sixCollectionViewCell"
     
-
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -23,40 +24,30 @@ class ThirdCollectionViewCell: UICollectionViewCell {
     let botLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
-        label.text = "Article name topppppppppppppppppppppppppppppppppppp"
-        label.textAlignment = .left
-        label.numberOfLines = 2
-        label.font = MainVewControllerConstants.thirdViewLabelFontTop
+        label.textColor = .white
+        label.font = MainVewControllerConstants.firstVClabelfont
         return label
     } ()
     
-    
     override init(frame:CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .clear
         self.addSubview(imageView)
-        self.addSubview(botLabel)
+        imageView.addSubview(botLabel)
         setConstraints()
     }
-
+    
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            
- 
-
             imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
             imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
-//            imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
-            imageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.65),
+            imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
             
-            botLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-            botLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
-            botLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 5),
-            botLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
-        
-          ])
+            botLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 10),
+            botLabel.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -10),
+            botLabel.heightAnchor.constraint(equalToConstant: 16),
+            botLabel.widthAnchor.constraint(equalTo: imageView.widthAnchor),
+        ])
     }
     
     override func layoutSubviews() {
@@ -71,12 +62,11 @@ class ThirdCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func setCell(imageName:String?, labelText:String?) {
-        guard let imageName = imageName else { return }
-        imageView.image = UIImage(named: imageName)
+    func setCell(imageName: String?, labelText: String?) {
+        guard let imageName = imageName, let url = URL(string: imageName) else { return }
+        imageView.kf.setImage(with: url)
         guard let labelText = labelText else { return }
         botLabel.text = labelText
-        
     }
     
     required init?(coder: NSCoder) {

@@ -13,7 +13,8 @@ class FifthView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .systemGray
+        imageView.backgroundColor = .clear
+        imageView.image = UIImage(named: "cooking")
         return imageView
     } ()
     
@@ -21,8 +22,8 @@ class FifthView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.text = "Top text text text"
-        label.font = MainVewControllerConstants.thirdViewLabelFont
+        label.text = "We will teach you how to cook like a chef"
+        label.font = MainVewControllerConstants.thirdViewLabelFontTop
         return label
     } ()
     
@@ -30,8 +31,8 @@ class FifthView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.text = "Bot text text text"
-        label.font = MainVewControllerConstants.thirdViewLabelFont
+        label.text = "Cooking courses and masterclasses"
+        label.font = MainVewControllerConstants.thirdViewLabelFontBottom
         return label
     } ()
     
@@ -53,17 +54,17 @@ class FifthView: UIView {
         NSLayoutConstraint.activate([
             
             imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
-            imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
+            imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             imageView.widthAnchor.constraint(equalToConstant: 40),
             imageView.heightAnchor.constraint(equalToConstant: 40),
             
             topLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
-            topLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
+            topLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             topLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 15),
             topLabel.heightAnchor.constraint(equalToConstant: 20),
             
             botLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
-            botLabel.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 0),
+            botLabel.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 3),
             botLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 15),
             botLabel.heightAnchor.constraint(equalToConstant: 20)
             
