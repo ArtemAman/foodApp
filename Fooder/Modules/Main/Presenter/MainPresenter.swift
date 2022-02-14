@@ -12,14 +12,16 @@ class MainPresenter {
     weak var view: MainViewInput?
     
     var firstViewModel: PreSetupedTabletsFirst?
+    var thirdViewModel: ReceipViewModel?
+    var sixthViewModel: PreSetupedTabletsSixth?
     let articleParser:ArticleParser = ArticleParser()
 
     private func getRecipesList() {
-        MainServices().getRecipesList(query: "Asia") { [weak self] result in
+        MainServices().getRecipesList(query: "random") { [weak self] result in
             switch result {
             case .success(let succes):
                 let listOfReceips = Parser<RecipeResponse>().parce(data: succes.data)
-//                self?.prepareViewModel(listOfReceips: listOfReceips)
+                self?.prepareViewModel(listOfReceips: listOfReceips)
             case .failure(let erorr):
                 print(erorr.localizedDescription)
                 /// view?.showError(error: error)
@@ -33,14 +35,15 @@ class MainPresenter {
 // MARK: - Public
 extension MainPresenter: MainViewOutput {
     
-    private func prepareViewModel() {
+    private func prepareViewModel(listOfReceips: RecipeResponse?) {
         firstViewModel = PreSetupedTabletsFirst()
+        thirdViewModel = ReceipViewModel(list: listOfReceips)
+        sixthViewModel = PreSetupedTabletsSixth()
         self.view?.updateTable()
     }
     
     func viewLoaded() {
         getRecipesList()
-        prepareViewModel()
         articleParser.scrapeNews(page: "2")
     }
 }

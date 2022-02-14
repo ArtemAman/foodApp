@@ -9,5 +9,7 @@ import Foundation
 
 protocol MainViewOutput: AnyObject {
     var firstViewModel: PreSetupedTabletsFirst? { get set }
+    var sixthViewModel: PreSetupedTabletsSixth? { get set }
+    var thirdViewModel: ReceipViewModel? { get set }
     func viewLoaded()
 }

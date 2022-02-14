@@ -10,6 +10,14 @@ import UIKit
 protocol CellViewModelProtocol {
     var imageUrlString: String? { get }
     var name: String? { get }
+    var dietLabels: [String]? { get }
+    var healthLabels: [String]? { get }
+    var cautions: [String]? { get }
+    var ingredients: [Ingredient]? { get }
+    var totalWeight: Float? { get }
+    var cuisineType: [String]? { get }
+    var mealType: [String]? { get }
+    var dishType: [String]? { get }
 }
 
 struct ReceipViewModel {
@@ -54,8 +62,10 @@ struct Cell: CellViewModelProtocol {
 
 struct MainTableViewModel {
     
+    
     var collections: [UIView]
     var heights: [CGFloat]
+    var headers:[String]
 }
 
 struct PreSetupedTabletsFirst {
@@ -80,4 +90,14 @@ struct PreSetupedTabletsFirst {
                                    "South East Asian"]
 }
 
+
+struct PreSetupedTabletsSixth {
+    
+    var requestString: [String] = ["Breakfast",
+                                   "Lunch",
+                                   "Dinner",
+                                   "Snack",
+                                   "Teatime",
+                                   ]
+}
 

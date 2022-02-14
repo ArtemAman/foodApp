@@ -16,7 +16,7 @@ struct CollectionAttribute {
 struct MainVewControllerConstants {
     
     static let firstVClabelfont = UIFont.systemFont(ofSize: 14, weight: .bold)
-    static let headersFont = UIFont.systemFont(ofSize: 24, weight: .bold)
+    static let headersFont = UIFont.systemFont(ofSize: 22, weight: .semibold)
     static let secondViewLabelFont = UIFont.systemFont(ofSize: 18, weight: .semibold)
     static let thirdViewLabelFontTop = UIFont.systemFont(ofSize: 14, weight: .semibold)
     static let thirdViewLabelFontBottom = UIFont.systemFont(ofSize: 14, weight: .light)
@@ -30,7 +30,7 @@ struct MainVewControllerConstants {
         minimumLineSpacing: 15)
     
     static let secondCollectionAtributes = CollectionAttribute(
-        itemSize: CGSize(width: UIScreen.main.bounds.height / 5, height: 30),
+        itemSize: CGSize(width: UIScreen.main.bounds.height / 5, height: 40),
         minimumLineSpacing: 15)
     
     static let thirdCollectionAtributes = CollectionAttribute(

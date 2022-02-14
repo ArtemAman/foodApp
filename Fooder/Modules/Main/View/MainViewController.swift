@@ -38,6 +38,15 @@ class MainViewController: UIViewController {
         
         presenter?.viewLoaded()
         
+        let headers = ["Foreign kitchens",
+                       "Diets",
+                       "Random receips",
+                       "Smth interesting about cooking",
+                       "",
+                       "Dishes",
+                       "Season products"
+        ]
+        
         let collections = [firstCollection,
                            secondCollection,
                            thirdCollection,
@@ -54,7 +63,7 @@ class MainViewController: UIViewController {
                                  MainVewControllerConstants.sixthHeight,
                                  MainVewControllerConstants.seventhHeight]
         
-        cells = MainTableViewModel(collections: collections, heights: collectionHeights)
+        cells = MainTableViewModel(collections: collections, heights: collectionHeights, headers: headers)
         
         setupView()
         
@@ -83,11 +92,14 @@ extension MainViewController: MainViewInput {
         firstCollection.cells = presenter?.firstViewModel
         firstCollection.reloadData()
         
-//        sixthCollection.cells = presenter?.firstViewModel
+        thirdCollection.cells = presenter?.thirdViewModel
+        thirdCollection.reloadData()
+        
+        sixthCollection.cells = presenter?.sixthViewModel
         sixthCollection.reloadData()
         
-        HUD.show(.labeledSuccess(title: "Загрузка", subtitle: "завершена"), onView: self.view)
-        HUD.hide(afterDelay: 1, completion: nil)
+//        HUD.show(.labeledSuccess(title: "Загрузка", subtitle: "завершена"), onView: self.view)
+//        HUD.hide(afterDelay: 1, completion: nil)
     }
 }
 
@@ -99,10 +111,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainVCTableViewCell.reuseId, for: indexPath) as! MainVCTableViewCell
-        cell.backgroundColor = .green
-        if let cellModel = cells?.collections[indexPath.row] {
-            cell.cellSet(collection: cellModel)
+        if let cellView = cells?.collections[indexPath.row] {
+            cell.cellSet(collection: cellView)
         }
+        if let cellText = cells?.headers[indexPath.row] {
+            cell.labelSet(text: cellText)
+        }
+        
         return cell
     }
     

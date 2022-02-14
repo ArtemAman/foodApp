@@ -24,7 +24,6 @@ class ThirdCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.text = "Article name topppppppppppppppppppppppppppppppppppp"
         label.textAlignment = .left
         label.numberOfLines = 2
         label.font = MainVewControllerConstants.thirdViewLabelFontTop
@@ -43,8 +42,6 @@ class ThirdCollectionViewCell: UICollectionViewCell {
     private func setConstraints() {
         NSLayoutConstraint.activate([
             
- 
-
             imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
             imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
@@ -64,18 +61,19 @@ class ThirdCollectionViewCell: UICollectionViewCell {
         
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
-        imageView.addShadow()
         
-//        layer.shadowRadius = 3
-//        layer.shadowOpacity = 0.4
-//        layer.shadowOffset = CGSize(width: 1.5, height: 2)
+        layer.shadowRadius = 3
+        layer.shadowOpacity = 0.4
+        layer.shadowOffset = CGSize(width: 1.5, height: 2)
         
     }
     
-    func setCell(imageName:String?, labelText:String?) {
-        guard let imageName = imageName else { return }
-        imageView.image = UIImage(named: imageName)
-        guard let labelText = labelText else { return }
+    func setCell(model: Cell?) {
+        guard let model = model else { return }
+        print(model)
+        guard let imageName = model.imageUrlString, let url = URL(string: imageName) else { return }
+        imageView.kf.setImage(with: url)
+        guard let labelText = model.name else { return }
         botLabel.text = labelText
         
     }

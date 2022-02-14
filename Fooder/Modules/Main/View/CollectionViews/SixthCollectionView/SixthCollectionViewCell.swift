@@ -24,7 +24,7 @@ class SixthCollectionViewCell: UICollectionViewCell {
     let botLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .white
+        label.textColor = .black
         label.font = MainVewControllerConstants.firstVClabelfont
         return label
     } ()
@@ -63,8 +63,8 @@ class SixthCollectionViewCell: UICollectionViewCell {
     }
     
     func setCell(imageName: String?, labelText: String?) {
-        guard let imageName = imageName, let url = URL(string: imageName) else { return }
-        imageView.kf.setImage(with: url)
+        guard let imageName = imageName else { return }
+        imageView.image = UIImage(named: imageName)
         guard let labelText = labelText else { return }
         botLabel.text = labelText
     }
