@@ -9,7 +9,7 @@ import UIKit
 
 class FirstCollectionView: UICollectionView {
     
-    var cells: ReceipViewModel?
+    var cells: PreSetupedTabletsFirst?
     
     init() {
         let frame = MainDimensionsCalculator.calculateCVFrame(height: MainVewControllerConstants.firstCollectionAtributes.itemSize.height)
@@ -38,14 +38,15 @@ class FirstCollectionView: UICollectionView {
 extension FirstCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        cells?.cells.count ?? 0
+        let cellsCount = cells?.requestString.count ?? 0
+        return cellsCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: FirstCollectionViewCell.reuseId, for: indexPath) as! FirstCollectionViewCell
-        let model = cells?.cells[indexPath.row]
-        cell.setCell(imageName: model?.imageUrlString,
-                     labelText: model?.name)
+        let requestString = cells?.requestString[indexPath.row]
+        cell.setCell(imageName: requestString,
+                     labelText: requestString)
         return cell
     }
     

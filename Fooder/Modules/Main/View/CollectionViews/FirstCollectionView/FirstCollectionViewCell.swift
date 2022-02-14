@@ -64,8 +64,12 @@ class FirstCollectionViewCell: UICollectionViewCell {
     }
     
     func setCell(imageName: String?, labelText: String?) {
-        guard let imageName = imageName, let url = URL(string: imageName) else { return }
-        imageView.kf.setImage(with: url)
+//        guard let imageName = imageName, let url = URL(string: imageName) else { return }
+//        imageView.kf.setImage(with: url)
+//        guard let labelText = labelText else { return }
+//        botLabel.text = labelText
+        guard let imageName = imageName else { return }
+        imageView.image = UIImage(named: imageName)
         guard let labelText = labelText else { return }
         botLabel.text = labelText
     }

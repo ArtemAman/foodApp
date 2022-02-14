@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
     private lazy var sixthCollection = SixthCollectionView()
     private lazy var seventhCollection = SeventhCollectionView()
     
-    var cells: TableViewModel?
+    var cells: MainTableViewModel?
     
     private lazy var tableView: UITableView = {
         let table = UITableView()
@@ -54,11 +54,11 @@ class MainViewController: UIViewController {
                                  MainVewControllerConstants.sixthHeight,
                                  MainVewControllerConstants.seventhHeight]
         
-        cells = TableViewModel(collections: collections, heights: collectionHeights)
+        cells = MainTableViewModel(collections: collections, heights: collectionHeights)
         
         setupView()
         
-        HUD.show(.labeledProgress(title: "Загрузка", subtitle: "в процессе..."), onView: self.view)
+//        HUD.show(.labeledProgress(title: "Загрузка", subtitle: "в процессе..."), onView: self.view)
     }
     
     private func setupView() {
@@ -83,7 +83,7 @@ extension MainViewController: MainViewInput {
         firstCollection.cells = presenter?.firstViewModel
         firstCollection.reloadData()
         
-        sixthCollection.cells = presenter?.firstViewModel
+//        sixthCollection.cells = presenter?.firstViewModel
         sixthCollection.reloadData()
         
         HUD.show(.labeledSuccess(title: "Загрузка", subtitle: "завершена"), onView: self.view)

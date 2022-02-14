@@ -11,7 +11,7 @@ class MainPresenter {
     
     weak var view: MainViewInput?
     
-    var firstViewModel: ReceipViewModel?
+    var firstViewModel: PreSetupedTabletsFirst?
     let articleParser:ArticleParser = ArticleParser()
 
     private func getRecipesList() {
@@ -19,7 +19,7 @@ class MainPresenter {
             switch result {
             case .success(let succes):
                 let listOfReceips = Parser<RecipeResponse>().parce(data: succes.data)
-                self?.prepareViewModel(listOfReceips: listOfReceips)
+//                self?.prepareViewModel(listOfReceips: listOfReceips)
             case .failure(let erorr):
                 print(erorr.localizedDescription)
                 /// view?.showError(error: error)
@@ -27,17 +27,21 @@ class MainPresenter {
         }
     }
     
-    private func prepareViewModel(listOfReceips: RecipeResponse?) {
-        firstViewModel = ReceipViewModel(list: listOfReceips)
-        self.view?.updateTable()
-    }
+
 }
 
 // MARK: - Public
 extension MainPresenter: MainViewOutput {
+    
+    private func prepareViewModel() {
+        firstViewModel = PreSetupedTabletsFirst()
+        self.view?.updateTable()
+    }
+    
     func viewLoaded() {
         getRecipesList()
-        articleParser.scrapeNYCMetalScene()
+        prepareViewModel()
+        articleParser.scrapeNews(page: "2")
     }
 }
 

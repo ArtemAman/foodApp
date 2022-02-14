@@ -49,3 +49,35 @@ struct Cell: CellViewModelProtocol {
         dishType = recipe?.dishType
     }
 }
+
+
+
+struct MainTableViewModel {
+    
+    var collections: [UIView]
+    var heights: [CGFloat]
+}
+
+struct PreSetupedTabletsFirst {
+    
+    var requestString: [String] = ["Asian",
+                                   "Italian",
+                                   "American",
+                                   "British",
+                                   "Caribbean",
+                                   "Central Europe",
+                                   "Chinese",
+                                   "Eastern Europe",
+                                   "French",
+                                   "Indian",
+                                   "Japanese",
+                                   "Kosher",
+                                   "Mediterranean",
+                                   "Mexican",
+                                   "Middle Eastern",
+                                   "Nordic",
+                                   "South American",
+                                   "South East Asian"]
+}
+
+

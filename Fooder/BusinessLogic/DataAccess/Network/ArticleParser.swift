@@ -13,9 +13,9 @@ import SwiftSoup
 
 class ArticleParser {
     
-    func scrapeNYCMetalScene() -> Void {
+    func scrapeNews(page: String) -> Void {
         
-        AF.request("https://povar.ru/art").responseString(completionHandler: { response in
+        AF.request(ServerConstants.baseNewsUrl + "/art/" + page).responseString(completionHandler: { response in
             
             guard let html = response.value else { return }
             
