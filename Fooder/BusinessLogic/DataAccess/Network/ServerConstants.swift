@@ -13,6 +13,8 @@ enum ServerConstants {
     static let appKey = "56a0c228add3a72b212930f86b5657cb"
     static let appId = "081de56d"
     static let type = "public"
+    
+    static let baseNewsUrl = "https://povar.ru/art"
 
     
 }

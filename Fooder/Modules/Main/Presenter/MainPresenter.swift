@@ -12,6 +12,7 @@ class MainPresenter {
     weak var view: MainViewInput?
     
     var firstViewModel: ReceipViewModel?
+    let articleParser:ArticleParser = ArticleParser()
 
     private func getRecipesList() {
         MainServices().getRecipesList(query: "Asia") { [weak self] result in
@@ -36,6 +37,7 @@ class MainPresenter {
 extension MainPresenter: MainViewOutput {
     func viewLoaded() {
         getRecipesList()
+        articleParser.scrapeNYCMetalScene()
     }
 }
 

@@ -10,5 +10,6 @@ target 'Fooder' do
   pod 'Moya'
   pod 'PKHUD'
   pod 'Kingfisher'
+  pod 'SwiftSoup'
   
 end
