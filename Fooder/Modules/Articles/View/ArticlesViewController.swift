@@ -33,7 +33,7 @@ class ArticlesViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(tableView)
         setupConstraints()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell2")
+        tableView.register(ArrticleVCTableViewCell.self, forCellReuseIdentifier: ArrticleVCTableViewCell.reuseId)
     }
     
     private func setupConstraints() {
@@ -57,18 +57,19 @@ extension ArticlesViewController: ArticlesViewInput {
 extension ArticlesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        10
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell2", for: indexPath)
-        cell.backgroundColor = .lightGray
+        let cell = tableView.dequeueReusableCell(withIdentifier: ArrticleVCTableViewCell.reuseId, for: indexPath) as! ArrticleVCTableViewCell
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        145
+        let height = ArticlesViewControllerConstants.imageHeight + (ArticlesViewControllerConstants.lableArticleFont.lineHeight * 2) + 15
+        
+        return height
     }
     
     
