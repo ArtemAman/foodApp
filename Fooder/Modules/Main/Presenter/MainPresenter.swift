@@ -17,7 +17,8 @@ class MainPresenter {
     let articleParser:ArticleParser = ArticleParser()
 
     private func getRecipesList() {
-        MainServices().getRecipesList(query: "random") { [weak self] result in
+        let randomString = String.random()
+        MainServices().getRecipesList(query: randomString) { [weak self] result in
             switch result {
             case .success(let succes):
                 let listOfReceips = Parser<RecipeResponse>().parce(data: succes.data)

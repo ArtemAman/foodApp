@@ -61,6 +61,7 @@
 		F057DBD127BA814C0097A616 /* FavouriteViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBD027BA814C0097A616 /* FavouriteViewInput.swift */; };
 		F057DBD327BA816E0097A616 /* FavouriteOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBD227BA816E0097A616 /* FavouriteOutput.swift */; };
 		F057DBD527BA82C60097A616 /* ArticleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBD427BA82C60097A616 /* ArticleParser.swift */; };
+		F057DBD927BB14B00097A616 /* RandomString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBD827BB14B00097A616 /* RandomString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +123,7 @@
 		F057DBD027BA814C0097A616 /* FavouriteViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewInput.swift; sourceTree = "<group>"; };
 		F057DBD227BA816E0097A616 /* FavouriteOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteOutput.swift; sourceTree = "<group>"; };
 		F057DBD427BA82C60097A616 /* ArticleParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleParser.swift; sourceTree = "<group>"; };
+		F057DBD827BB14B00097A616 /* RandomString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 			children = (
 				1C470B2627B2F20D000B3EF9 /* UIViewController+Extension.swift */,
 				F057DBC727BA7CF90097A616 /* Shadows.swift */,
+				F057DBD827BB14B00097A616 /* RandomString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 				F057DBC827BA7CF90097A616 /* Shadows.swift in Sources */,
 				1C470B0027B2E296000B3EF9 /* AppDelegate.swift in Sources */,
 				F0164ACA27B57FEF008CBA53 /* SecondCollectionView.swift in Sources */,
+				F057DBD927BB14B00097A616 /* RandomString.swift in Sources */,
 				1C470B0227B2E296000B3EF9 /* SceneDelegate.swift in Sources */,
 				1CDACF9627B45A4000081F3C /* Parcer.swift in Sources */,
 				F057DBD127BA814C0097A616 /* FavouriteViewInput.swift in Sources */,
