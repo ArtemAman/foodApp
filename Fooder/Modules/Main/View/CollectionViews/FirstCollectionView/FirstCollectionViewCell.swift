@@ -55,6 +55,7 @@ class FirstCollectionViewCell: UICollectionViewCell {
         
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
+//        imageView.addShadow()
         
         layer.shadowRadius = 3
         layer.shadowOpacity = 0.4

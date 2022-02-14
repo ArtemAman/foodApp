@@ -63,9 +63,9 @@ class FourthCollectionViewCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
         
-        layer.shadowRadius = 3
-        layer.shadowOpacity = 0.4
-        layer.shadowOffset = CGSize(width: 1.5, height: 2)
+//        layer.shadowRadius = 3
+//        layer.shadowOpacity = 0.4
+//        layer.shadowOffset = CGSize(width: 1.5, height: 2)
         
     }
     

@@ -53,9 +53,9 @@ class ArrticleVCTableViewCell: UITableViewCell {
         imageArticle.layer.cornerRadius = 10
         imageArticle.layer.masksToBounds = true
         
-        layer.shadowRadius = 3
-        layer.shadowOpacity = 0.4
-        layer.shadowOffset = CGSize(width: 1.5, height: 2)
+        imageArticle.layer.shadowRadius = 3
+        imageArticle.layer.shadowOpacity = 0.4
+        imageArticle.layer.shadowOffset = CGSize(width: 3, height: 2)
         
     }
 

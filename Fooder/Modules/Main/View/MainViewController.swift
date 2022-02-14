@@ -57,10 +57,6 @@ class MainViewController: UIViewController {
         cells = TableViewModel(collections: collections, heights: collectionHeights)
         
         setupView()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
         HUD.show(.labeledProgress(title: "Загрузка", subtitle: "в процессе..."), onView: self.view)
     }
