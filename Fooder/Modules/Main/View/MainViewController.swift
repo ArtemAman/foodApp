@@ -44,7 +44,7 @@ class MainViewController: UIViewController {
                        "Smth interesting about cooking",
                        "",
                        "Dishes",
-                       "Season products"
+                       "Random products"
         ]
         
         let collections = [firstCollection,
@@ -104,6 +104,9 @@ extension MainViewController: MainViewInput {
         sixthCollection.cells = presenter?.sixthViewModel
         sixthCollection.reloadData()
         
+        seventhCollection.cells = presenter?.thirdViewModel
+        seventhCollection.reloadData()
+        
 //        HUD.show(.labeledSuccess(title: "Загрузка", subtitle: "завершена"), onView: self.view)
 //        HUD.hide(afterDelay: 1, completion: nil)
     }
@@ -130,6 +133,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let cellSize = cells?.heights[indexPath.row] else { return 0 }
         return cellSize
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
     
 }

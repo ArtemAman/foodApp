@@ -9,7 +9,7 @@ import UIKit
 
 class SeventhCollectionView: UICollectionView {
     
-//    let cells: PreSetupedTabletsFirst = PreSetupedTabletsFirst()
+    var cells: ReceipViewModel?
 
     
     init() {
@@ -38,15 +38,13 @@ class SeventhCollectionView: UICollectionView {
 extension SeventhCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        cells.requestString.count
-        12
-        
+        cells?.cells.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: SeventhCollectionViewCell.reuseId, for: indexPath) as! SeventhCollectionViewCell
-        
-//        cell.setCell(imageName:cells.requestString[indexPath.row], labelText: cells.requestString[indexPath.row])
+        let model = cells?.cells[indexPath.row]
+        cell.setCell(model: model)
         return cell
     }
     

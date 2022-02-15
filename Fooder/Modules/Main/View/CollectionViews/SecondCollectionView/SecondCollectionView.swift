@@ -44,15 +44,15 @@ class SecondCollectionView: UICollectionView {
 extension SecondCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let numberOfCells = cells?.tabletString.count ?? 0
-        return numberOfCells
+        cells?.requestString.count ?? 0
+
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: SecondCollectionViewCell.reuseId, for: indexPath) as! SecondCollectionViewCell
-        let model = cells?.tabletString[indexPath.row]
-        cell.setCell(model: model)
+        let requestString = cells?.requestString[indexPath.row]
+        cell.setCell(labelText: requestString)
         return cell
     }
     

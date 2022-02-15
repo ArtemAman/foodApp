@@ -62,6 +62,7 @@
 		F057DBD327BA816E0097A616 /* FavouriteOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBD227BA816E0097A616 /* FavouriteOutput.swift */; };
 		F057DBD527BA82C60097A616 /* ArticleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBD427BA82C60097A616 /* ArticleParser.swift */; };
 		F057DBD927BB14B00097A616 /* RandomString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBD827BB14B00097A616 /* RandomString.swift */; };
+		F057DBDB27BC01170097A616 /* CapitalizedLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBDA27BC01170097A616 /* CapitalizedLetter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,7 @@
 		F057DBD227BA816E0097A616 /* FavouriteOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteOutput.swift; sourceTree = "<group>"; };
 		F057DBD427BA82C60097A616 /* ArticleParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleParser.swift; sourceTree = "<group>"; };
 		F057DBD827BB14B00097A616 /* RandomString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomString.swift; sourceTree = "<group>"; };
+		F057DBDA27BC01170097A616 /* CapitalizedLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapitalizedLetter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 				1C470B2627B2F20D000B3EF9 /* UIViewController+Extension.swift */,
 				F057DBC727BA7CF90097A616 /* Shadows.swift */,
 				F057DBD827BB14B00097A616 /* RandomString.swift */,
+				F057DBDA27BC01170097A616 /* CapitalizedLetter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				F0164AC127B52AB4008CBA53 /* FirstCollectionViewCell.swift in Sources */,
 				F057DBCF27BA80FD0097A616 /* FavouriteViewController.swift in Sources */,
 				F057DBC627BA790D0097A616 /* SearchModuleConfigurator.swift in Sources */,
+				F057DBDB27BC01170097A616 /* CapitalizedLetter.swift in Sources */,
 				F0164AE427B9BB99008CBA53 /* SixthCollectionViewCell.swift in Sources */,
 				F0164AB627B467E7008CBA53 /* ArticlesConfigurator.swift in Sources */,
 				1C470B3027B2FF14000B3EF9 /* MainAPI.swift in Sources */,

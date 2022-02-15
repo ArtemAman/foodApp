@@ -107,21 +107,15 @@ struct PreSetupedTabletsSixth {
                                    ]
 }
 
-struct ParamasForSecondCollectionVC {
-    
-    var webLabel: String
-    var apiParameter: String
-}
-
 struct PreSetupedTabletsSecond {
     
-    var tabletString: [ParamasForSecondCollectionVC] =
-     [ ParamasForSecondCollectionVC(webLabel: "Balanced", apiParameter: "balanced"), ParamasForSecondCollectionVC(webLabel: "High-Fiber", apiParameter: "high-fiber"),
-       ParamasForSecondCollectionVC(webLabel: "High-Protein", apiParameter: "high-protein"),
-       ParamasForSecondCollectionVC(webLabel: "Low-Carb", apiParameter: "low-carb"),
-       ParamasForSecondCollectionVC(webLabel: "Low-Fat", apiParameter: "low-fat"),
-       ParamasForSecondCollectionVC(webLabel: "Low-Sodium", apiParameter: "low-sodium"),
-     ]
+    var requestString: [String] = ["balanced",
+                                   "high-fiber",
+                                   "high-protein",
+                                   "low-carb",
+                                   "low-fat",
+                                   "low-sodium",
+                                   ]
 }
 
 

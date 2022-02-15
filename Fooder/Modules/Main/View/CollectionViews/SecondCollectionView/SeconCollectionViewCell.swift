@@ -65,9 +65,9 @@ class SecondCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func setCell(model:ParamasForSecondCollectionVC? ) {
-        guard let model = model else { return }
-        botLabel.text = model.webLabel
+    func setCell(labelText: String? ) {
+        guard let labelText = labelText else { return }
+        botLabel.text = labelText.captalizeFirstCharacter()
         
     }
     

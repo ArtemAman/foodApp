@@ -70,11 +70,12 @@ class SeventhCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func setCell(imageName:String?, labelText:String?) {
-        guard let imageName = imageName else { return }
-        imageView.image = UIImage(named: imageName)
-        guard let labelText = labelText else { return }
-        botLabel.text = labelText
+    func setCell(model: Cell?) {
+        guard let model = model else { return }
+        guard let imageName = model.ingredients?.first?.image, let url = URL(string: imageName) else { return }
+        imageView.kf.setImage(with: url)
+        guard let labelText = model.ingredients?.first?.food else { return }
+        botLabel.text = labelText.captalizeFirstCharacter()
         
     }
     
