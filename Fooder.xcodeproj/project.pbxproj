@@ -63,6 +63,8 @@
 		F057DBD527BA82C60097A616 /* ArticleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBD427BA82C60097A616 /* ArticleParser.swift */; };
 		F057DBD927BB14B00097A616 /* RandomString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBD827BB14B00097A616 /* RandomString.swift */; };
 		F057DBDB27BC01170097A616 /* CapitalizedLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBDA27BC01170097A616 /* CapitalizedLetter.swift */; };
+		F057DBDD27BC4AAB0097A616 /* FavouriteViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBDC27BC4AAB0097A616 /* FavouriteViewControllerCell.swift */; };
+		F057DBDF27BC506B0097A616 /* FavouriteViewControllerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBDE27BC506B0097A616 /* FavouriteViewControllerConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +128,8 @@
 		F057DBD427BA82C60097A616 /* ArticleParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleParser.swift; sourceTree = "<group>"; };
 		F057DBD827BB14B00097A616 /* RandomString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomString.swift; sourceTree = "<group>"; };
 		F057DBDA27BC01170097A616 /* CapitalizedLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapitalizedLetter.swift; sourceTree = "<group>"; };
+		F057DBDC27BC4AAB0097A616 /* FavouriteViewControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewControllerCell.swift; sourceTree = "<group>"; };
+		F057DBDE27BC506B0097A616 /* FavouriteViewControllerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewControllerConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,8 +408,10 @@
 			isa = PBXGroup;
 			children = (
 				F057DBCE27BA80FD0097A616 /* FavouriteViewController.swift */,
+				F057DBDC27BC4AAB0097A616 /* FavouriteViewControllerCell.swift */,
 				F057DBD027BA814C0097A616 /* FavouriteViewInput.swift */,
 				F057DBD227BA816E0097A616 /* FavouriteOutput.swift */,
+				F057DBDE27BC506B0097A616 /* FavouriteViewControllerConstants.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -648,6 +654,7 @@
 				F057DBD927BB14B00097A616 /* RandomString.swift in Sources */,
 				1C470B0227B2E296000B3EF9 /* SceneDelegate.swift in Sources */,
 				1CDACF9627B45A4000081F3C /* Parcer.swift in Sources */,
+				F057DBDD27BC4AAB0097A616 /* FavouriteViewControllerCell.swift in Sources */,
 				F057DBD127BA814C0097A616 /* FavouriteViewInput.swift in Sources */,
 				F0164AD127B675F3008CBA53 /* ThirdCollectionView.swift in Sources */,
 				F0164AE727B9C20C008CBA53 /* SeventhCollectionView.swift in Sources */,
@@ -682,6 +689,7 @@
 				F0164ACC27B5800E008CBA53 /* SeconCollectionViewCell.swift in Sources */,
 				1C470B2227B2EC76000B3EF9 /* MainViewOutput.swift in Sources */,
 				F0164AD827B678C7008CBA53 /* FourthCollectionViewCell.swift in Sources */,
+				F057DBDF27BC506B0097A616 /* FavouriteViewControllerConstants.swift in Sources */,
 				F0164AC527B53964008CBA53 /* MainViewControllerCell.swift in Sources */,
 				F0164AAB27B46683008CBA53 /* ArticlesViewController.swift in Sources */,
 				F0164AD627B678BA008CBA53 /* FourthCollectionView.swift in Sources */,

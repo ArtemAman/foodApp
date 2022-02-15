@@ -34,7 +34,7 @@ class FavouriteViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(tableView)
         setupConstraints()
-        tableView.register(ArrticleVCTableViewCell.self, forCellReuseIdentifier: ArrticleVCTableViewCell.reuseId)
+        tableView.register(FavouriteViewControllerCell.self, forCellReuseIdentifier: FavouriteViewControllerCell.reuseId)
     }
     
     private func setupConstraints() {
@@ -51,26 +51,24 @@ class FavouriteViewController: UIViewController {
     }
 }
 
-extension FavouriteViewController: SearchViewInput {
+extension FavouriteViewController: FavouriteViewInput {
     
 }
 
 extension FavouriteViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        2
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ArrticleVCTableViewCell.reuseId, for: indexPath) as! ArrticleVCTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: FavouriteViewControllerCell.reuseId, for: indexPath) as! FavouriteViewControllerCell
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let height = ArticlesViewControllerConstants.imageHeight + (ArticlesViewControllerConstants.lableArticleFont.lineHeight * 2) + 15
-        
-        return height
+        return 150
     }
     
     

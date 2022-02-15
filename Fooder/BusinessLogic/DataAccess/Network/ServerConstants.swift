@@ -14,7 +14,7 @@ enum ServerConstants {
     static let appId = "081de56d"
     static let type = "public"
     
-    static let baseNewsUrl = "https://povar.ru"
+    static let baseNewsUrl = "https://www.bbc.co.uk/food/articles"
     
 }
 

@@ -11,5 +11,5 @@ import UIKit
 
 class FavouritePresenter {
     
-    weak var view: SearchViewInput?
+    weak var view: FavouriteViewInput?
 }

@@ -46,7 +46,6 @@ class ArrticleVCTableViewCell: UITableViewCell {
     
     func setCell(model: FourthCell?) {
         guard let model = model else { return }
-        print(model)
         guard let imageName = model.imageUrlString, let url = URL(string: imageName) else { return }
         imageArticle.kf.setImage(with: url)
         guard let labelText = model.name else { return }

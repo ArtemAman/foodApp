@@ -10,9 +10,9 @@ import UIKit
 final class FavouriteModuleConfigurator {
 
     // MARK: - Internal methods
-    func configure() -> (SearchViewController, SearchPresenter) {
-        let view = SearchViewController()
-        let presenter = SearchPresenter()
+    func configure() -> (FavouriteViewController, FavouritePresenter) {
+        let view = FavouriteViewController()
+        let presenter = FavouritePresenter()
 
         presenter.view = view
         view.presenter = presenter
