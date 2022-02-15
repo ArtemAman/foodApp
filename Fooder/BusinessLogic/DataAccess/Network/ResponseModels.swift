@@ -5,7 +5,7 @@
 //  Created by Artyom Amankeldiev on 09.02.2022.
 //
 
-import Foundation
+import UIKit
 import CoreText
 
 
@@ -103,6 +103,15 @@ struct Nutrient: Decodable {
     var quantity:Float?
     var unit:String?
 
+}
+
+
+struct Article {
+    
+    var imageUrlString: String?
+    var name: String?
+    var urlToFull: String?
+    
 }
 
 

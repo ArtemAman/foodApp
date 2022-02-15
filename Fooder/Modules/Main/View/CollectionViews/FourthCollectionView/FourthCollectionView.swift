@@ -7,7 +7,7 @@ import UIKit
 
 class FourthCollectionView: UICollectionView {
     
-//    let cells: PreSetupedTabletsFirst = PreSetupedTabletsFirst()
+    var cells: FourthCollectionViewModel?
 
     
     init() {
@@ -37,16 +37,15 @@ extension FourthCollectionView: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        cells.requestString.count
-        12
+        cells?.cells.count ?? 0
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: FourthCollectionViewCell.reuseId, for: indexPath) as! FourthCollectionViewCell
-        
-//        cell.setCell(imageName:cells.requestString[indexPath.row], labelText: cells.requestString[indexPath.row])
+        let model = cells?.cells[indexPath.row]
+        cell.setCell(model:model)
         return cell
+        
     }
-    
-    
 }

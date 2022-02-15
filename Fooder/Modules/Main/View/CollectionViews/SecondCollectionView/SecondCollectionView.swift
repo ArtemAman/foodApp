@@ -16,7 +16,7 @@ import UIKit
 
 class SecondCollectionView: UICollectionView {
     
-    
+    var cells: PreSetupedTabletsSecond?
     
     init() {
         let collectionFrame = MainDimensionsCalculator.calculateCVFrame(height: MainVewControllerConstants.secondCollectionAtributes.itemSize.height)
@@ -44,14 +44,15 @@ class SecondCollectionView: UICollectionView {
 extension SecondCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return 5
+        let numberOfCells = cells?.tabletString.count ?? 0
+        return numberOfCells
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: SecondCollectionViewCell.reuseId, for: indexPath) as! SecondCollectionViewCell
-        cell.setCell(labelText: "olololo")
+        let model = cells?.tabletString[indexPath.row]
+        cell.setCell(model: model)
         return cell
     }
     

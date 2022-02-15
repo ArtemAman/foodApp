@@ -69,10 +69,11 @@ class FourthCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func setCell(imageName:String?, labelText:String?) {
-        guard let imageName = imageName else { return }
-        imageView.image = UIImage(named: imageName)
-        guard let labelText = labelText else { return }
+    func setCell(model: FourthCell?) {
+        guard let model = model else { return }
+        guard let imageName = model.imageUrlString, let url = URL(string: imageName) else { return }
+        imageView.kf.setImage(with: url)
+        guard let labelText = model.name else { return }
         botLabel.text = labelText
         
     }

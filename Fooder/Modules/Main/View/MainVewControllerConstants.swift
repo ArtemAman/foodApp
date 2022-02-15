@@ -40,13 +40,13 @@ struct MainVewControllerConstants {
     
     // heights
     
-    static let firstHeight = MainVewControllerConstants.firstCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight
-    static let secondHeight = MainVewControllerConstants.secondCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight
-    static let thirdHeight = MainVewControllerConstants.thirdCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight
-    static let fourthHeight = MainVewControllerConstants.thirdCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight
+    static let firstHeight = MainVewControllerConstants.firstCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight + 10
+    static let secondHeight = MainVewControllerConstants.secondCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight + 10
+    static let thirdHeight = MainVewControllerConstants.thirdCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight + 10
+    static let fourthHeight = MainVewControllerConstants.thirdCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight + 10
     static let fifthViewHeight: CGFloat = 60
-    static let sixthHeight = MainVewControllerConstants.firstCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight
-    static let seventhHeight = MainVewControllerConstants.thirdCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight
+    static let sixthHeight = MainVewControllerConstants.firstCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight + 10
+    static let seventhHeight = MainVewControllerConstants.thirdCollectionAtributes.itemSize.height + MainVewControllerConstants.headersFont.lineHeight + 10
     
     
     

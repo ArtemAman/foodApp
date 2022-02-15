@@ -15,7 +15,7 @@ class SecondCollectionViewCell: UICollectionViewCell {
     let layerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemGray
+        view.backgroundColor = .white
         return view
     } ()
     
@@ -23,6 +23,7 @@ class SecondCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
+        label.textAlignment = .center
         label.font = MainVewControllerConstants.secondViewLabelFont
         return label
     } ()
@@ -64,9 +65,9 @@ class SecondCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func setCell(labelText:String?) {
-        guard let labelText = labelText else { return }
-        botLabel.text = labelText
+    func setCell(model:ParamasForSecondCollectionVC? ) {
+        guard let model = model else { return }
+        botLabel.text = model.webLabel
         
     }
     

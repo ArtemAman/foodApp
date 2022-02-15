@@ -20,6 +20,12 @@ protocol CellViewModelProtocol {
     var dishType: [String]? { get }
 }
 
+protocol FourthCellViewModelProtocol {
+    var imageUrlString: String? { get }
+    var name: String? { get }
+    var urlToFull: String? { get }
+}
+
 struct ReceipViewModel {
     
     var cells: [Cell] = []
@@ -101,3 +107,47 @@ struct PreSetupedTabletsSixth {
                                    ]
 }
 
+struct ParamasForSecondCollectionVC {
+    
+    var webLabel: String
+    var apiParameter: String
+}
+
+struct PreSetupedTabletsSecond {
+    
+    var tabletString: [ParamasForSecondCollectionVC] =
+     [ ParamasForSecondCollectionVC(webLabel: "Balanced", apiParameter: "balanced"), ParamasForSecondCollectionVC(webLabel: "High-Fiber", apiParameter: "high-fiber"),
+       ParamasForSecondCollectionVC(webLabel: "High-Protein", apiParameter: "high-protein"),
+       ParamasForSecondCollectionVC(webLabel: "Low-Carb", apiParameter: "low-carb"),
+       ParamasForSecondCollectionVC(webLabel: "Low-Fat", apiParameter: "low-fat"),
+       ParamasForSecondCollectionVC(webLabel: "Low-Sodium", apiParameter: "low-sodium"),
+     ]
+}
+
+
+
+struct FourthCollectionViewModel {
+    
+    var cells: [FourthCell] = []
+    
+    init(list: [Article?]) {
+        list.forEach({ article in
+            cells.append(FourthCell(article: article))
+        })
+    }
+    
+}
+
+struct FourthCell: FourthCellViewModelProtocol {
+    
+    var imageUrlString: String?
+    var name: String?
+    var urlToFull: String?
+    
+    init(article: Article?) {
+        self.imageUrlString = article?.imageUrlString
+        self.name = article?.name
+        self.urlToFull = article?.urlToFull
+        
+    }
+}

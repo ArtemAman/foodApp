@@ -43,6 +43,7 @@ class MainVCTableViewCell: UITableViewCell {
             topLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             topLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
             topLabel.heightAnchor.constraint(equalToConstant: 24),
+            
             topLabel.widthAnchor.constraint(equalTo: self.widthAnchor),
 
           ])

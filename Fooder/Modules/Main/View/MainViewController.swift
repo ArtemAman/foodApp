@@ -92,8 +92,14 @@ extension MainViewController: MainViewInput {
         firstCollection.cells = presenter?.firstViewModel
         firstCollection.reloadData()
         
+        secondCollection.cells = presenter?.secondViewModel
+        secondCollection.reloadData()
+        
         thirdCollection.cells = presenter?.thirdViewModel
         thirdCollection.reloadData()
+        
+        fourthCollection.cells = presenter?.fourthViewModel
+        fourthCollection.reloadData()
         
         sixthCollection.cells = presenter?.sixthViewModel
         sixthCollection.reloadData()
