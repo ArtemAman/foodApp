@@ -9,6 +9,7 @@ import UIKit
 
 class ArticlesViewController: UIViewController {
     
+    var cells: FourthCollectionViewModel?
     var presenter: ArticlesPresenter?
     
     private lazy var tableView: UITableView = {
@@ -25,8 +26,8 @@ class ArticlesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         setupView()
+        presenter?.viewLoaded()
     }
     
     private func setupView() {
@@ -51,18 +52,26 @@ class ArticlesViewController: UIViewController {
 }
 
 extension ArticlesViewController: ArticlesViewInput {
-    
+    func updateTable() {
+        cells = presenter?.fourthViewModel
+        tableView.reloadData()
+        
+//        HUD.show(.labeledSuccess(title: "Загрузка", subtitle: "завершена"), onView: self.view)
+//        HUD.hide(afterDelay: 1, completion: nil)
+    }
 }
 
 extension ArticlesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        cells?.cells.count ?? 0
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ArrticleVCTableViewCell.reuseId, for: indexPath) as! ArrticleVCTableViewCell
+        let model = cells?.cells[indexPath.row]
+        cell.setCell(model: model)
         return cell
     }
     

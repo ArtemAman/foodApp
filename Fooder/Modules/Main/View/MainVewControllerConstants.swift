@@ -16,7 +16,7 @@ struct CollectionAttribute {
 struct MainVewControllerConstants {
     
     static let firstVClabelfont = UIFont.systemFont(ofSize: 14, weight: .bold)
-    static let headersFont = UIFont.systemFont(ofSize: 22, weight: .semibold)
+    static let headersFont = UIFont.systemFont(ofSize: 22, weight: .medium)
     static let secondViewLabelFont = UIFont.systemFont(ofSize: 18, weight: .semibold)
     static let thirdViewLabelFontTop = UIFont.systemFont(ofSize: 14, weight: .semibold)
     static let thirdViewLabelFontBottom = UIFont.systemFont(ofSize: 14, weight: .light)

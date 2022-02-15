@@ -9,10 +9,8 @@ import UIKit
 
 struct ArticlesViewControllerConstants {
     
-    static let imageHeight: CGFloat = UIScreen.main.bounds.height / 5
+    static let imageHeight: CGFloat = UIScreen.main.bounds.height / 4
     
     static let lableArticleFont = UIFont.systemFont(ofSize: 16, weight: .semibold)
-    
-    
 
 }

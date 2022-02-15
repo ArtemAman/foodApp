@@ -12,15 +12,6 @@ class ArrticleVCTableViewCell: UITableViewCell {
     
     static let reuseId = "ArticleCell"
     
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        cellSet()
-    }
-    
-    
-    
     private lazy var imageArticle: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -39,11 +30,27 @@ class ArrticleVCTableViewCell: UITableViewCell {
         return label
     } ()
     
-    func cellSet() {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        layoutSet()
+    }
+    
+    func layoutSet() {
         
         self.addSubview(imageArticle)
         self.addSubview(labelArticle)
         setConstraints()
+        
+    }
+    
+    func setCell(model: FourthCell?) {
+        guard let model = model else { return }
+        print(model)
+        guard let imageName = model.imageUrlString, let url = URL(string: imageName) else { return }
+        imageArticle.kf.setImage(with: url)
+        guard let labelText = model.name else { return }
+        labelArticle.text = labelText
         
     }
     
@@ -67,16 +74,11 @@ class ArrticleVCTableViewCell: UITableViewCell {
             imageArticle.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
             imageArticle.heightAnchor.constraint(equalToConstant: ArticlesViewControllerConstants.imageHeight),
            
-            
-
             labelArticle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             labelArticle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             labelArticle.topAnchor.constraint(equalTo: imageArticle.bottomAnchor, constant: 5),
             labelArticle.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
             
-            
-            
-
           ])
     }
     

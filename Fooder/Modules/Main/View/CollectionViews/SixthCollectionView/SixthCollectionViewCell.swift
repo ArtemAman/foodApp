@@ -24,7 +24,7 @@ class SixthCollectionViewCell: UICollectionViewCell {
     let botLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
+        label.textColor = .white
         label.font = MainVewControllerConstants.firstVClabelfont
         return label
     } ()

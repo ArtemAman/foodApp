@@ -7,5 +7,8 @@
 
 import UIKit
 protocol ArticlesViewOutput: AnyObject {
+    
+    var fourthViewModel: FourthCollectionViewModel? { get set }
+    
     func viewLoaded()
 }
