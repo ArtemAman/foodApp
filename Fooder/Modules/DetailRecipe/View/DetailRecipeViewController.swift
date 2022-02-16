@@ -1,16 +1,17 @@
 //
-//  ArticlesViewController.swift
+//  DetailViewController.swift
 //  Fooder
 //
-//  Created by Artyom Amankeldiev on 10.02.2022.
+//  Created by Artyom Amankeldiev on 16.02.2022.
 //
 
 import UIKit
 
-class ArticlesViewController: UIViewController {
+
+
+class DetailRecipeViewController: UIViewController {
     
-    var cells: FourthCollectionViewModel?
-    var presenter: ArticlesViewOutput?
+    var presenter: DetailRecipePresenter?
     
     private lazy var tableView: UITableView = {
         let table = UITableView()
@@ -26,15 +27,15 @@ class ArticlesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         setupView()
-        presenter?.viewLoaded()
     }
     
     private func setupView() {
         view.backgroundColor = .white
         view.addSubview(tableView)
         setupConstraints()
-        tableView.register(ArrticleVCTableViewCell.self, forCellReuseIdentifier: ArrticleVCTableViewCell.reuseId)
+        tableView.register(DetailRecipeVCTableViewCell.self, forCellReuseIdentifier: DetailRecipeVCTableViewCell.reuseId)
     }
     
     private func setupConstraints() {
@@ -47,31 +48,22 @@ class ArticlesViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             
             ])
+    }
+}
+
+extension DetailRecipeViewController: DetailRecipeViewInput {
     
-    }
 }
 
-extension ArticlesViewController: ArticlesViewInput {
-    func updateTable() {
-        cells = presenter?.fourthViewModel
-        tableView.reloadData()
-        
-//        HUD.show(.labeledSuccess(title: "Загрузка", subtitle: "завершена"), onView: self.view)
-//        HUD.hide(afterDelay: 1, completion: nil)
-    }
-}
-
-extension ArticlesViewController: UITableViewDataSource, UITableViewDelegate {
+extension DetailRecipeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        cells?.cells.count ?? 0
+        10
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ArrticleVCTableViewCell.reuseId, for: indexPath) as! ArrticleVCTableViewCell
-        let model = cells?.cells[indexPath.row]
-        cell.setCell(model: model)
+        let cell = tableView.dequeueReusableCell(withIdentifier: DetailRecipeVCTableViewCell.reuseId, for: indexPath) as! DetailRecipeVCTableViewCell
         return cell
     }
     
@@ -83,4 +75,5 @@ extension ArticlesViewController: UITableViewDataSource, UITableViewDelegate {
     
     
 }
+
 

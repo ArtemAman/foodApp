@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MainViewInput: AnyObject {
     func updateTable()
+    func presentDetailRecipe(viewController:UIViewController)
 }

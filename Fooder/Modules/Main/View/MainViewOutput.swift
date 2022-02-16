@@ -15,4 +15,5 @@ protocol MainViewOutput: AnyObject {
     var fourthViewModel: FourthCollectionViewModel? { get set }
     
     func viewLoaded()
+    func configureDetailRecipeViewController(cellIndex:Int)
 }

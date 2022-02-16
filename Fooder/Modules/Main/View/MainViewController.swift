@@ -37,6 +37,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         presenter?.viewLoaded()
+        thirdCollection.mainVc = self
         
         let headers = ["Foreign kitchens",
                        "Diets",
@@ -88,6 +89,13 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: MainViewInput {
+    
+    
+    func presentDetailRecipe(viewController: UIViewController) {
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    
     func updateTable() {
         firstCollection.cells = presenter?.firstViewModel
         firstCollection.reloadData()
@@ -144,4 +152,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 
     }
     
+}
+
+
+extension MainViewController:
+    ThirdCollectionViewCellPressDelegate {
+    
+    
+    func makeDetailVc(index: Int) {
+        presenter?.configureDetailRecipeViewController(cellIndex: index)
+    }
+    
+
 }

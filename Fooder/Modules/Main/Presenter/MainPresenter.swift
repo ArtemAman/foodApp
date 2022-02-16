@@ -5,7 +5,7 @@
 //  Created by Максим Чикинов on 08.02.2022.
 //
 
-import Foundation
+import UIKit
 
 class MainPresenter {
     
@@ -44,8 +44,6 @@ class MainPresenter {
 
 // MARK: - Public
 extension MainPresenter: MainViewOutput {
-
-    
     
     private func prepareThirdViewModel(listOfReceips: RecipeResponse?) {
         thirdViewModel = ReceipViewModel(list: listOfReceips)
@@ -71,6 +69,14 @@ extension MainPresenter: MainViewOutput {
         getArticles()
         
     }
+    
+    func configureDetailRecipeViewController(cellIndex: Int) {
+        let detailRecipeModule = DetailRecipeModuleConfigurator().configure()
+        let detailRecipeVC = detailRecipeModule.0
+        view?.presentDetailRecipe(viewController: detailRecipeVC)
+    }
+    
+
 }
 
 

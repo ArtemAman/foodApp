@@ -70,7 +70,6 @@ class ThirdCollectionViewCell: UICollectionViewCell {
     
     func setCell(model: Cell?) {
         guard let model = model else { return }
-        print(model)
         guard let imageName = model.imageUrlString, let url = URL(string: imageName) else { return }
         imageView.kf.setImage(with: url)
         guard let labelText = model.name else { return }
