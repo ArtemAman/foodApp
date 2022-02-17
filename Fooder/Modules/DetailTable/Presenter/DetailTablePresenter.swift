@@ -5,4 +5,17 @@
 //  Created by Artyom Amankeldiev on 16.02.2022.
 //
 
-import Foundation
+
+import UIKit
+
+class DetailTablePresenter {
+    
+    weak var view: DetailTableViewInput?
+}
+
+
+extension DetailTablePresenter: DetailTableViewOutput {
+    func viewLoaded() {
+    
+    }
+}

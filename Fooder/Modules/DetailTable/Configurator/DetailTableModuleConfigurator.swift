@@ -11,9 +11,9 @@ import UIKit
 final class DetailTableModuleConfigurator {
 
     // MARK: - Internal methods
-    func configure() -> (DetailRecipeViewController, DetailRecipePresenter) {
-        let view = DetailRecipeViewController()
-        let presenter = DetailRecipePresenter()
+    func configure() -> (DetailTableViewController, DetailTablePresenter) {
+        let view = DetailTableViewController()
+        let presenter = DetailTablePresenter()
 
         presenter.view = view
         view.presenter = presenter

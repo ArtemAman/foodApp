@@ -37,7 +37,14 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         presenter?.viewLoaded()
+        
+        firstCollection.mainVc = self
+        secondCollection.mainVc = self
         thirdCollection.mainVc = self
+        fourthCollection.mainVc = self
+        sixthCollection.mainVc = self
+        seventhCollection.mainVc = self
+        
         
         let headers = ["Foreign kitchens",
                        "Diets",
@@ -155,13 +162,20 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 
-extension MainViewController:
-    ThirdCollectionViewCellPressDelegate {
-    
+extension MainViewController: DetailCollectionViewCellPressDelegate {
     
     func makeDetailVc(index: Int) {
         presenter?.configureDetailRecipeViewController(cellIndex: index)
     }
-    
+}
 
+extension MainViewController: RequestCollectionViewCellPressDelegate {
+    
+    func makeDetailVc(requestString: String?) {
+        
+        presenter?.configureDetailTableViewController(requestingString: requestString)
+    }
+    
+    
+    
 }

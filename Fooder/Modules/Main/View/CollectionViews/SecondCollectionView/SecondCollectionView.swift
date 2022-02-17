@@ -18,6 +18,8 @@ class SecondCollectionView: UICollectionView {
     
     var cells: PreSetupedTabletsSecond?
     
+    weak var mainVc: RequestCollectionViewCellPressDelegate?
+    
     init() {
         let collectionFrame = MainDimensionsCalculator.calculateCVFrame(height: MainVewControllerConstants.secondCollectionAtributes.itemSize.height)
         
@@ -56,6 +58,10 @@ extension SecondCollectionView: UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let requestString = cells?.requestString[indexPath.row]
+        mainVc?.makeDetailVc(requestString: requestString)
+
+      }
 }
 

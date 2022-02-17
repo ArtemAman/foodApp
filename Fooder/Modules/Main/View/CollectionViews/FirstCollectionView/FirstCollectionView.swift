@@ -11,6 +11,8 @@ class FirstCollectionView: UICollectionView {
     
     var cells: PreSetupedTabletsFirst?
     
+    weak var mainVc: RequestCollectionViewCellPressDelegate?
+    
     init() {
         let frame = MainDimensionsCalculator.calculateCVFrame(height: MainVewControllerConstants.firstCollectionAtributes.itemSize.height)
         let flowLayout = UICollectionViewFlowLayout()
@@ -50,4 +52,9 @@ extension FirstCollectionView: UICollectionViewDelegate, UICollectionViewDataSou
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let requestString = cells?.requestString[indexPath.row]
+        mainVc?.makeDetailVc(requestString: requestString)
+
+    }
 }

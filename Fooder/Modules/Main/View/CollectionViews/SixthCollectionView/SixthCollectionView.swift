@@ -10,6 +10,7 @@ import UIKit
 class SixthCollectionView: UICollectionView {
     
     var cells: PreSetupedTabletsSixth?
+    weak var mainVc: RequestCollectionViewCellPressDelegate?
     
     init() {
         let frame = MainDimensionsCalculator.calculateCVFrame(height: MainVewControllerConstants.firstCollectionAtributes.itemSize.height)
@@ -48,6 +49,12 @@ extension SixthCollectionView: UICollectionViewDelegate, UICollectionViewDataSou
         cell.setCell(imageName: model,
                      labelText: model)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let requestString = cells?.requestString[indexPath.row]
+        mainVc?.makeDetailVc(requestString: requestString)
+
     }
     
 }

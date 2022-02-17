@@ -32,7 +32,7 @@ class TabBar: UITabBarController {
         
         
         viewControllers = [
-            mainViewController.createNavController(title: "Main",
+            mainViewController.createNavController(title: "Fooder",
                                                    image: UIImage(systemName: "house")!),
             searchViewController.createNavController(title: "Search",
                                                    image: UIImage(systemName: "magnifyingglass")!),

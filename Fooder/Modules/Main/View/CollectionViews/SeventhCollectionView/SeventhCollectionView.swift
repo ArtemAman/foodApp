@@ -10,7 +10,7 @@ import UIKit
 class SeventhCollectionView: UICollectionView {
     
     var cells: ReceipViewModel?
-
+    weak var mainVc: DetailCollectionViewCellPressDelegate?
     
     init() {
         let frame = MainDimensionsCalculator.calculateCVFrame(height: MainVewControllerConstants.thirdCollectionAtributes.itemSize.height)
@@ -47,6 +47,10 @@ extension SeventhCollectionView: UICollectionViewDelegate, UICollectionViewDataS
         cell.setCell(model: model)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        mainVc?.makeDetailVc(index: indexPath.row)
+      }
     
     
 }

@@ -7,14 +7,12 @@
 
 import UIKit
 
-protocol ThirdCollectionViewCellPressDelegate: class {
-    func makeDetailVc(index:Int)
-}
+
 
 class ThirdCollectionView: UICollectionView {
     
     var cells: ReceipViewModel?
-    var mainVc: ThirdCollectionViewCellPressDelegate?
+    weak var mainVc: DetailCollectionViewCellPressDelegate?
 
     
     init() {
@@ -56,7 +54,6 @@ extension ThirdCollectionView: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         mainVc?.makeDetailVc(index: indexPath.row)
-        print("\(indexPath.row)")
       }
     
     

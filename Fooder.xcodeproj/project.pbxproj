@@ -70,12 +70,17 @@
 		F057DBED27BD1F700097A616 /* DetailRecipePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBEC27BD1F700097A616 /* DetailRecipePresenter.swift */; };
 		F057DBEF27BD208C0097A616 /* DetailRecipeViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBEE27BD208C0097A616 /* DetailRecipeViewInput.swift */; };
 		F057DBF127BD209B0097A616 /* DetailRecipeViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBF027BD209B0097A616 /* DetailRecipeViewOutput.swift */; };
-		F057DBF327BD21CB0097A616 /* DetailRecipeViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBF227BD21CB0097A616 /* DetailRecipeViewControllerCell.swift */; };
 		F057DBFA27BD44300097A616 /* DetailTableModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBF927BD44300097A616 /* DetailTableModuleConfigurator.swift */; };
 		F057DBFC27BD44840097A616 /* DetailTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBFB27BD44840097A616 /* DetailTablePresenter.swift */; };
 		F057DC0027BD44BD0097A616 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DBFF27BD44BD0097A616 /* DetailTableViewController.swift */; };
 		F057DC0227BD44D70097A616 /* DetailTableViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC0127BD44D70097A616 /* DetailTableViewInput.swift */; };
 		F057DC0427BD44E40097A616 /* DetailTableViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC0327BD44E40097A616 /* DetailTableViewOutput.swift */; };
+		F057DC0627BD459D0097A616 /* DetailTableViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC0527BD459D0097A616 /* DetailTableViewControllerCell.swift */; };
+		F057DC0927BD508E0097A616 /* SubviewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC0827BD508E0097A616 /* SubviewProtocols.swift */; };
+		F057DC0B27BD52F60097A616 /* DetailTableViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC0A27BD52F60097A616 /* DetailTableViewConstants.swift */; };
+		F057DC0D27BD57650097A616 /* DetailRecipeViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC0C27BD57650097A616 /* DetailRecipeViewConstants.swift */; };
+		F057DC1027BE722D0097A616 /* NutrientsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC0F27BE722D0097A616 /* NutrientsCollectionView.swift */; };
+		F057DC1227BE72400097A616 /* NutrientsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC1127BE72400097A616 /* NutrientsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,12 +151,17 @@
 		F057DBEC27BD1F700097A616 /* DetailRecipePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipePresenter.swift; sourceTree = "<group>"; };
 		F057DBEE27BD208C0097A616 /* DetailRecipeViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewInput.swift; sourceTree = "<group>"; };
 		F057DBF027BD209B0097A616 /* DetailRecipeViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewOutput.swift; sourceTree = "<group>"; };
-		F057DBF227BD21CB0097A616 /* DetailRecipeViewControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewControllerCell.swift; sourceTree = "<group>"; };
 		F057DBF927BD44300097A616 /* DetailTableModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableModuleConfigurator.swift; sourceTree = "<group>"; };
 		F057DBFB27BD44840097A616 /* DetailTablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTablePresenter.swift; sourceTree = "<group>"; };
 		F057DBFF27BD44BD0097A616 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		F057DC0127BD44D70097A616 /* DetailTableViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewInput.swift; sourceTree = "<group>"; };
 		F057DC0327BD44E40097A616 /* DetailTableViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewOutput.swift; sourceTree = "<group>"; };
+		F057DC0527BD459D0097A616 /* DetailTableViewControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewControllerCell.swift; sourceTree = "<group>"; };
+		F057DC0827BD508E0097A616 /* SubviewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubviewProtocols.swift; sourceTree = "<group>"; };
+		F057DC0A27BD52F60097A616 /* DetailTableViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewConstants.swift; sourceTree = "<group>"; };
+		F057DC0C27BD57650097A616 /* DetailRecipeViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewConstants.swift; sourceTree = "<group>"; };
+		F057DC0F27BE722D0097A616 /* NutrientsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsCollectionView.swift; sourceTree = "<group>"; };
+		F057DC1127BE72400097A616 /* NutrientsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +234,7 @@
 		1C470B1527B2EB13000B3EF9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				F057DC0727BD506C0097A616 /* SubviewsProtocols */,
 				F0164AA027B463AA008CBA53 /* Model */,
 				1C470B3327B3025F000B3EF9 /* Configurator */,
 				1C470B1827B2EB35000B3EF9 /* Presenter */,
@@ -569,10 +580,11 @@
 		F057DBE227BD1D2D0097A616 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F057DC0E27BE72110097A616 /* NutrientsCollectionView */,
 				F057DBEA27BD1F620097A616 /* DetailRecipeViewController.swift */,
-				F057DBF227BD21CB0097A616 /* DetailRecipeViewControllerCell.swift */,
 				F057DBEE27BD208C0097A616 /* DetailRecipeViewInput.swift */,
 				F057DBF027BD209B0097A616 /* DetailRecipeViewOutput.swift */,
+				F057DC0C27BD57650097A616 /* DetailRecipeViewConstants.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -615,8 +627,10 @@
 			isa = PBXGroup;
 			children = (
 				F057DBFF27BD44BD0097A616 /* DetailTableViewController.swift */,
+				F057DC0527BD459D0097A616 /* DetailTableViewControllerCell.swift */,
 				F057DC0127BD44D70097A616 /* DetailTableViewInput.swift */,
 				F057DC0327BD44E40097A616 /* DetailTableViewOutput.swift */,
+				F057DC0A27BD52F60097A616 /* DetailTableViewConstants.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -635,6 +649,23 @@
 				F057DBF927BD44300097A616 /* DetailTableModuleConfigurator.swift */,
 			);
 			path = Configurator;
+			sourceTree = "<group>";
+		};
+		F057DC0727BD506C0097A616 /* SubviewsProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				F057DC0827BD508E0097A616 /* SubviewProtocols.swift */,
+			);
+			path = SubviewsProtocols;
+			sourceTree = "<group>";
+		};
+		F057DC0E27BE72110097A616 /* NutrientsCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F057DC0F27BE722D0097A616 /* NutrientsCollectionView.swift */,
+				F057DC1127BE72400097A616 /* NutrientsCollectionViewCell.swift */,
+			);
+			path = NutrientsCollectionView;
 			sourceTree = "<group>";
 		};
 		FE24AF3DC40732788836EB5F /* Frameworks */ = {
@@ -759,7 +790,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F057DBF327BD21CB0097A616 /* DetailRecipeViewControllerCell.swift in Sources */,
 				F057DC0427BD44E40097A616 /* DetailTableViewOutput.swift in Sources */,
 				F0164AC327B52DC3008CBA53 /* MainVewControllerConstants.swift in Sources */,
 				F057DBD527BA82C60097A616 /* ArticleParser.swift in Sources */,
@@ -794,10 +824,13 @@
 				F057DBC327BA786C0097A616 /* SearchViewOutput.swift in Sources */,
 				F057DBB827BA6D700097A616 /* ArticlesViewControllerConstants.swift in Sources */,
 				F0164ABF27B52934008CBA53 /* FirstCollectionView.swift in Sources */,
+				F057DC0927BD508E0097A616 /* SubviewProtocols.swift in Sources */,
 				F057DBD327BA816E0097A616 /* FavouriteOutput.swift in Sources */,
 				F057DBE927BD1ED40097A616 /* DetailRecipeModuleConfigurator.swift in Sources */,
 				F0164AC127B52AB4008CBA53 /* FirstCollectionViewCell.swift in Sources */,
 				F057DBCF27BA80FD0097A616 /* FavouriteViewController.swift in Sources */,
+				F057DC1227BE72400097A616 /* NutrientsCollectionViewCell.swift in Sources */,
+				F057DC1027BE722D0097A616 /* NutrientsCollectionView.swift in Sources */,
 				F057DBC627BA790D0097A616 /* SearchModuleConfigurator.swift in Sources */,
 				F057DBDB27BC01170097A616 /* CapitalizedLetter.swift in Sources */,
 				F0164AE427B9BB99008CBA53 /* SixthCollectionViewCell.swift in Sources */,
@@ -809,8 +842,10 @@
 				F0164AD827B678C7008CBA53 /* FourthCollectionViewCell.swift in Sources */,
 				F057DBDF27BC506B0097A616 /* FavouriteViewControllerConstants.swift in Sources */,
 				F057DBFA27BD44300097A616 /* DetailTableModuleConfigurator.swift in Sources */,
+				F057DC0627BD459D0097A616 /* DetailTableViewControllerCell.swift in Sources */,
 				F0164AC527B53964008CBA53 /* MainViewControllerCell.swift in Sources */,
 				F0164AAB27B46683008CBA53 /* ArticlesViewController.swift in Sources */,
+				F057DC0B27BD52F60097A616 /* DetailTableViewConstants.swift in Sources */,
 				F057DBED27BD1F700097A616 /* DetailRecipePresenter.swift in Sources */,
 				F057DC0027BD44BD0097A616 /* DetailTableViewController.swift in Sources */,
 				F0164AD627B678BA008CBA53 /* FourthCollectionView.swift in Sources */,
@@ -825,6 +860,7 @@
 				F057DBCD27BA80D60097A616 /* FavouritePresenter.swift in Sources */,
 				F0164AAF27B466AD008CBA53 /* ArticlesViewInput.swift in Sources */,
 				1C470B2727B2F20D000B3EF9 /* UIViewController+Extension.swift in Sources */,
+				F057DC0D27BD57650097A616 /* DetailRecipeViewConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

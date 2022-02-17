@@ -19,9 +19,9 @@ class MainPresenter {
     
     let articleParser:ArticleParser = ArticleParser()
 
-    private func getRecipesList(){
-        let randomString = String.random()
-        MainServices().getRecipesList(query: randomString) { [weak self] result in
+    private func getRecipesList(requestingString:String){
+        
+        MainServices().getRecipesList(query: requestingString) { [weak self] result in
             switch result {
             case .success(let succes):
                 let listOfReceips = Parser<RecipeResponse>().parce(data: succes.data)
@@ -36,15 +36,12 @@ class MainPresenter {
         let articles = articleParser.scrapeNews(page: "1") { [weak self] articles in
             self?.prepareFourthModel(listOfArticles: articles)
         }
-        
     }
-    
-
 }
 
 // MARK: - Public
 extension MainPresenter: MainViewOutput {
-    
+        
     private func prepareThirdViewModel(listOfReceips: RecipeResponse?) {
         thirdViewModel = ReceipViewModel(list: listOfReceips)
         self.view?.updateTable()
@@ -65,7 +62,7 @@ extension MainPresenter: MainViewOutput {
     
     func viewLoaded() {
         preparePreSetupedModels()
-        getRecipesList()
+        getRecipesList(requestingString: String.random())
         getArticles()
         
     }
@@ -76,6 +73,16 @@ extension MainPresenter: MainViewOutput {
         view?.presentDetailRecipe(viewController: detailRecipeVC)
     }
     
+    func configureDetailTableViewController(requestingString: String?) {
+        guard let requestingString = requestingString else {
+            return
+        }
+        let detailRecipeModule = DetailTableModuleConfigurator().configure()
+        let detailRecipeVC = detailRecipeModule.0
+//        getRecipesList(requestingString: requestingString)
+        view?.presentDetailRecipe(viewController: detailRecipeVC)
+    }
+        
 
 }
 

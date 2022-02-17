@@ -8,8 +8,8 @@ import UIKit
 class FourthCollectionView: UICollectionView {
     
     var cells: FourthCollectionViewModel?
+    weak var mainVc: DetailCollectionViewCellPressDelegate?
 
-    
     init() {
         let frame = MainDimensionsCalculator.calculateCVFrame(height: MainVewControllerConstants.thirdCollectionAtributes.itemSize.height)
         let flowLayout = UICollectionViewFlowLayout()
@@ -36,7 +36,6 @@ class FourthCollectionView: UICollectionView {
 extension FourthCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        cells.requestString.count
         cells?.cells.count ?? 0
         
     }
@@ -48,4 +47,9 @@ extension FourthCollectionView: UICollectionViewDelegate, UICollectionViewDataSo
         return cell
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        mainVc?.makeDetailVc(index: indexPath.row)
+    }
+    
 }

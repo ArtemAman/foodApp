@@ -1,16 +1,15 @@
 //
-//  DetailViewCell.swift
+//  DetailTableViewControllerCell.swift
 //  Fooder
 //
 //  Created by Artyom Amankeldiev on 16.02.2022.
 //
 
-
 import UIKit
 
-class DetailRecipeVCTableViewCell: UITableViewCell {
+class DetailTableViewControllerCell: UITableViewCell {
     
-    static let reuseId = "DetailRecipeCell"
+    static let reuseId = "DetailTableCell"
     
     private lazy var imageArticle: UIImageView = {
         let imageView = UIImageView()
@@ -26,7 +25,7 @@ class DetailRecipeVCTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.text = "Ololo"
-        label.font = ArticlesViewControllerConstants.lableArticleFont
+        label.font = DetailTableViewControllerConstants.lableArticleFont
         return label
     } ()
     
@@ -71,7 +70,7 @@ class DetailRecipeVCTableViewCell: UITableViewCell {
             imageArticle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             imageArticle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             imageArticle.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
-            imageArticle.heightAnchor.constraint(equalToConstant: ArticlesViewControllerConstants.imageHeight),
+            imageArticle.heightAnchor.constraint(equalToConstant: DetailTableViewControllerConstants.imageHeight),
            
             labelArticle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             labelArticle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),

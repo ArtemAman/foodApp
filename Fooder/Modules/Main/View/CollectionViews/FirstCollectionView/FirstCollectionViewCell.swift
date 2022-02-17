@@ -12,6 +12,8 @@ class FirstCollectionViewCell: UICollectionViewCell {
     
     static let reuseId: String = "firstCollectionViewCell"
     
+    var mainVc: DetailCollectionViewCellPressDelegate?
+    
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
