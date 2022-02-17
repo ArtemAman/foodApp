@@ -42,7 +42,8 @@ class ProductView: UIView {
     
     private lazy var dividerView: UIView = {
         let dividerView = UIView()
-        dividerView.backgroundColor = UIColor.black.withAlphaComponent(0.05)
+        dividerView.translatesAutoresizingMaskIntoConstraints = false
+        dividerView.backgroundColor = UIColor.black.withAlphaComponent(0.95)
         
         return dividerView
     }()
@@ -65,7 +66,7 @@ class ProductView: UIView {
         
         addSubview(leftLabel)
         addSubview(rightLabel)
-//        addSubview(dividerView)
+        addSubview(dividerView)
         
     }
     
@@ -84,10 +85,10 @@ class ProductView: UIView {
 //            rightLabel.heightAnchor.constraint(equalToConstant: 25),
             rightLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
             
-//            dividerView.heightAnchor.constraint(equalToConstant: 1),
-//            dividerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
-//            dividerView.leftAnchor.constraint(equalTo: leftAnchor, constant: 0),
-//            dividerView.rightAnchor.constraint(equalTo: rightAnchor, constant: 0),
+            dividerView.heightAnchor.constraint(equalToConstant: 1),
+            dividerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            dividerView.leftAnchor.constraint(equalTo: leftAnchor, constant: 0),
+            dividerView.rightAnchor.constraint(equalTo: rightAnchor, constant: 0),
             
             
             
