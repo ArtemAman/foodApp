@@ -58,6 +58,18 @@ class DetailRecipeViewController: UIViewController {
         return view
     }()
     
+    private lazy var cautionsLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
+        label.text = "Cautions"
+        label.backgroundColor = .green
+        label.numberOfLines = 1
+        label.font = MainVewControllerConstants.thirdViewLabelFontTop
+        
+        return label
+    } ()
+    
     private lazy var nutrientsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -106,6 +118,17 @@ class DetailRecipeViewController: UIViewController {
         return label
     } ()
     
+    private lazy var cautionsStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = .equalSpacing
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.spacing = 0
+        
+        return stackView
+    }()
+    
     private lazy var nutrientStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -120,10 +143,6 @@ class DetailRecipeViewController: UIViewController {
     private lazy var productsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-//        stackView.distribution = .fillEqually
-//        stackView.alignment = .fill
-//        stackView.axis = .horizontal
-        
         stackView.distribution = .equalSpacing
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -136,9 +155,9 @@ class DetailRecipeViewController: UIViewController {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .fillEqually
-        stackView.alignment = .fill
-        stackView.axis = .horizontal
-        stackView.spacing = 10
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.spacing = 0
         
         return stackView
     }()
@@ -147,9 +166,9 @@ class DetailRecipeViewController: UIViewController {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .fillEqually
-        stackView.alignment = .fill
-        stackView.axis = .horizontal
-        stackView.spacing = 10
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.spacing = 0
         
         return stackView
     }()
@@ -158,8 +177,7 @@ class DetailRecipeViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
-        setItemsForNutrients()
-        setItemsForProducts()
+        
     }
     
     private func setupView() {
@@ -169,6 +187,8 @@ class DetailRecipeViewController: UIViewController {
         
         contentView.addSubview(imageView)
         contentView.addSubview(nameLabel)
+        contentView.addSubview(cautionsLabel)
+        contentView.addSubview(cautionsStackView)
         contentView.addSubview(nutrientsLabel)
         contentView.addSubview(nutrientStackView)
         contentView.addSubview(productsLabel)
@@ -181,6 +201,13 @@ class DetailRecipeViewController: UIViewController {
         contentView.addSubview(botView)
         
         setupConstraints()
+        
+        setItemsForCautions()
+        setItemsForNutrients()
+        setItemsForProducts()
+        setItemsForDiet()
+        setItemsForHealth()
+        
     }
     
     private func setupConstraints() {
@@ -202,11 +229,19 @@ class DetailRecipeViewController: UIViewController {
             
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 100),
+            nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 5),
+            
+            cautionsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            cautionsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            cautionsLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
+            
+            cautionsStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            cautionsStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            cautionsStackView.topAnchor.constraint(equalTo: cautionsLabel.bottomAnchor, constant: 10),
             
             nutrientsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             nutrientsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            nutrientsLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
+            nutrientsLabel.topAnchor.constraint(equalTo: cautionsStackView.bottomAnchor, constant: 10),
             
             nutrientStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             nutrientStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
@@ -236,7 +271,7 @@ class DetailRecipeViewController: UIViewController {
             healthStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             healthStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             healthStackView.topAnchor.constraint(equalTo: healthLabel.bottomAnchor, constant: 10),
-            healthStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 10)
+            healthStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
     }
     
@@ -253,8 +288,40 @@ class DetailRecipeViewController: UIViewController {
             productsStackView.addArrangedSubview(view)
             
             NSLayoutConstraint.activate([
-                view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-//                view.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
+                view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10)
+            ])
+        }
+    }
+    
+    private func setItemsForDiet() {
+        for _ in (0...3) {
+            let view = ProductView()
+            dietsStackView.addArrangedSubview(view)
+            
+            NSLayoutConstraint.activate([
+                view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10)
+            ])
+        }
+    }
+    
+    private func setItemsForHealth() {
+        for _ in (0...3) {
+            let view = ProductView()
+            healthStackView.addArrangedSubview(view)
+            
+            NSLayoutConstraint.activate([
+                view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10)
+            ])
+        }
+    }
+    
+    private func setItemsForCautions() {
+        for _ in (0...3) {
+            let view = ProductView()
+            cautionsStackView.addArrangedSubview(view)
+            
+            NSLayoutConstraint.activate([
+                view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10)
             ])
         }
     }
