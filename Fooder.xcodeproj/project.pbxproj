@@ -79,8 +79,7 @@
 		F057DC0927BD508E0097A616 /* SubviewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC0827BD508E0097A616 /* SubviewProtocols.swift */; };
 		F057DC0B27BD52F60097A616 /* DetailTableViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC0A27BD52F60097A616 /* DetailTableViewConstants.swift */; };
 		F057DC0D27BD57650097A616 /* DetailRecipeViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC0C27BD57650097A616 /* DetailRecipeViewConstants.swift */; };
-		F057DC1027BE722D0097A616 /* NutrientsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC0F27BE722D0097A616 /* NutrientsCollectionView.swift */; };
-		F057DC1227BE72400097A616 /* NutrientsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC1127BE72400097A616 /* NutrientsCollectionViewCell.swift */; };
+		F057DC1927BEA9720097A616 /* NutrientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC1827BEA9720097A616 /* NutrientsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,8 +159,7 @@
 		F057DC0827BD508E0097A616 /* SubviewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubviewProtocols.swift; sourceTree = "<group>"; };
 		F057DC0A27BD52F60097A616 /* DetailTableViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewConstants.swift; sourceTree = "<group>"; };
 		F057DC0C27BD57650097A616 /* DetailRecipeViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewConstants.swift; sourceTree = "<group>"; };
-		F057DC0F27BE722D0097A616 /* NutrientsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsCollectionView.swift; sourceTree = "<group>"; };
-		F057DC1127BE72400097A616 /* NutrientsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsCollectionViewCell.swift; sourceTree = "<group>"; };
+		F057DC1827BEA9720097A616 /* NutrientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -580,7 +578,7 @@
 		F057DBE227BD1D2D0097A616 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F057DC0E27BE72110097A616 /* NutrientsCollectionView */,
+				F057DC0E27BE72110097A616 /* NutrientsStackView */,
 				F057DBEA27BD1F620097A616 /* DetailRecipeViewController.swift */,
 				F057DBEE27BD208C0097A616 /* DetailRecipeViewInput.swift */,
 				F057DBF027BD209B0097A616 /* DetailRecipeViewOutput.swift */,
@@ -659,13 +657,12 @@
 			path = SubviewsProtocols;
 			sourceTree = "<group>";
 		};
-		F057DC0E27BE72110097A616 /* NutrientsCollectionView */ = {
+		F057DC0E27BE72110097A616 /* NutrientsStackView */ = {
 			isa = PBXGroup;
 			children = (
-				F057DC0F27BE722D0097A616 /* NutrientsCollectionView.swift */,
-				F057DC1127BE72400097A616 /* NutrientsCollectionViewCell.swift */,
+				F057DC1827BEA9720097A616 /* NutrientsView.swift */,
 			);
-			path = NutrientsCollectionView;
+			path = NutrientsStackView;
 			sourceTree = "<group>";
 		};
 		FE24AF3DC40732788836EB5F /* Frameworks */ = {
@@ -814,6 +811,7 @@
 				F0164AE927B9C21B008CBA53 /* SeventhCollectionViewCell.swift in Sources */,
 				F057DBEF27BD208C0097A616 /* DetailRecipeViewInput.swift in Sources */,
 				1C470B1C27B2EBBB000B3EF9 /* MainPresenter.swift in Sources */,
+				F057DC1927BEA9720097A616 /* NutrientsView.swift in Sources */,
 				F0164AD327B6760D008CBA53 /* ThirdCollectionViewCell.swift in Sources */,
 				F0164A9C27B44444008CBA53 /* ReceipViewModel.swift in Sources */,
 				F0164AAD27B46694008CBA53 /* ArticlesPresenter.swift in Sources */,
@@ -829,8 +827,6 @@
 				F057DBE927BD1ED40097A616 /* DetailRecipeModuleConfigurator.swift in Sources */,
 				F0164AC127B52AB4008CBA53 /* FirstCollectionViewCell.swift in Sources */,
 				F057DBCF27BA80FD0097A616 /* FavouriteViewController.swift in Sources */,
-				F057DC1227BE72400097A616 /* NutrientsCollectionViewCell.swift in Sources */,
-				F057DC1027BE722D0097A616 /* NutrientsCollectionView.swift in Sources */,
 				F057DBC627BA790D0097A616 /* SearchModuleConfigurator.swift in Sources */,
 				F057DBDB27BC01170097A616 /* CapitalizedLetter.swift in Sources */,
 				F0164AE427B9BB99008CBA53 /* SixthCollectionViewCell.swift in Sources */,

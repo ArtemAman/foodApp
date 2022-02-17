@@ -17,4 +17,7 @@ struct DetailRecipeViewControllerConstants {
     
     static let minimumLineSpacing: CGFloat = 5
     static let itemSize: CGSize =  CGSize(width: (UIScreen.main.bounds.width / 4) - 35 / 4, height: (UIScreen.main.bounds.width / 4) - 35 / 4)
+    
+    static let tableViewCellHeight: CGFloat = 24
+    
 }
