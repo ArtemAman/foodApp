@@ -117,35 +117,49 @@ class DetailRecipeViewController: UIViewController {
         return stackView
     }()
     
-    private lazy var productsStackView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemMint
+    private lazy var productsStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+//        stackView.distribution = .fillEqually
+//        stackView.alignment = .fill
+//        stackView.axis = .horizontal
         
-        return view
+        stackView.distribution = .equalSpacing
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.spacing = 0
+        
+        return stackView
     }()
     
-    private lazy var dietsStackView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemMint
+    private lazy var dietsStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = .fillEqually
+        stackView.alignment = .fill
+        stackView.axis = .horizontal
+        stackView.spacing = 10
         
-        return view
+        return stackView
     }()
     
-    private lazy var healthStackView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemMint
+    private lazy var healthStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = .fillEqually
+        stackView.alignment = .fill
+        stackView.axis = .horizontal
+        stackView.spacing = 10
         
-        return view
+        return stackView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
-        setItems()
+        setItemsForNutrients()
+        setItemsForProducts()
     }
     
     private func setupView() {
@@ -197,6 +211,7 @@ class DetailRecipeViewController: UIViewController {
             nutrientStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             nutrientStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             nutrientStackView.topAnchor.constraint(equalTo: nutrientsLabel.bottomAnchor, constant: 10),
+            nutrientStackView.heightAnchor.constraint(equalToConstant: DetailRecipeViewControllerConstants.nutrientsHeight),
             
             productsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             productsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
@@ -225,13 +240,21 @@ class DetailRecipeViewController: UIViewController {
         ])
     }
     
-    private func setItems() {
+    private func setItemsForNutrients() {
         for _ in (0...3) {
             let view = NutrientView()
             nutrientStackView.addArrangedSubview(view)
+        }
+    }
+    
+    private func setItemsForProducts() {
+        for _ in (0...3) {
+            let view = ProductView()
+            productsStackView.addArrangedSubview(view)
             
             NSLayoutConstraint.activate([
-                view.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1.2)
+                view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+//                view.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
             ])
         }
     }

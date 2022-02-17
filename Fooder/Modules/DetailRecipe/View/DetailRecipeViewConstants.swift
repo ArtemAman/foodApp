@@ -16,8 +16,8 @@ struct DetailRecipeViewControllerConstants {
     static let lableArticleFont = UIFont.systemFont(ofSize: 16, weight: .semibold)
     
     static let minimumLineSpacing: CGFloat = 5
-    static let itemSize: CGSize =  CGSize(width: (UIScreen.main.bounds.width / 4) - 35 / 4, height: (UIScreen.main.bounds.width / 4) - 35 / 4)
-    
+    static let nutrientsHeight: CGFloat = (UIScreen.main.bounds.width - 50) / 4 * 1.2
+ 
     static let tableViewCellHeight: CGFloat = 24
     
 }

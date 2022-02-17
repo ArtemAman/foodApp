@@ -80,6 +80,7 @@
 		F057DC0B27BD52F60097A616 /* DetailTableViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC0A27BD52F60097A616 /* DetailTableViewConstants.swift */; };
 		F057DC0D27BD57650097A616 /* DetailRecipeViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC0C27BD57650097A616 /* DetailRecipeViewConstants.swift */; };
 		F057DC1927BEA9720097A616 /* NutrientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC1827BEA9720097A616 /* NutrientsView.swift */; };
+		F057DC1C27BED1A50097A616 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC1B27BED1A50097A616 /* ProductView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,6 +161,7 @@
 		F057DC0A27BD52F60097A616 /* DetailTableViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewConstants.swift; sourceTree = "<group>"; };
 		F057DC0C27BD57650097A616 /* DetailRecipeViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewConstants.swift; sourceTree = "<group>"; };
 		F057DC1827BEA9720097A616 /* NutrientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsView.swift; sourceTree = "<group>"; };
+		F057DC1B27BED1A50097A616 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -578,7 +580,7 @@
 		F057DBE227BD1D2D0097A616 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F057DC0E27BE72110097A616 /* NutrientsStackView */,
+				F057DC0E27BE72110097A616 /* StackViewElements */,
 				F057DBEA27BD1F620097A616 /* DetailRecipeViewController.swift */,
 				F057DBEE27BD208C0097A616 /* DetailRecipeViewInput.swift */,
 				F057DBF027BD209B0097A616 /* DetailRecipeViewOutput.swift */,
@@ -657,12 +659,13 @@
 			path = SubviewsProtocols;
 			sourceTree = "<group>";
 		};
-		F057DC0E27BE72110097A616 /* NutrientsStackView */ = {
+		F057DC0E27BE72110097A616 /* StackViewElements */ = {
 			isa = PBXGroup;
 			children = (
 				F057DC1827BEA9720097A616 /* NutrientsView.swift */,
+				F057DC1B27BED1A50097A616 /* ProductView.swift */,
 			);
-			path = NutrientsStackView;
+			path = StackViewElements;
 			sourceTree = "<group>";
 		};
 		FE24AF3DC40732788836EB5F /* Frameworks */ = {
@@ -847,6 +850,7 @@
 				F0164AD627B678BA008CBA53 /* FourthCollectionView.swift in Sources */,
 				F057DBEB27BD1F620097A616 /* DetailRecipeViewController.swift in Sources */,
 				1C470B1E27B2EBDC000B3EF9 /* MainViewController.swift in Sources */,
+				F057DC1C27BED1A50097A616 /* ProductView.swift in Sources */,
 				F057DBCB27BA80B60097A616 /* FavouriteModuleConfigurator.swift in Sources */,
 				F057DC0227BD44D70097A616 /* DetailTableViewInput.swift in Sources */,
 				F0164ADF27B9B76B008CBA53 /* SixthCollectionView.swift in Sources */,
