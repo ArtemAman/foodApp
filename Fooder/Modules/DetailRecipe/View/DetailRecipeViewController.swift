@@ -13,11 +13,11 @@ class DetailRecipeViewController: UIViewController {
     
     var presenter: DetailRecipePresenter?
     
-    
     private lazy var scroll: UIScrollView = {
         let scroll = UIScrollView()
         scroll.translatesAutoresizingMaskIntoConstraints = false
         scroll.backgroundColor = .lightGray
+        
         return scroll
     }()
     
@@ -25,6 +25,7 @@ class DetailRecipeViewController: UIViewController {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemBlue
+        
         return view
     }()
     
@@ -33,6 +34,7 @@ class DetailRecipeViewController: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .systemPink
+        
         return imageView
     }()
     
@@ -44,6 +46,7 @@ class DetailRecipeViewController: UIViewController {
         label.backgroundColor = .green
         label.numberOfLines = 2
         label.font = MainVewControllerConstants.thirdViewLabelFontTop
+        
         return label
     } ()
     
@@ -51,6 +54,7 @@ class DetailRecipeViewController: UIViewController {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemRed
+        
         return view
     }()
     
@@ -62,6 +66,7 @@ class DetailRecipeViewController: UIViewController {
         label.backgroundColor = .green
         label.numberOfLines = 1
         label.font = MainVewControllerConstants.thirdViewLabelFontTop
+        
         return label
     } ()
     
@@ -73,6 +78,7 @@ class DetailRecipeViewController: UIViewController {
         label.backgroundColor = .green
         label.numberOfLines = 1
         label.font = MainVewControllerConstants.thirdViewLabelFontTop
+        
         return label
     } ()
     
@@ -84,6 +90,7 @@ class DetailRecipeViewController: UIViewController {
         label.backgroundColor = .green
         label.numberOfLines = 1
         label.font = MainVewControllerConstants.thirdViewLabelFontTop
+        
         return label
     } ()
     
@@ -95,24 +102,26 @@ class DetailRecipeViewController: UIViewController {
         label.backgroundColor = .green
         label.numberOfLines = 1
         label.font = MainVewControllerConstants.thirdViewLabelFontTop
+        
         return label
     } ()
     
     private lazy var nutrientStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .equalSpacing
+        stackView.distribution = .fillEqually
+        stackView.alignment = .fill
         stackView.axis = .horizontal
-        stackView.alignment = .center
-        stackView.spacing = 3
+        stackView.spacing = 10
+        
         return stackView
     }()
-    
     
     private lazy var productsStackView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemMint
+        
         return view
     }()
     
@@ -120,6 +129,7 @@ class DetailRecipeViewController: UIViewController {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemMint
+        
         return view
     }()
     
@@ -127,16 +137,16 @@ class DetailRecipeViewController: UIViewController {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemMint
+        
         return view
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupView()
         setItems()
     }
-    
     
     private func setupView() {
         view.backgroundColor = .white
@@ -156,14 +166,11 @@ class DetailRecipeViewController: UIViewController {
         
         contentView.addSubview(botView)
         
-        
         setupConstraints()
     }
     
     private func setupConstraints() {
-        
         NSLayoutConstraint.activate([
-            
             scroll.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             scroll.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             scroll.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
@@ -214,38 +221,23 @@ class DetailRecipeViewController: UIViewController {
             healthStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             healthStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             healthStackView.topAnchor.constraint(equalTo: healthLabel.bottomAnchor, constant: 10),
-            healthStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 10),
-            
-            
-            
-            
+            healthStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 10)
         ])
     }
     
-    
     private func setItems() {
-        
         for _ in (0...3) {
             let view = NutrientView()
             nutrientStackView.addArrangedSubview(view)
             
             NSLayoutConstraint.activate([
-                view.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 4 - 30),
-                view.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 4 - 30),
-                
+                view.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1.2)
             ])
         }
-        
-        
     }
-    
     
 }
 
 extension DetailRecipeViewController: DetailRecipeViewInput {
     
 }
-
-
-
-

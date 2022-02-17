@@ -11,37 +11,43 @@ import UIKit
 
 class NutrientView: UIView {
     
-    
     private lazy var topLabel: UILabel = {
         let labelTitle = UILabel()
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
-        labelTitle.text = "leftLabel"
-        labelTitle.font = .boldSystemFont(ofSize: 5)
+        labelTitle.text = "leftLabel leftLabel leftLabel"
+        labelTitle.font = .boldSystemFont(ofSize: 12)
         labelTitle.textColor = .black
+        labelTitle.textAlignment = .center
         
         return labelTitle
     }()
     
     private lazy var innerView: UIView = {
         let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
+        
         return view
     }()
     
     private lazy var botLabel: UILabel = {
         let labelTitle = UILabel()
-        labelTitle.text = "rightLabel"
-        labelTitle.font = .systemFont(ofSize: 5)
+        labelTitle.translatesAutoresizingMaskIntoConstraints = false
+        labelTitle.text = "botLabel botLabel botLabel botLabel botLabel botLabel botLabel"
+        labelTitle.font = .systemFont(ofSize: 12)
         labelTitle.textColor = .black
+        labelTitle.numberOfLines = 0
+        labelTitle.textAlignment = .center
+        
         return labelTitle
     }()
     
-    
     init() {
         super.init(frame: .zero)
+        backgroundColor = .yellow
+        
         setupViews()
         setupConstraints()
-        backgroundColor = .yellow
         
 //        fill()
     }
@@ -60,20 +66,21 @@ class NutrientView: UIView {
     private func setupConstraints() {
         
         NSLayoutConstraint.activate([
-
-            topLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
-            topLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
-            topLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
+            topLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            topLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
+            topLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             
-            innerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
-            innerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
             innerView.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 5),
-            innerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
+            innerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            innerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
+            innerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
             
-            botLabel.centerXAnchor.constraint(equalTo: innerView.centerXAnchor),
-            botLabel.centerYAnchor.constraint(equalTo: innerView.centerYAnchor),
-            
-          ])
+            botLabel.topAnchor.constraint(greaterThanOrEqualTo: innerView.topAnchor, constant: 5),
+            botLabel.leadingAnchor.constraint(equalTo: innerView.leadingAnchor, constant: 5),
+            botLabel.trailingAnchor.constraint(equalTo: innerView.trailingAnchor, constant: -5),
+            botLabel.bottomAnchor.constraint(lessThanOrEqualTo: innerView.bottomAnchor, constant: -5),
+            botLabel.centerYAnchor.constraint(equalTo: innerView.centerYAnchor)
+        ])
     }
     
 //    func fill() {
