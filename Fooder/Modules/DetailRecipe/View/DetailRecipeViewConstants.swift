@@ -10,7 +10,9 @@ import UIKit
 
 struct DetailRecipeViewControllerConstants {
     
-    static let nutrientsCollectionLabelFont = UIFont.systemFont(ofSize: 12, weight: .regular)
+    static let nutrientsCollectionTopLabelFont = UIFont.systemFont(ofSize: 20, weight: .regular)
+    
+    static let nutrientsCollectionAllLabelsFont = UIFont.systemFont(ofSize: 18, weight: .bold)
     
     static let imageHeight: CGFloat = UIScreen.main.bounds.height / 4
     static let lableArticleFont = UIFont.systemFont(ofSize: 16, weight: .semibold)

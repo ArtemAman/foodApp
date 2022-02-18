@@ -50,7 +50,6 @@ class ProductView: UIView {
     
     init() {
         super.init(frame: .zero)
-        backgroundColor = .yellow
         
         setupViews()
         setupConstraints()

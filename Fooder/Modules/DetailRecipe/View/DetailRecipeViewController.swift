@@ -16,7 +16,6 @@ class DetailRecipeViewController: UIViewController {
     private lazy var scroll: UIScrollView = {
         let scroll = UIScrollView()
         scroll.translatesAutoresizingMaskIntoConstraints = false
-        scroll.backgroundColor = .lightGray
         
         return scroll
     }()
@@ -24,7 +23,6 @@ class DetailRecipeViewController: UIViewController {
     private lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemBlue
         
         return view
     }()
@@ -43,29 +41,19 @@ class DetailRecipeViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.text = "Article name top"
-        label.backgroundColor = .green
+        label.backgroundColor = .clear
         label.numberOfLines = 2
-        label.font = MainVewControllerConstants.thirdViewLabelFontTop
+        label.font = DetailRecipeViewControllerConstants.nutrientsCollectionTopLabelFont
         
         return label
     } ()
-    
-    private lazy var botView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemRed
-        
-        return view
-    }()
     
     private lazy var cautionsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.text = "Cautions"
-        label.backgroundColor = .green
-        label.numberOfLines = 1
-        label.font = MainVewControllerConstants.thirdViewLabelFontTop
+        label.font = DetailRecipeViewControllerConstants.nutrientsCollectionAllLabelsFont
         
         return label
     } ()
@@ -75,9 +63,7 @@ class DetailRecipeViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.text = "Nutrients"
-        label.backgroundColor = .green
-        label.numberOfLines = 1
-        label.font = MainVewControllerConstants.thirdViewLabelFontTop
+        label.font = DetailRecipeViewControllerConstants.nutrientsCollectionAllLabelsFont
         
         return label
     } ()
@@ -87,9 +73,7 @@ class DetailRecipeViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.text = "Products"
-        label.backgroundColor = .green
-        label.numberOfLines = 1
-        label.font = MainVewControllerConstants.thirdViewLabelFontTop
+        label.font = DetailRecipeViewControllerConstants.nutrientsCollectionAllLabelsFont
         
         return label
     } ()
@@ -99,9 +83,7 @@ class DetailRecipeViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.text = "Diet vibe"
-        label.backgroundColor = .green
-        label.numberOfLines = 1
-        label.font = MainVewControllerConstants.thirdViewLabelFontTop
+        label.font = DetailRecipeViewControllerConstants.nutrientsCollectionAllLabelsFont
         
         return label
     } ()
@@ -111,9 +93,7 @@ class DetailRecipeViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.text = "Health vibe"
-        label.backgroundColor = .green
-        label.numberOfLines = 1
-        label.font = MainVewControllerConstants.thirdViewLabelFontTop
+        label.font = DetailRecipeViewControllerConstants.nutrientsCollectionAllLabelsFont
         
         return label
     } ()
@@ -173,6 +153,26 @@ class DetailRecipeViewController: UIViewController {
         return stackView
     }()
     
+    private lazy var productsButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .systemGreen
+        button.setTitle("Buy necessary products", for: .normal)
+        button.titleLabel?.font = DetailRecipeViewControllerConstants.nutrientsCollectionAllLabelsFont
+        
+        return button
+    }()
+    
+    private lazy var likeButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .systemRed
+        button.setTitle("Add to favourite", for: .normal)
+        button.titleLabel?.font = DetailRecipeViewControllerConstants.nutrientsCollectionAllLabelsFont
+        
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -197,10 +197,12 @@ class DetailRecipeViewController: UIViewController {
         contentView.addSubview(dietsStackView)
         contentView.addSubview(healthLabel)
         contentView.addSubview(healthStackView)
+        contentView.addSubview(productsButton)
+        contentView.addSubview(likeButton)
         
-        contentView.addSubview(botView)
         
         setupConstraints()
+        layoutSubviews()
         
         setItemsForCautions()
         setItemsForNutrients()
@@ -229,7 +231,7 @@ class DetailRecipeViewController: UIViewController {
             
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 5),
+            nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
             
             cautionsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             cautionsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
@@ -271,8 +273,29 @@ class DetailRecipeViewController: UIViewController {
             healthStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             healthStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             healthStackView.topAnchor.constraint(equalTo: healthLabel.bottomAnchor, constant: 10),
-            healthStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+            
+            productsButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
+            productsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
+            productsButton.topAnchor.constraint(equalTo: healthStackView.bottomAnchor, constant: 10),
+            productsButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            likeButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
+            likeButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
+            likeButton.topAnchor.constraint(equalTo: productsButton.bottomAnchor, constant: 10),
+            likeButton.heightAnchor.constraint(equalToConstant: 50),
+            likeButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
+            
         ])
+    }
+    
+    private func layoutSubviews() {
+        
+        productsButton.layer.cornerRadius = 20
+        productsButton.layer.masksToBounds = true
+        
+        likeButton.layer.cornerRadius = 20
+        likeButton.layer.masksToBounds = true
+        
     }
     
     private func setItemsForNutrients() {

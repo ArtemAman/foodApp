@@ -14,7 +14,7 @@ class NutrientView: UIView {
     private lazy var topLabel: UILabel = {
         let labelTitle = UILabel()
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
-        labelTitle.text = "leftLabel leftLabel leftLabel"
+        labelTitle.text = "leftLabel lef"
         labelTitle.font = .boldSystemFont(ofSize: 12)
         labelTitle.textColor = .black
         labelTitle.textAlignment = .center
@@ -33,7 +33,7 @@ class NutrientView: UIView {
     private lazy var botLabel: UILabel = {
         let labelTitle = UILabel()
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
-        labelTitle.text = "botLabel botLabel botLabel botLabel botLabel botLabel botLabel"
+        labelTitle.text = "botLabel botLabel botLabel botLabel"
         labelTitle.font = .systemFont(ofSize: 12)
         labelTitle.textColor = .black
         labelTitle.numberOfLines = 0
@@ -68,9 +68,9 @@ class NutrientView: UIView {
         NSLayoutConstraint.activate([
             topLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
             topLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            topLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            topLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             
-            innerView.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 5),
+            innerView.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 10),
             innerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
             innerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
             innerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
@@ -81,6 +81,21 @@ class NutrientView: UIView {
             botLabel.bottomAnchor.constraint(lessThanOrEqualTo: innerView.bottomAnchor, constant: -5),
             botLabel.centerYAnchor.constraint(equalTo: innerView.centerYAnchor)
         ])
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        layer.cornerRadius = 10
+        layer.masksToBounds = true
+        
+        innerView.layer.cornerRadius = 10
+        innerView.layer.masksToBounds = true
+        
+//        layer.shadowRadius = 3
+//        layer.shadowOpacity = 0.4
+//        layer.shadowOffset = CGSize(width: 1.5, height: 2)
+        
     }
     
 //    func fill() {
