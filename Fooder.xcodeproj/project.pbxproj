@@ -24,7 +24,6 @@
 		1CDACF9627B45A4000081F3C /* Parcer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDACF9527B45A4000081F3C /* Parcer.swift */; };
 		CF0982766C1EFF73AC87D030 /* Pods_Fooder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E06ED0BC4FE0550FCFC3572 /* Pods_Fooder.framework */; };
 		F0164A9A27B3E1E8008CBA53 /* ResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164A9927B3E1E8008CBA53 /* ResponseModels.swift */; };
-		F0164A9C27B44444008CBA53 /* ReceipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164A9B27B44444008CBA53 /* ReceipViewModel.swift */; };
 		F0164AAB27B46683008CBA53 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164AAA27B46683008CBA53 /* ArticlesViewController.swift */; };
 		F0164AAD27B46694008CBA53 /* ArticlesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164AAC27B46694008CBA53 /* ArticlesPresenter.swift */; };
 		F0164AAF27B466AD008CBA53 /* ArticlesViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0164AAE27B466AD008CBA53 /* ArticlesViewInput.swift */; };
@@ -81,6 +80,7 @@
 		F057DC0D27BD57650097A616 /* DetailRecipeViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC0C27BD57650097A616 /* DetailRecipeViewConstants.swift */; };
 		F057DC1927BEA9720097A616 /* NutrientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC1827BEA9720097A616 /* NutrientsView.swift */; };
 		F057DC1C27BED1A50097A616 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC1B27BED1A50097A616 /* ProductView.swift */; };
+		F057DC2027BFFA9F0097A616 /* ReceipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC1F27BFFA9F0097A616 /* ReceipViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,7 +105,6 @@
 		229128F2EC312DABBDFCADA5 /* Pods-Fooder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fooder.release.xcconfig"; path = "Target Support Files/Pods-Fooder/Pods-Fooder.release.xcconfig"; sourceTree = "<group>"; };
 		4E06ED0BC4FE0550FCFC3572 /* Pods_Fooder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fooder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0164A9927B3E1E8008CBA53 /* ResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModels.swift; sourceTree = "<group>"; };
-		F0164A9B27B44444008CBA53 /* ReceipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReceipViewModel.swift; path = Fooder/Modules/Main/Model/ReceipViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F0164AAA27B46683008CBA53 /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 		F0164AAC27B46694008CBA53 /* ArticlesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesPresenter.swift; sourceTree = "<group>"; };
 		F0164AAE27B466AD008CBA53 /* ArticlesViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewInput.swift; sourceTree = "<group>"; };
@@ -162,6 +161,7 @@
 		F057DC0C27BD57650097A616 /* DetailRecipeViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewConstants.swift; sourceTree = "<group>"; };
 		F057DC1827BEA9720097A616 /* NutrientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsView.swift; sourceTree = "<group>"; };
 		F057DC1B27BED1A50097A616 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
+		F057DC1F27BFFA9F0097A616 /* ReceipViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceipViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,7 +374,7 @@
 		F0164AA027B463AA008CBA53 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F0164A9B27B44444008CBA53 /* ReceipViewModel.swift */,
+				F057DC1F27BFFA9F0097A616 /* ReceipViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -801,6 +801,7 @@
 				1CDACF9627B45A4000081F3C /* Parcer.swift in Sources */,
 				F057DBDD27BC4AAB0097A616 /* FavouriteViewControllerCell.swift in Sources */,
 				F057DBD127BA814C0097A616 /* FavouriteViewInput.swift in Sources */,
+				F057DC2027BFFA9F0097A616 /* ReceipViewModel.swift in Sources */,
 				F0164AD127B675F3008CBA53 /* ThirdCollectionView.swift in Sources */,
 				F0164AE727B9C20C008CBA53 /* SeventhCollectionView.swift in Sources */,
 				1C470B2027B2EC61000B3EF9 /* MainViewInput.swift in Sources */,
@@ -816,7 +817,6 @@
 				1C470B1C27B2EBBB000B3EF9 /* MainPresenter.swift in Sources */,
 				F057DC1927BEA9720097A616 /* NutrientsView.swift in Sources */,
 				F0164AD327B6760D008CBA53 /* ThirdCollectionViewCell.swift in Sources */,
-				F0164A9C27B44444008CBA53 /* ReceipViewModel.swift in Sources */,
 				F0164AAD27B46694008CBA53 /* ArticlesPresenter.swift in Sources */,
 				F057DBC127BA78580097A616 /* SearchViewInput.swift in Sources */,
 				1C470B2C27B2FE80000B3EF9 /* MainServices.swift in Sources */,

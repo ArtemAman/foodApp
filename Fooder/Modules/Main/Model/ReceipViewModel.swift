@@ -18,6 +18,7 @@ protocol CellViewModelProtocol {
     var cuisineType: [String]? { get }
     var mealType: [String]? { get }
     var dishType: [String]? { get }
+    var totalNutrients:Nutrients? { get }
 }
 
 protocol FourthCellViewModelProtocol {
@@ -39,6 +40,7 @@ struct ReceipViewModel {
 }
 
 struct Cell: CellViewModelProtocol {
+    
     var imageUrlString: String?
     var name: String?
     var dietLabels: [String]?
@@ -49,6 +51,7 @@ struct Cell: CellViewModelProtocol {
     var cuisineType: [String]?
     var mealType: [String]?
     var dishType: [String]?
+    var totalNutrients: Nutrients?
     
     init(recipe: Recipe?) {
         imageUrlString = recipe?.image
@@ -61,6 +64,7 @@ struct Cell: CellViewModelProtocol {
         cuisineType = recipe?.cuisineType
         mealType = recipe?.mealType
         dishType = recipe?.dishType
+        totalNutrients = recipe?.totalNutrients
     }
 }
 

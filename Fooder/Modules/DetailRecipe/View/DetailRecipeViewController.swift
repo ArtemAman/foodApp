@@ -13,6 +13,8 @@ class DetailRecipeViewController: UIViewController {
     
     var presenter: DetailRecipePresenter?
     
+    var recipeInfo: CellViewModelProtocol?
+    
     private lazy var scroll: UIScrollView = {
         let scroll = UIScrollView()
         scroll.translatesAutoresizingMaskIntoConstraints = false
@@ -176,6 +178,7 @@ class DetailRecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        presenter?.viewLoaded()
         setupView()
         
     }
@@ -299,14 +302,17 @@ class DetailRecipeViewController: UIViewController {
     }
     
     private func setItemsForNutrients() {
-        for _ in (0...3) {
+        guard let recipeInfo = recipeInfo else { return }
+        for _ in (0...4) {
             let view = NutrientView()
             nutrientStackView.addArrangedSubview(view)
         }
     }
-    
+    // stayed here
     private func setItemsForProducts() {
-        for _ in (0...3) {
+        guard let recipeInfo = recipeInfo else { return }
+        guard let ingredients = recipeInfo.ingredients else { return }
+        for _ in ingredients {
             let view = ProductView()
             productsStackView.addArrangedSubview(view)
             
@@ -352,5 +358,13 @@ class DetailRecipeViewController: UIViewController {
 }
 
 extension DetailRecipeViewController: DetailRecipeViewInput {
+    
+    func setupInfo() {
+        recipeInfo = presenter?.detailDecipeViewModel
+        guard let recipeInfo = recipeInfo else { return }
+        nameLabel.text = recipeInfo.name
+        
+    }
+    
     
 }

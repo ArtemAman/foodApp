@@ -68,7 +68,7 @@ extension MainPresenter: MainViewOutput {
     }
     
     func configureDetailRecipeViewController(cellIndex: Int) {
-        let detailRecipeModule = DetailRecipeModuleConfigurator().configure()
+        let detailRecipeModule = DetailRecipeModuleConfigurator().configure(model: thirdViewModel?.cells[cellIndex] as! CellViewModelProtocol)
         let detailRecipeVC = detailRecipeModule.0
         view?.presentDetailRecipe(viewController: detailRecipeVC)
     }

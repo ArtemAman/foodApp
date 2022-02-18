@@ -7,5 +7,5 @@
 
 import UIKit
 protocol DetailRecipeViewInput: AnyObject {
-    
+    func setupInfo()
 }

@@ -12,9 +12,9 @@ import UIKit
 final class DetailRecipeModuleConfigurator {
 
     // MARK: - Internal methods
-    func configure() -> (DetailRecipeViewController, DetailRecipePresenter) {
+    func configure(model: CellViewModelProtocol) -> (DetailRecipeViewController, DetailRecipePresenter) {
         let view = DetailRecipeViewController()
-        let presenter = DetailRecipePresenter()
+        let presenter = DetailRecipePresenter(model: model)
 
         presenter.view = view
         view.presenter = presenter

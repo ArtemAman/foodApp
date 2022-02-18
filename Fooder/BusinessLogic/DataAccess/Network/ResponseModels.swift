@@ -83,7 +83,7 @@ struct Nutrients: Decodable {
     var energy:Nutrient?
     var fat:Nutrient?
     var chocdf:Nutrient?
-    var sugar:Nutrient?
+//    var sugar:Nutrient?
     var procnt:Nutrient?
     
     enum CodingKeys: String, CodingKey {
@@ -91,7 +91,7 @@ struct Nutrients: Decodable {
        case energy = "ENERC_KCAL" // smth wrong with json for key totalDaily
        case fat = "FAT"
        case chocdf = "CHOCDF"
-       case sugar = "SUGAR"
+//       case sugar = "SUGAR"
        case procnt = "PROCNT"
     }
 
