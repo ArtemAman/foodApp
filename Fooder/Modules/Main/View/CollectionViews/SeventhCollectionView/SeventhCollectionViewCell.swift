@@ -11,8 +11,18 @@ class SeventhCollectionViewCell: UICollectionViewCell {
     
     static let reuseId: String = "seventhCollectionViewCell"
     
+    private lazy var outerView: UIView = {
+        let view = UIView()
+        view.clipsToBounds = false
+        view.layer.shadowRadius = 3
+        view.layer.shadowOpacity = 0.4
+        view.layer.shadowOffset = CGSize(width: 1.5, height: 2)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
 
-    let imageView: UIImageView = {
+    private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
@@ -20,7 +30,7 @@ class SeventhCollectionViewCell: UICollectionViewCell {
         return imageView
     } ()
     
-    let botLabel: UILabel = {
+    private lazy var botLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
@@ -30,31 +40,35 @@ class SeventhCollectionViewCell: UICollectionViewCell {
         return label
     } ()
     
-    
     override init(frame:CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .clear
-        self.addSubview(imageView)
+        
+        self.addSubview(outerView)
         self.addSubview(botLabel)
+        outerView.addSubview(imageView)
+        
         setConstraints()
     }
 
     private func setConstraints() {
         NSLayoutConstraint.activate([
             
- 
-
-            imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-            imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
-            imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
-//            imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
-            imageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.7),
+            outerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            outerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
+            outerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
+            outerView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.65),
+            
+            imageView.leadingAnchor.constraint(equalTo: outerView.leadingAnchor, constant: 0),
+            imageView.topAnchor.constraint(equalTo: outerView.topAnchor, constant: 0),
+            imageView.trailingAnchor.constraint(equalTo: outerView.trailingAnchor, constant: 0),
+            imageView.bottomAnchor.constraint(equalTo: outerView.bottomAnchor, constant: 0),
             
             botLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             botLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
-            botLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 5),
+            botLabel.topAnchor.constraint(equalTo: outerView.bottomAnchor, constant: 5),
             botLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
-        
+    
           ])
     }
     
@@ -63,10 +77,6 @@ class SeventhCollectionViewCell: UICollectionViewCell {
         
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
-        
-//        layer.shadowRadius = 3
-//        layer.shadowOpacity = 0.4
-//        layer.shadowOffset = CGSize(width: 1.5, height: 2)
         
     }
     

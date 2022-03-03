@@ -28,6 +28,7 @@ class MainViewController: UIViewController {
         table.dataSource = self
         table.translatesAutoresizingMaskIntoConstraints = false
         table.backgroundColor = .clear
+        table.separatorStyle = .none
         table.register(MainVCTableViewCell.self, forCellReuseIdentifier: MainVCTableViewCell.reuseId)
         
         return table
