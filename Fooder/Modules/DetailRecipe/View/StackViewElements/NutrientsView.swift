@@ -14,7 +14,7 @@ class NutrientView: UIView {
     private lazy var topLabel: UILabel = {
         let labelTitle = UILabel()
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
-        labelTitle.text = "leftLabel lef"
+        labelTitle.text = "by eye"
         labelTitle.font = .boldSystemFont(ofSize: 12)
         labelTitle.textColor = .black
         labelTitle.textAlignment = .center
@@ -98,9 +98,16 @@ class NutrientView: UIView {
         
     }
     
-//    func fill() {
-//        titleLabel.text = itemModel.title
-//        subtitleLabel.text = itemModel.subtitle
-//    }
+    func fill(nutrient: Nutrient?) {
+        guard let nutrient = nutrient else {
+            return
+        }
+        topLabel.text = nutrient.label
+        guard let quantity = nutrient.quantity, let unit = nutrient.unit else { return }
+        let normQuantity = String(format: "%.2f", quantity)
+       
+        botLabel.text = "\(normQuantity) \n \(unit)"
+    
+    }
 
 }

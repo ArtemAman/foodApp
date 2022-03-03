@@ -81,6 +81,7 @@
 		F057DC1927BEA9720097A616 /* NutrientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC1827BEA9720097A616 /* NutrientsView.swift */; };
 		F057DC1C27BED1A50097A616 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC1B27BED1A50097A616 /* ProductView.swift */; };
 		F057DC2027BFFA9F0097A616 /* ReceipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC1F27BFFA9F0097A616 /* ReceipViewModel.swift */; };
+		F057DC2227D11D460097A616 /* EnumerationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC2127D11D460097A616 /* EnumerationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +163,7 @@
 		F057DC1827BEA9720097A616 /* NutrientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsView.swift; sourceTree = "<group>"; };
 		F057DC1B27BED1A50097A616 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		F057DC1F27BFFA9F0097A616 /* ReceipViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceipViewModel.swift; sourceTree = "<group>"; };
+		F057DC2127D11D460097A616 /* EnumerationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumerationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -664,6 +666,7 @@
 			children = (
 				F057DC1827BEA9720097A616 /* NutrientsView.swift */,
 				F057DC1B27BED1A50097A616 /* ProductView.swift */,
+				F057DC2127D11D460097A616 /* EnumerationView.swift */,
 			);
 			path = StackViewElements;
 			sourceTree = "<group>";
@@ -848,6 +851,7 @@
 				F057DBED27BD1F700097A616 /* DetailRecipePresenter.swift in Sources */,
 				F057DC0027BD44BD0097A616 /* DetailTableViewController.swift in Sources */,
 				F0164AD627B678BA008CBA53 /* FourthCollectionView.swift in Sources */,
+				F057DC2227D11D460097A616 /* EnumerationView.swift in Sources */,
 				F057DBEB27BD1F620097A616 /* DetailRecipeViewController.swift in Sources */,
 				1C470B1E27B2EBDC000B3EF9 /* MainViewController.swift in Sources */,
 				F057DC1C27BED1A50097A616 /* ProductView.swift in Sources */,

@@ -1,15 +1,14 @@
 //
-//  ProductView.swift
+//  EnumerationView.swift
 //  Fooder
 //
-//  Created by Artyom Amankeldiev on 17.02.2022.
+//  Created by Artyom Amankeldiev on 03.03.2022.
 //
-
 
 import UIKit
 
 
-class ProductView: UIView {
+class EnumerationView: UIView {
     
     private lazy var leftLabel: UILabel = {
         let labelTitle = UILabel()
@@ -17,18 +16,6 @@ class ProductView: UIView {
         labelTitle.text = "leftLabel leftLabel"
         labelTitle.font = .boldSystemFont(ofSize: 12)
         labelTitle.textColor = .black
-        labelTitle.textAlignment = .center
-        
-        return labelTitle
-    }()
-    
-    private lazy var rightLabel: UILabel = {
-        let labelTitle = UILabel()
-        labelTitle.translatesAutoresizingMaskIntoConstraints = false
-        labelTitle.text = "botLabel botLabel"
-        labelTitle.font = .systemFont(ofSize: 12)
-        labelTitle.textColor = .black
-        labelTitle.numberOfLines = 0
         labelTitle.textAlignment = .center
         
         return labelTitle
@@ -64,7 +51,6 @@ class ProductView: UIView {
     private func setupViews() {
         
         addSubview(leftLabel)
-        addSubview(rightLabel)
         addSubview(dividerView)
         
     }
@@ -77,9 +63,6 @@ class ProductView: UIView {
             leftLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             leftLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
 
-            rightLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            rightLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            rightLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
             
             dividerView.heightAnchor.constraint(equalToConstant: 1),
             dividerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
@@ -91,15 +74,8 @@ class ProductView: UIView {
         ])
     }
     
-    func fill(ingredient:Ingredient) {
-        leftLabel.text = ingredient.food?.captalizeFirstCharacter()
-        let quantity = String(describing: ingredient.quantity!)
-        guard let measure = ingredient.measure else { return }
-        if measure == "<unit>" {
-            rightLabel.text = "\(quantity) units"
-        } else {
-            rightLabel.text = "\(quantity) \(measure)"
-        }
+    func fill(labelText: String) {
+        leftLabel.text = labelText
         
     }
 

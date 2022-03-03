@@ -10,16 +10,17 @@ import UIKit
 class DetailRecipePresenter {
     
     weak var view: DetailRecipeViewInput?
-    var detailDecipeViewModel: CellViewModelProtocol?
+    var detailRecipeViewModel: CellViewModelProtocol?
     
     init(model:CellViewModelProtocol?) {
-        self .detailDecipeViewModel = model
+        self .detailRecipeViewModel = model
     }
 }
 
 
 extension DetailRecipePresenter: DetailRecipeViewOutput {
     func viewLoaded() {
+        guard let detailRecipeViewModel = detailRecipeViewModel else { return }
         view?.setupInfo()
     
     }

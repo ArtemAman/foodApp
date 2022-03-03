@@ -12,8 +12,14 @@ import UIKit
 class DetailRecipeViewController: UIViewController {
     
     var presenter: DetailRecipePresenter?
-    
     var recipeInfo: CellViewModelProtocol?
+    var dietLabels: [String]?
+    var healthLabels: [String]?
+    var cautions: [String]?
+    var ingredients: [Ingredient]?
+    var nutrients: Nutrients?
+    
+    
     
     private lazy var scroll: UIScrollView = {
         let scroll = UIScrollView()
@@ -33,7 +39,8 @@ class DetailRecipeViewController: UIViewController {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .systemPink
+        imageView.clipsToBounds = true
+        imageView.backgroundColor = .systemGray
         
         return imageView
     }()
@@ -207,6 +214,8 @@ class DetailRecipeViewController: UIViewController {
         setupConstraints()
         layoutSubviews()
         
+        setImage()
+    
         setItemsForCautions()
         setItemsForNutrients()
         setItemsForProducts()
@@ -230,7 +239,6 @@ class DetailRecipeViewController: UIViewController {
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
-            imageView.heightAnchor.constraint(equalToConstant: DetailRecipeViewControllerConstants.imageHeight),
             
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
@@ -301,19 +309,44 @@ class DetailRecipeViewController: UIViewController {
         
     }
     
+    private func setImage() {
+        guard let imageName = recipeInfo?.imageUrlString, let url = URL(string: imageName) else { return }
+        imageView.kf.setImage(with: url)
+    }
+    
     private func setItemsForNutrients() {
-        guard let recipeInfo = recipeInfo else { return }
-        for _ in (0...4) {
-            let view = NutrientView()
-            nutrientStackView.addArrangedSubview(view)
+        guard let nutrients = nutrients else { return }
+        for elem in (0...3) {
+            switch elem {
+            case 0:
+                let view = NutrientView()
+                view.fill(nutrient: nutrients.enercKcal)
+                nutrientStackView.addArrangedSubview(view)
+            case 1:
+                let view = NutrientView()
+                view.fill(nutrient: nutrients.PROCNT)
+                nutrientStackView.addArrangedSubview(view)
+            case 2:
+                let view = NutrientView()
+                view.fill(nutrient: nutrients.FAT)
+                nutrientStackView.addArrangedSubview(view)
+            case 3:
+                let view = NutrientView()
+                view.fill(nutrient: nutrients.CHOCDF)
+                nutrientStackView.addArrangedSubview(view)
+            default:
+                let view = NutrientView()
+                nutrientStackView.addArrangedSubview(view)
+            }
+            
         }
     }
-    // stayed here
+    
     private func setItemsForProducts() {
-        guard let recipeInfo = recipeInfo else { return }
-        guard let ingredients = recipeInfo.ingredients else { return }
-        for _ in ingredients {
+        guard let ingredients = ingredients else { return }
+        for ingredient in ingredients {
             let view = ProductView()
+            view.fill(ingredient: ingredient)
             productsStackView.addArrangedSubview(view)
             
             NSLayoutConstraint.activate([
@@ -323,19 +356,41 @@ class DetailRecipeViewController: UIViewController {
     }
     
     private func setItemsForDiet() {
-        for _ in (0...3) {
-            let view = ProductView()
+        guard let dietLabels = dietLabels else {
+            return
+        }
+        if dietLabels.count == 0 {
+            
+            let view = EnumerationView()
+            view.fill(labelText: "no diet labels")
             dietsStackView.addArrangedSubview(view)
             
             NSLayoutConstraint.activate([
                 view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10)
             ])
+            
+        } else {
+            
+            for text in dietLabels {
+                let view = EnumerationView()
+                view.fill(labelText: text)
+                dietsStackView.addArrangedSubview(view)
+                
+                NSLayoutConstraint.activate([
+                    view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10)
+                ])
+            }
         }
     }
     
     private func setItemsForHealth() {
-        for _ in (0...3) {
-            let view = ProductView()
+        guard let healthLabels = healthLabels else {
+            return
+        }
+        
+        for text in healthLabels {
+            let view = EnumerationView()
+            view.fill(labelText: text)
             healthStackView.addArrangedSubview(view)
             
             NSLayoutConstraint.activate([
@@ -345,26 +400,41 @@ class DetailRecipeViewController: UIViewController {
     }
     
     private func setItemsForCautions() {
-        for _ in (0...3) {
-            let view = ProductView()
+        
+        guard let cautions = cautions else { return }
+        
+        if cautions.count == 0 {
+            let view = EnumerationView()
+            view.fill(labelText: "No cautions in this recipe")
             cautionsStackView.addArrangedSubview(view)
             
             NSLayoutConstraint.activate([
                 view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10)
             ])
+        } else {
+            for text in cautions {
+                let view = EnumerationView()
+                view.fill(labelText: text)
+                cautionsStackView.addArrangedSubview(view)
+                
+                NSLayoutConstraint.activate([
+                    view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10)
+                ])
+            }
         }
     }
-    
 }
 
 extension DetailRecipeViewController: DetailRecipeViewInput {
-    
+
     func setupInfo() {
-        recipeInfo = presenter?.detailDecipeViewModel
+        recipeInfo = presenter?.detailRecipeViewModel
         guard let recipeInfo = recipeInfo else { return }
         nameLabel.text = recipeInfo.name
-        
+        dietLabels = recipeInfo.dietLabels
+        healthLabels = recipeInfo.healthLabels
+        cautions = recipeInfo.cautions
+        ingredients = recipeInfo.ingredients
+        nutrients = recipeInfo.totalNutrients
     }
-    
-    
 }
