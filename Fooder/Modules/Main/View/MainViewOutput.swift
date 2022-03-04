@@ -16,5 +16,5 @@ protocol MainViewOutput: AnyObject {
     
     func viewLoaded()
     func configureDetailRecipeViewController(cellIndex:Int)
-    func configureDetailTableViewController(requestingString:String?)
+    func configureDetailTableViewController(requestingString:String?, requestType: Int)
 }

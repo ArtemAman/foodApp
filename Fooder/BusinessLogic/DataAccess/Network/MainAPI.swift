@@ -9,7 +9,10 @@ import Foundation
 import Moya
 
 enum MainAPI {
-    case recipes(q: String)
+    case recipes(requestingString: String)
+    case kitchens(kitchen: String)
+    case diets(diet: String)
+    case dishes(dish: String)
 
 }
 
@@ -21,24 +24,49 @@ extension MainAPI: TargetType {
     
     var path: String {
         switch self {
-        case .recipes:
+        default:
             return ""
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .recipes:
+        default:
             return .get
         }
     }
     
     var task: Task {
         switch self {
-        case .recipes(let q):
+        case .recipes(let requestingString):
             return .requestParameters(
                 parameters:
-                    ["q" : q,
+                    ["q" : requestingString,
+                     "type" : ServerConstants.type,
+                     "app_key": ServerConstants.appKey,
+                     "app_id": ServerConstants.appId],
+                encoding: URLEncoding.queryString)
+       
+        case .kitchens(kitchen: let kitchen):
+            return .requestParameters(
+                parameters:
+                    ["cuisineType" : kitchen,
+                     "type" : ServerConstants.type,
+                     "app_key": ServerConstants.appKey,
+                     "app_id": ServerConstants.appId],
+                encoding: URLEncoding.queryString)
+        case .diets(diet: let diet):
+            return .requestParameters(
+                parameters:
+                    ["diet" : diet,
+                     "type" : ServerConstants.type,
+                     "app_key": ServerConstants.appKey,
+                     "app_id": ServerConstants.appId],
+                encoding: URLEncoding.queryString)
+        case .dishes(dish: let dish):
+            return .requestParameters(
+                parameters:
+                    ["mealType" : dish,
                      "type" : ServerConstants.type,
                      "app_key": ServerConstants.appKey,
                      "app_id": ServerConstants.appId],
@@ -48,7 +76,7 @@ extension MainAPI: TargetType {
     
     var headers: [String : String]? {
         switch self {
-        case .recipes:
+        default:
             return nil
         }
     }

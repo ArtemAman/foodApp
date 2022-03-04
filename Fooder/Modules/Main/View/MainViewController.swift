@@ -171,10 +171,10 @@ extension MainViewController: DetailCollectionViewCellPressDelegate {
 }
 
 extension MainViewController: RequestCollectionViewCellPressDelegate {
-    
-    func makeDetailVc(requestString: String?) {
+   
+    func makeDetailVc(requestString: String?, requestingType: Int) {
         
-        presenter?.configureDetailTableViewController(requestingString: requestString)
+        presenter?.configureDetailTableViewController(requestingString: requestString, requestType: requestingType)
     }
     
     

@@ -53,7 +53,7 @@ extension SixthCollectionView: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let requestString = cells?.requestString[indexPath.row]
-        mainVc?.makeDetailVc(requestString: requestString)
+        mainVc?.makeDetailVc(requestString: requestString, requestingType: 6)
 
     }
     

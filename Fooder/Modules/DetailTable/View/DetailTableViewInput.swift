@@ -7,5 +7,5 @@
 
 import UIKit
 protocol DetailTableViewInput: AnyObject {
-    
+    func updateTable()
 }

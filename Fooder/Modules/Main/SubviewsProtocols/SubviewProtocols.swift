@@ -13,5 +13,5 @@ protocol DetailCollectionViewCellPressDelegate: class {
 
 protocol RequestCollectionViewCellPressDelegate: class {
     
-    func makeDetailVc(requestString:String?)
+    func makeDetailVc(requestString:String?, requestingType: Int)
 }

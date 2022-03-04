@@ -43,7 +43,7 @@ class DetailTableViewControllerCell: UITableViewCell {
         
     }
     
-    func setCell(model: FourthCell?) {
+    func setCell(model: CellViewModelProtocol?) {
         guard let model = model else { return }
         guard let imageName = model.imageUrlString, let url = URL(string: imageName) else { return }
         imageArticle.kf.setImage(with: url)

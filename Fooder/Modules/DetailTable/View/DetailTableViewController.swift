@@ -12,6 +12,7 @@ import UIKit
 class DetailTableViewController: UIViewController {
     
     var presenter: DetailTablePresenter?
+    var cells: ReceipViewModel?
     
     private lazy var tableView: UITableView = {
         let table = UITableView()
@@ -26,8 +27,7 @@ class DetailTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        presenter?.viewLoaded()
         setupView()
     }
     
@@ -52,18 +52,27 @@ class DetailTableViewController: UIViewController {
 }
 
 extension DetailTableViewController: DetailTableViewInput {
+    func updateTable() {
+        cells = presenter?.recipeViewModel
+        tableView.reloadData()
+    }
+    
     
 }
 
 extension DetailTableViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        let cellsCount = cells?.cells.count ?? 0
+        return cellsCount
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewControllerCell.reuseId, for: indexPath) as! DetailTableViewControllerCell
+        
+        let model = cells?.cells[indexPath.row]
+        cell.setCell(model: model)
         return cell
     }
     

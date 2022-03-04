@@ -73,13 +73,12 @@ extension MainPresenter: MainViewOutput {
         view?.presentDetailRecipe(viewController: detailRecipeVC)
     }
     
-    func configureDetailTableViewController(requestingString: String?) {
+    func configureDetailTableViewController(requestingString: String?, requestType: Int) {
         guard let requestingString = requestingString else {
             return
         }
-        let detailRecipeModule = DetailTableModuleConfigurator().configure()
+        let detailRecipeModule = DetailTableModuleConfigurator().configure(requestType: requestType, requestString: requestingString)
         let detailRecipeVC = detailRecipeModule.0
-//        getRecipesList(requestingString: requestingString)
         view?.presentDetailRecipe(viewController: detailRecipeVC)
     }
         
