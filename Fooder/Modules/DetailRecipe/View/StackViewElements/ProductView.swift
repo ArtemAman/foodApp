@@ -25,11 +25,11 @@ class ProductView: UIView {
     private lazy var rightLabel: UILabel = {
         let labelTitle = UILabel()
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
-        labelTitle.text = "botLabel botLabel"
+        labelTitle.text = "Up to your taste"
         labelTitle.font = .systemFont(ofSize: 12)
         labelTitle.textColor = .black
         labelTitle.numberOfLines = 0
-        labelTitle.textAlignment = .center
+        labelTitle.textAlignment = .right
         
         return labelTitle
     }()
@@ -78,6 +78,7 @@ class ProductView: UIView {
             leftLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
 
             rightLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            rightLabel.leadingAnchor.constraint(equalTo: leftLabel.trailingAnchor, constant: 10),
             rightLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             rightLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
             
@@ -85,8 +86,6 @@ class ProductView: UIView {
             dividerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
             dividerView.leftAnchor.constraint(equalTo: leftAnchor, constant: 0),
             dividerView.rightAnchor.constraint(equalTo: rightAnchor, constant: 0),
-            
-            
             
         ])
     }

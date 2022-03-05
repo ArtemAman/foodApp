@@ -176,7 +176,10 @@ extension MainViewController: RequestCollectionViewCellPressDelegate {
         
         presenter?.configureDetailTableViewController(requestingString: requestString, requestType: requestingType)
     }
-    
-    
-    
+}
+
+extension MainViewController: RequestWebViewPressDelegate {
+    func makeWebView() {
+        print("ololo")
+    }
 }

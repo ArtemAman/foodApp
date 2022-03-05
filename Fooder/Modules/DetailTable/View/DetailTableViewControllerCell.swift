@@ -11,6 +11,17 @@ class DetailTableViewControllerCell: UITableViewCell {
     
     static let reuseId = "DetailTableCell"
     
+    private lazy var outerView: UIView = {
+        let view = UIView()
+        view.clipsToBounds = false
+        view.layer.shadowRadius = 3
+        view.layer.shadowOpacity = 0.4
+        view.layer.shadowOffset = CGSize(width: 1.5, height: 2)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    
     private lazy var imageArticle: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -19,7 +30,6 @@ class DetailTableViewControllerCell: UITableViewCell {
         return imageView
     } ()
 
-    
     private lazy var labelArticle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -37,8 +47,10 @@ class DetailTableViewControllerCell: UITableViewCell {
     
     func layoutSet() {
         
-        self.addSubview(imageArticle)
+        self.addSubview(outerView)
         self.addSubview(labelArticle)
+        outerView.addSubview(imageArticle)
+    
         setConstraints()
         
     }
@@ -58,19 +70,20 @@ class DetailTableViewControllerCell: UITableViewCell {
         imageArticle.layer.cornerRadius = 10
         imageArticle.layer.masksToBounds = true
         
-        imageArticle.layer.shadowRadius = 3
-        imageArticle.layer.shadowOpacity = 0.4
-        imageArticle.layer.shadowOffset = CGSize(width: 3, height: 2)
-        
     }
 
     private func setConstraints() {
         NSLayoutConstraint.activate([
             
-            imageArticle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            imageArticle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            imageArticle.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
-            imageArticle.heightAnchor.constraint(equalToConstant: DetailTableViewControllerConstants.imageHeight),
+            outerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            outerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            outerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
+            outerView.heightAnchor.constraint(equalToConstant: DetailTableViewControllerConstants.imageHeight),
+            
+            imageArticle.leadingAnchor.constraint(equalTo: outerView.leadingAnchor, constant: 0),
+            imageArticle.trailingAnchor.constraint(equalTo: outerView.trailingAnchor, constant: 0),
+            imageArticle.topAnchor.constraint(equalTo: outerView.topAnchor, constant: 0),
+            imageArticle.bottomAnchor.constraint(equalTo: outerView.bottomAnchor, constant: 0),
            
             labelArticle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             labelArticle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
@@ -79,7 +92,6 @@ class DetailTableViewControllerCell: UITableViewCell {
             
           ])
     }
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

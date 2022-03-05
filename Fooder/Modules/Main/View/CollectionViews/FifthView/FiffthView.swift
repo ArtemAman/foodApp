@@ -9,6 +9,8 @@ import UIKit
 
 class FifthView: UIView {
     
+    weak var mainVc: RequestWebViewPressDelegate?
+    
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -36,6 +38,8 @@ class FifthView: UIView {
         return label
     } ()
     
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -44,11 +48,17 @@ class FifthView: UIView {
         self.addSubview(topLabel)
         self.addSubview(botLabel)
         setConstraints()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
+        self.addGestureRecognizer(tapGesture)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        mainVc?.makeWebView()
+        }
     
     private func setConstraints() {
         NSLayoutConstraint.activate([

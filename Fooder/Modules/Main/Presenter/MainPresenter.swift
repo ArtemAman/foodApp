@@ -33,7 +33,7 @@ class MainPresenter {
     }
     
     private func getArticles() {
-        let articles = articleParser.scrapeNews(page: "1") { [weak self] articles in
+        articleParser.scrapeNews(page: "1") { [weak self] articles in
             self?.prepareFourthModel(listOfArticles: articles)
         }
     }
@@ -81,8 +81,6 @@ extension MainPresenter: MainViewOutput {
         let detailRecipeVC = detailRecipeModule.0
         view?.presentDetailRecipe(viewController: detailRecipeVC)
     }
-        
-
 }
 
 

@@ -15,3 +15,8 @@ protocol RequestCollectionViewCellPressDelegate: class {
     
     func makeDetailVc(requestString:String?, requestingType: Int)
 }
+
+protocol RequestWebViewPressDelegate: class {
+    
+    func makeWebView()
+}
