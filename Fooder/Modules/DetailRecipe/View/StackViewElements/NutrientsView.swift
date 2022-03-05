@@ -11,10 +11,20 @@ import UIKit
 
 class NutrientView: UIView {
     
+    private lazy var outerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .yellow
+        view.layer.cornerRadius = 10
+        view.layer.masksToBounds = true
+        
+        return view
+    }()
+    
     private lazy var topLabel: UILabel = {
         let labelTitle = UILabel()
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
-        labelTitle.text = "by eye"
+        labelTitle.text = "Nutrient"
         labelTitle.font = .boldSystemFont(ofSize: 12)
         labelTitle.textColor = .black
         labelTitle.textAlignment = .center
@@ -33,7 +43,7 @@ class NutrientView: UIView {
     private lazy var botLabel: UILabel = {
         let labelTitle = UILabel()
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
-        labelTitle.text = "botLabel botLabel botLabel botLabel"
+        labelTitle.text = ""
         labelTitle.font = .systemFont(ofSize: 12)
         labelTitle.textColor = .black
         labelTitle.numberOfLines = 0
@@ -44,12 +54,10 @@ class NutrientView: UIView {
     
     init() {
         super.init(frame: .zero)
-        backgroundColor = .yellow
         
         setupViews()
         setupConstraints()
         
-//        fill()
     }
     
     required init?(coder: NSCoder) {
@@ -57,8 +65,11 @@ class NutrientView: UIView {
     }
     
     private func setupViews() {
-        addSubview(topLabel)
-        addSubview(innerView)
+        
+        addSubview(outerView)
+        
+        outerView.addSubview(topLabel)
+        outerView.addSubview(innerView)
         
         innerView.addSubview(botLabel)
     }
@@ -66,14 +77,20 @@ class NutrientView: UIView {
     private func setupConstraints() {
         
         NSLayoutConstraint.activate([
-            topLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-            topLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            topLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            
+            outerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            outerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            outerView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+            outerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            
+            topLabel.leadingAnchor.constraint(equalTo: outerView.leadingAnchor, constant: 5),
+            topLabel.trailingAnchor.constraint(equalTo: outerView.trailingAnchor, constant: -5),
+            topLabel.topAnchor.constraint(equalTo: outerView.topAnchor, constant: 10),
             
             innerView.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 10),
-            innerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-            innerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            innerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+            innerView.leadingAnchor.constraint(equalTo: outerView.leadingAnchor, constant: 5),
+            innerView.trailingAnchor.constraint(equalTo: outerView.trailingAnchor, constant: -5),
+            innerView.bottomAnchor.constraint(equalTo: outerView.bottomAnchor, constant: -5),
             
             botLabel.topAnchor.constraint(greaterThanOrEqualTo: innerView.topAnchor, constant: 5),
             botLabel.leadingAnchor.constraint(equalTo: innerView.leadingAnchor, constant: 5),
@@ -86,15 +103,14 @@ class NutrientView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        layer.cornerRadius = 10
-        layer.masksToBounds = true
+
+        
+        layer.shadowRadius = 3
+        layer.shadowOpacity = 0.4
+        layer.shadowOffset = CGSize(width: 1.5, height: 2)
         
         innerView.layer.cornerRadius = 10
         innerView.layer.masksToBounds = true
-        
-//        layer.shadowRadius = 3
-//        layer.shadowOpacity = 0.4
-//        layer.shadowOffset = CGSize(width: 1.5, height: 2)
         
     }
     

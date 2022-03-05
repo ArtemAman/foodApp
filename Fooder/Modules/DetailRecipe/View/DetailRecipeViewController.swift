@@ -18,6 +18,7 @@ class DetailRecipeViewController: UIViewController {
     var cautions: [String]?
     var ingredients: [Ingredient]?
     var nutrients: Nutrients?
+    var isChecked = true
     
     
     
@@ -403,6 +404,12 @@ class DetailRecipeViewController: UIViewController {
     @objc func moreButtonAction(sender: UIButton!) {
         var counter = 0
         UIView.animate(withDuration: 0.3) {
+            self.isChecked = !self.isChecked
+            if self.isChecked {
+                sender.setTitle("Show more +", for: .normal)
+            } else {
+                sender.setTitle("Show less -", for: .normal)
+            }
                 self.healthStackView.arrangedSubviews.forEach { view in
                     if counter >= 5 {
                         view.alpha = view.isHidden ? 1 : 0
