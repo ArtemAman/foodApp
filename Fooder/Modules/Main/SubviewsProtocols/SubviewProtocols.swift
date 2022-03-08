@@ -10,6 +10,11 @@ protocol DetailCollectionViewCellPressDelegate: class {
     func makeDetailVc(index:Int)
 }
 
+protocol DetailArticlePressDelegate: class {
+    
+    func makeDetailVc(articleCell:FourthCell)
+}
+
 
 protocol RequestCollectionViewCellPressDelegate: class {
     

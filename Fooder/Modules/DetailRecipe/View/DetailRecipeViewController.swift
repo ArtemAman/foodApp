@@ -11,7 +11,7 @@ import UIKit
 
 class DetailRecipeViewController: UIViewController {
     
-    var presenter: DetailRecipePresenter?
+    var presenter: DetailRecipeViewOutput?
     var recipeInfo: CellViewModelProtocol?
     var dietLabels: [String]?
     var healthLabels: [String]?
@@ -410,15 +410,15 @@ class DetailRecipeViewController: UIViewController {
             } else {
                 sender.setTitle("Show less -", for: .normal)
             }
-                self.healthStackView.arrangedSubviews.forEach { view in
-                    if counter >= 5 {
-                        view.alpha = view.isHidden ? 1 : 0
-                        view.isHidden = view.isHidden ? false : true
-                    }
-                    counter += 1
+            self.healthStackView.arrangedSubviews.forEach { view in
+                if counter >= 5 {
+                    view.alpha = view.isHidden ? 1 : 0
+                    view.isHidden = view.isHidden ? false : true
                 }
+                counter += 1
             }
-       }
+        }
+   }
     
     private func setItemsForCautions() {
         
@@ -449,7 +449,7 @@ class DetailRecipeViewController: UIViewController {
 extension DetailRecipeViewController: DetailRecipeViewInput {
 
     func setupInfo() {
-        recipeInfo = presenter?.detailRecipeViewModel
+        recipeInfo = self.presenter?.detailRecipeViewModel
         guard let recipeInfo = recipeInfo else { return }
         nameLabel.text = recipeInfo.name
         dietLabels = recipeInfo.dietLabels

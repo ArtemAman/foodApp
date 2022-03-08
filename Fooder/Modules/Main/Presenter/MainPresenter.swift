@@ -41,7 +41,7 @@ class MainPresenter {
 
 // MARK: - Public
 extension MainPresenter: MainViewOutput {
-        
+    
     private func prepareThirdViewModel(listOfReceips: RecipeResponse?) {
         thirdViewModel = ReceipViewModel(list: listOfReceips)
         self.view?.updateTable()
@@ -70,7 +70,7 @@ extension MainPresenter: MainViewOutput {
     func configureDetailRecipeViewController(cellIndex: Int) {
         let detailRecipeModule = DetailRecipeModuleConfigurator().configure(model: thirdViewModel?.cells[cellIndex] as! CellViewModelProtocol)
         let detailRecipeVC = detailRecipeModule.0
-        view?.presentDetailRecipe(viewController: detailRecipeVC)
+        view?.presentDetailViewController(viewController: detailRecipeVC)
     }
     
     func configureDetailTableViewController(requestingString: String?, requestType: Int) {
@@ -79,7 +79,13 @@ extension MainPresenter: MainViewOutput {
         }
         let detailRecipeModule = DetailTableModuleConfigurator().configure(requestType: requestType, requestString: requestingString)
         let detailRecipeVC = detailRecipeModule.0
-        view?.presentDetailRecipe(viewController: detailRecipeVC)
+        view?.presentDetailViewController(viewController: detailRecipeVC)
+    }
+    
+    func configureDetailArticleViewController(articleCell: FourthCell) {
+        let detailArticleModule = DetailArticleConfigurator().configure(articleCell: articleCell)
+        let detailArticleVC = detailArticleModule.0
+        view?.presentDetailViewController(viewController: detailArticleVC)
     }
 }
 

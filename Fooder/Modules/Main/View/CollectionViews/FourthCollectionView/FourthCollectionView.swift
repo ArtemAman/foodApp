@@ -8,7 +8,7 @@ import UIKit
 class FourthCollectionView: UICollectionView {
     
     var cells: FourthCollectionViewModel?
-    weak var mainVc: DetailCollectionViewCellPressDelegate?
+    weak var mainVc: DetailArticlePressDelegate?
 
     init() {
         let frame = MainDimensionsCalculator.calculateCVFrame(height: MainVewControllerConstants.thirdCollectionAtributes.itemSize.height)
@@ -49,7 +49,7 @@ extension FourthCollectionView: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        mainVc?.makeDetailVc(index: indexPath.row)
+        guard let model = cells?.cells[indexPath.row] else { return }
+        mainVc?.makeDetailVc(articleCell: model)
     }
-    
 }

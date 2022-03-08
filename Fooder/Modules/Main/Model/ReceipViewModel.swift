@@ -133,7 +133,6 @@ struct FourthCollectionViewModel {
             cells.append(FourthCell(article: article))
         })
     }
-    
 }
 
 struct FourthCell: FourthCellViewModelProtocol {

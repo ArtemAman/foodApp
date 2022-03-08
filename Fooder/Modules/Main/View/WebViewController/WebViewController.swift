@@ -5,4 +5,8 @@
 //  Created by Artyom Amankeldiev on 05.03.2022.
 //
 
-import Foundation
+import UIKit
+
+class WebViewController: UIViewController {
+    
+}

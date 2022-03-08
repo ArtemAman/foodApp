@@ -13,15 +13,14 @@ class DetailRecipePresenter {
     var detailRecipeViewModel: CellViewModelProtocol?
     
     init(model:CellViewModelProtocol?) {
-        self .detailRecipeViewModel = model
+        self.detailRecipeViewModel = model
     }
 }
 
 
 extension DetailRecipePresenter: DetailRecipeViewOutput {
     func viewLoaded() {
-        guard let detailRecipeViewModel = detailRecipeViewModel else { return }
+        guard detailRecipeViewModel != nil else { return }
         view?.setupInfo()
-    
     }
 }

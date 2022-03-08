@@ -11,13 +11,39 @@ import SwiftSoup
 
 class ArticleParser {
     
+    func scrapeNewsDetail(requestingUrl: String, completion: @escaping(String?) -> Void) {
+        AF.request(ServerConstants.baseNewsUrl + requestingUrl).responseString(completionHandler: { response in
+            print(requestingUrl)
+            guard let html = response.value else { return }
+            let text = self.parseHtmlDetail(html: html)
+            completion(text)
+        })
+    }
+    
     func scrapeNews(page: String, completion: @escaping([Article?]) -> Void) {
-        AF.request(ServerConstants.baseNewsUrl + "?page=" + page).responseString(completionHandler: { response in
+        AF.request(ServerConstants.baseNewsUrl + ServerConstants.articles + "?page=" + page).responseString(completionHandler: { response in
             
             guard let html = response.value else { return }
             let articles = self.parseHtml(html:html)
             completion(articles)
         })
+    }
+    
+    func parseHtmlDetail(html: String) -> String? {
+        
+        do {
+            let doc: Document = try SwiftSoup.parse(html)
+            
+            let fullPage = try doc.getElementsByClass("blocks-article__grid")
+            let text = try fullPage.text()
+            return text
+        } catch Exception.Error(let type, let message) {
+            print(message, type)
+            return nil
+        } catch {
+            print("error")
+            return nil
+        }
     }
     
     func parseHtml(html: String) -> [Article?] {
@@ -32,9 +58,9 @@ class ArticleParser {
             
             let link = try doc.getElementsByClass("promo__story")
             for element in link {
-                let lenk = try element.attr("href")
+                let link = try element.attr("href")
                 let href = try element.html()
-                urlToFullToReturn = href
+                urlToFullToReturn = link
                 let doc2: Document = try SwiftSoup.parse(href)
                 let info = try doc2.getElementsByClass("promo__image")
                 let header = try doc2.getElementsByClass("promo__title")

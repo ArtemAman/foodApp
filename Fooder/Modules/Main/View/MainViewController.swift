@@ -8,7 +8,7 @@
 import UIKit
 import PKHUD
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UIWebViewDelegate {
     
     var presenter: MainViewOutput?
     
@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     private lazy var secondCollection = SecondCollectionView()
     private lazy var thirdCollection = ThirdCollectionView()
     private lazy var fourthCollection = FourthCollectionView()
-    private lazy var fifthCollection = FifthView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 20, height: MainVewControllerConstants.fifthViewHeight))
+    private lazy var fifthView = FifthView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 20, height: MainVewControllerConstants.fifthViewHeight))
     private lazy var sixthCollection = SixthCollectionView()
     private lazy var seventhCollection = SeventhCollectionView()
     
@@ -43,6 +43,7 @@ class MainViewController: UIViewController {
         secondCollection.mainVc = self
         thirdCollection.mainVc = self
         fourthCollection.mainVc = self
+        fifthView.mainVc = self
         sixthCollection.mainVc = self
         seventhCollection.mainVc = self
         
@@ -60,7 +61,7 @@ class MainViewController: UIViewController {
                            secondCollection,
                            thirdCollection,
                            fourthCollection,
-                           fifthCollection,
+                           fifthView,
                            sixthCollection,
                            seventhCollection]
         
@@ -99,7 +100,7 @@ class MainViewController: UIViewController {
 extension MainViewController: MainViewInput {
     
     
-    func presentDetailRecipe(viewController: UIViewController) {
+    func presentDetailViewController(viewController: UIViewController) {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -180,6 +181,16 @@ extension MainViewController: RequestCollectionViewCellPressDelegate {
 
 extension MainViewController: RequestWebViewPressDelegate {
     func makeWebView() {
+        
+//        self.navigationController?.pushViewController(webV, animated: true)
         print("ololo")
     }
+}
+
+extension MainViewController: DetailArticlePressDelegate {
+    func makeDetailVc(articleCell: FourthCell) {
+        presenter?.configureDetailArticleViewController(articleCell: articleCell)
+    }
+    
+    
 }
