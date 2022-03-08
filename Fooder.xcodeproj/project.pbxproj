@@ -82,6 +82,13 @@
 		F057DC1C27BED1A50097A616 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC1B27BED1A50097A616 /* ProductView.swift */; };
 		F057DC2027BFFA9F0097A616 /* ReceipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC1F27BFFA9F0097A616 /* ReceipViewModel.swift */; };
 		F057DC2227D11D460097A616 /* EnumerationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC2127D11D460097A616 /* EnumerationView.swift */; };
+		F057DC2527D3D4180097A616 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC2427D3D4180097A616 /* WebViewController.swift */; };
+		F057DC2C27D62F6A0097A616 /* DetailArticleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC2B27D62F6A0097A616 /* DetailArticleConfigurator.swift */; };
+		F057DC2E27D62F920097A616 /* DetailArticlePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC2D27D62F920097A616 /* DetailArticlePresenter.swift */; };
+		F057DC3027D62FCF0097A616 /* DetailArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC2F27D62FCF0097A616 /* DetailArticleViewController.swift */; };
+		F057DC3227D6302F0097A616 /* DetailArticleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC3127D6302F0097A616 /* DetailArticleInput.swift */; };
+		F057DC3427D6303B0097A616 /* DetailArticleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC3327D6303B0097A616 /* DetailArticleOutput.swift */; };
+		F057DC3627D6369B0097A616 /* DetailArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC3527D6369B0097A616 /* DetailArticleModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,6 +171,13 @@
 		F057DC1B27BED1A50097A616 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		F057DC1F27BFFA9F0097A616 /* ReceipViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceipViewModel.swift; sourceTree = "<group>"; };
 		F057DC2127D11D460097A616 /* EnumerationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumerationView.swift; sourceTree = "<group>"; };
+		F057DC2427D3D4180097A616 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		F057DC2B27D62F6A0097A616 /* DetailArticleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailArticleConfigurator.swift; sourceTree = "<group>"; };
+		F057DC2D27D62F920097A616 /* DetailArticlePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailArticlePresenter.swift; sourceTree = "<group>"; };
+		F057DC2F27D62FCF0097A616 /* DetailArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailArticleViewController.swift; sourceTree = "<group>"; };
+		F057DC3127D6302F0097A616 /* DetailArticleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailArticleInput.swift; sourceTree = "<group>"; };
+		F057DC3327D6303B0097A616 /* DetailArticleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailArticleOutput.swift; sourceTree = "<group>"; };
+		F057DC3527D6369B0097A616 /* DetailArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailArticleModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +236,7 @@
 		1C470B1427B2EB01000B3EF9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F057DC2627D62B070097A616 /* DetailArticle */,
 				F057DBF427BD43D10097A616 /* DetailTable */,
 				F057DBE027BD1CA10097A616 /* DetailRecipe */,
 				1C470B1527B2EB13000B3EF9 /* Main */,
@@ -248,10 +263,11 @@
 		1C470B1727B2EB2D000B3EF9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F057DC2327D3D3F80097A616 /* WebViewController */,
 				F0164AB727B526F4008CBA53 /* CollectionViews */,
 				1C470B1D27B2EBDC000B3EF9 /* MainViewController.swift */,
-				F0164AC427B53964008CBA53 /* MainViewControllerCell.swift */,
 				1C470B1F27B2EC61000B3EF9 /* MainViewInput.swift */,
+				F0164AC427B53964008CBA53 /* MainViewControllerCell.swift */,
 				1C470B2127B2EC76000B3EF9 /* MainViewOutput.swift */,
 				F0164AC227B52DC3008CBA53 /* MainVewControllerConstants.swift */,
 				F0164ACD27B58DDA008CBA53 /* MainDimensionsCalculator.swift */,
@@ -671,6 +687,59 @@
 			path = StackViewElements;
 			sourceTree = "<group>";
 		};
+		F057DC2327D3D3F80097A616 /* WebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F057DC2427D3D4180097A616 /* WebViewController.swift */,
+			);
+			path = WebViewController;
+			sourceTree = "<group>";
+		};
+		F057DC2627D62B070097A616 /* DetailArticle */ = {
+			isa = PBXGroup;
+			children = (
+				F057DC2727D62B190097A616 /* Configurator */,
+				F057DC2827D62B220097A616 /* Presenter */,
+				F057DC2927D62B2B0097A616 /* View */,
+				F057DC2A27D62B9A0097A616 /* Model */,
+			);
+			path = DetailArticle;
+			sourceTree = "<group>";
+		};
+		F057DC2727D62B190097A616 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				F057DC2B27D62F6A0097A616 /* DetailArticleConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		F057DC2827D62B220097A616 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F057DC2D27D62F920097A616 /* DetailArticlePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F057DC2927D62B2B0097A616 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F057DC2F27D62FCF0097A616 /* DetailArticleViewController.swift */,
+				F057DC3127D6302F0097A616 /* DetailArticleInput.swift */,
+				F057DC3327D6303B0097A616 /* DetailArticleOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F057DC2A27D62B9A0097A616 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F057DC3527D6369B0097A616 /* DetailArticleModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FE24AF3DC40732788836EB5F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -795,6 +864,7 @@
 			files = (
 				F057DC0427BD44E40097A616 /* DetailTableViewOutput.swift in Sources */,
 				F0164AC327B52DC3008CBA53 /* MainVewControllerConstants.swift in Sources */,
+				F057DC2C27D62F6A0097A616 /* DetailArticleConfigurator.swift in Sources */,
 				F057DBD527BA82C60097A616 /* ArticleParser.swift in Sources */,
 				F057DBC827BA7CF90097A616 /* Shadows.swift in Sources */,
 				1C470B0027B2E296000B3EF9 /* AppDelegate.swift in Sources */,
@@ -808,8 +878,10 @@
 				F0164AD127B675F3008CBA53 /* ThirdCollectionView.swift in Sources */,
 				F0164AE727B9C20C008CBA53 /* SeventhCollectionView.swift in Sources */,
 				1C470B2027B2EC61000B3EF9 /* MainViewInput.swift in Sources */,
+				F057DC3627D6369B0097A616 /* DetailArticleModel.swift in Sources */,
 				F057DBB627BA6A320097A616 /* ArticlesViewControllerCell.swift in Sources */,
 				1C470B2427B2F14E000B3EF9 /* TabBar.swift in Sources */,
+				F057DC2527D3D4180097A616 /* WebViewController.swift in Sources */,
 				F057DBBB27BA72C60097A616 /* SearchViewController.swift in Sources */,
 				F057DBFC27BD44840097A616 /* DetailTablePresenter.swift in Sources */,
 				F0164A9A27B3E1E8008CBA53 /* ResponseModels.swift in Sources */,
@@ -837,6 +909,7 @@
 				F057DBDB27BC01170097A616 /* CapitalizedLetter.swift in Sources */,
 				F0164AE427B9BB99008CBA53 /* SixthCollectionViewCell.swift in Sources */,
 				F0164AB627B467E7008CBA53 /* ArticlesConfigurator.swift in Sources */,
+				F057DC2E27D62F920097A616 /* DetailArticlePresenter.swift in Sources */,
 				1C470B3027B2FF14000B3EF9 /* MainAPI.swift in Sources */,
 				1C470B3227B2FF80000B3EF9 /* ServerConstants.swift in Sources */,
 				F0164ACC27B5800E008CBA53 /* SeconCollectionViewCell.swift in Sources */,
@@ -848,10 +921,12 @@
 				F0164AC527B53964008CBA53 /* MainViewControllerCell.swift in Sources */,
 				F0164AAB27B46683008CBA53 /* ArticlesViewController.swift in Sources */,
 				F057DC0B27BD52F60097A616 /* DetailTableViewConstants.swift in Sources */,
+				F057DC3427D6303B0097A616 /* DetailArticleOutput.swift in Sources */,
 				F057DBED27BD1F700097A616 /* DetailRecipePresenter.swift in Sources */,
 				F057DC0027BD44BD0097A616 /* DetailTableViewController.swift in Sources */,
 				F0164AD627B678BA008CBA53 /* FourthCollectionView.swift in Sources */,
 				F057DC2227D11D460097A616 /* EnumerationView.swift in Sources */,
+				F057DC3027D62FCF0097A616 /* DetailArticleViewController.swift in Sources */,
 				F057DBEB27BD1F620097A616 /* DetailRecipeViewController.swift in Sources */,
 				1C470B1E27B2EBDC000B3EF9 /* MainViewController.swift in Sources */,
 				F057DC1C27BED1A50097A616 /* ProductView.swift in Sources */,
@@ -862,6 +937,7 @@
 				F0164ADB27B67CBF008CBA53 /* FiffthView.swift in Sources */,
 				F057DBF127BD209B0097A616 /* DetailRecipeViewOutput.swift in Sources */,
 				F057DBCD27BA80D60097A616 /* FavouritePresenter.swift in Sources */,
+				F057DC3227D6302F0097A616 /* DetailArticleInput.swift in Sources */,
 				F0164AAF27B466AD008CBA53 /* ArticlesViewInput.swift in Sources */,
 				1C470B2727B2F20D000B3EF9 /* UIViewController+Extension.swift in Sources */,
 				F057DC0D27BD57650097A616 /* DetailRecipeViewConstants.swift in Sources */,
