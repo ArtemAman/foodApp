@@ -12,6 +12,13 @@ class FavouriteViewController: UIViewController {
     
     var presenter: FavouritePresenter?
     
+    private lazy var segmetedControl: UISegmentedControl = {
+        let items = ["Favourite recipes", "Favourite articles"]
+        let segmented = UISegmentedControl(items: items)
+        segmented.translatesAutoresizingMaskIntoConstraints = false
+        return segmented
+    }()
+    
     private lazy var tableView: UITableView = {
         let table = UITableView()
         table.delegate = self
@@ -25,13 +32,12 @@ class FavouriteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         setupView()
     }
     
     private func setupView() {
         view.backgroundColor = .white
+        view.addSubview(segmetedControl)
         view.addSubview(tableView)
         setupConstraints()
         tableView.register(FavouriteViewControllerCell.self, forCellReuseIdentifier: FavouriteViewControllerCell.reuseId)
@@ -41,7 +47,11 @@ class FavouriteViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             
-            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            segmetedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            segmetedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            segmetedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            
+            tableView.topAnchor.constraint(equalTo: segmetedControl.bottomAnchor, constant: 5),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),

@@ -20,5 +20,4 @@ class Parser<T: Decodable> {
             return nil
         }
     }
-    
 }
