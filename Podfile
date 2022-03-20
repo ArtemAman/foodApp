@@ -11,5 +11,6 @@ target 'Fooder' do
   pod 'PKHUD'
   pod 'Kingfisher'
   pod 'SwiftSoup'
+  pod 'RealmSwift'
   
 end

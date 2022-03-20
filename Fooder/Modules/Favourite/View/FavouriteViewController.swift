@@ -16,6 +16,8 @@ class FavouriteViewController: UIViewController {
         let items = ["Favourite recipes", "Favourite articles"]
         let segmented = UISegmentedControl(items: items)
         segmented.translatesAutoresizingMaskIntoConstraints = false
+        segmented.selectedSegmentIndex = 0
+        segmented.addTarget(self, action: #selector(segmentAction(_:)), for: .valueChanged)
         return segmented
     }()
     
@@ -59,6 +61,19 @@ class FavouriteViewController: UIViewController {
             ])
     
     }
+    
+    @objc func segmentAction(_ segmentedControl: UISegmentedControl) {
+            switch (segmentedControl.selectedSegmentIndex) {
+            case 0:
+                print("segmented 0")
+                tableView.reloadData()
+            case 1:
+                print("segmented 1")
+                tableView.reloadData()
+            default:
+                break
+            }
+    }
 }
 
 extension FavouriteViewController: FavouriteViewInput {
@@ -68,7 +83,15 @@ extension FavouriteViewController: FavouriteViewInput {
 extension FavouriteViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        switch (segmetedControl.selectedSegmentIndex) {
+        case 0:
+            return 3
+        case 1:
+            return 4
+        default:
+            return 0
+            
+        }
     }
     
     
@@ -79,6 +102,10 @@ extension FavouriteViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
     
     
