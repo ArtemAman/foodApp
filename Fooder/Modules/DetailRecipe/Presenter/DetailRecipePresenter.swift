@@ -19,8 +19,26 @@ class DetailRecipePresenter {
 
 
 extension DetailRecipePresenter: DetailRecipeViewOutput {
+    
+    
+    func favourite(ifWeWriteToBase: Bool) {
+        guard let detailRecipeViewModel = detailRecipeViewModel else { return }
+        if ifWeWriteToBase == true {
+            let base = RecipeBaseModel(model: detailRecipeViewModel)
+            RealmBase.saveData(base)
+        } else {
+            RealmBase.deleteOne(detailRecipeViewModel.imageUrlString!)
+        }
+    }
+   
     func viewLoaded() {
+//        RealmBase.deleteAll()
         guard detailRecipeViewModel != nil else { return }
+        let base = RecipeBaseModel(model: detailRecipeViewModel!)
+        let checkTheBase = RealmBase.checkOne(base)
+        if checkTheBase {
+            view?.isInBase = true
+        }
         view?.setupInfo()
     }
 }

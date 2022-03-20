@@ -11,6 +11,7 @@ import UIKit
 class FavouriteViewController: UIViewController {
     
     var presenter: FavouritePresenter?
+    var recipeCells: ReceipViewModel?
     
     private lazy var segmetedControl: UISegmentedControl = {
         let items = ["Favourite recipes", "Favourite articles"]
@@ -35,6 +36,7 @@ class FavouriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        presenter?.viewLoaded()
     }
     
     private func setupView() {
@@ -77,6 +79,11 @@ class FavouriteViewController: UIViewController {
 }
 
 extension FavouriteViewController: FavouriteViewInput {
+    func updateTable() {
+        recipeCells = presenter?.favouriteRecipeModel
+        tableView.reloadData()
+    }
+    
     
 }
 
@@ -85,7 +92,7 @@ extension FavouriteViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch (segmetedControl.selectedSegmentIndex) {
         case 0:
-            return 3
+            return recipeCells?.cells.count ?? 0
         case 1:
             return 4
         default:
@@ -97,7 +104,17 @@ extension FavouriteViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FavouriteViewControllerCell.reuseId, for: indexPath) as! FavouriteViewControllerCell
-        return cell
+        switch (segmetedControl.selectedSegmentIndex) {
+        case 0:
+            let recipeModel = recipeCells?.cells[indexPath.row]
+            let model = FavouriteCell(recipe: recipeModel)
+            cell.setCell(model: model)
+            return cell
+        case 1:
+            return cell
+        default:
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

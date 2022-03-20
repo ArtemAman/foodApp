@@ -8,5 +8,7 @@
 import UIKit
 
 protocol FavouriteOutput: AnyObject {
+    
+    var favouriteRecipeModel: ReceipViewModel? { get }
     func viewLoaded()
 }

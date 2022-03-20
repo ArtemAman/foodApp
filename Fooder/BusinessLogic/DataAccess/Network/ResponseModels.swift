@@ -75,6 +75,18 @@ struct Ingredient: Decodable {
     var foodCategory:String?
     var foodId:String?
     var image:String?
+    
+    init(ingredientFromBase: IngredientBaseModel) {
+        
+        text = ingredientFromBase.text
+        quantity = ingredientFromBase.quantity
+        measure = ingredientFromBase.measure
+        food = ingredientFromBase.food
+        weight = ingredientFromBase.weight
+        foodCategory = ingredientFromBase.foodCategory
+        foodId = ingredientFromBase.foodId
+        image = ingredientFromBase.image
+    }
 
 }
 
@@ -84,6 +96,16 @@ struct Nutrients: Decodable {
     var FAT:Nutrient?
     var CHOCDF:Nutrient?
     var PROCNT:Nutrient?
+    
+    init(nutrientsFromBase: NutrientsBaseModel) {
+        
+        enercKcal = Nutrient(nutrientFromBase: nutrientsFromBase.enercKcal!)
+        FAT = Nutrient(nutrientFromBase: nutrientsFromBase.FAT!)
+        CHOCDF = Nutrient(nutrientFromBase: nutrientsFromBase.CHOCDF!)
+        PROCNT = Nutrient(nutrientFromBase: nutrientsFromBase.PROCNT!)
+       
+    }
+
 
 }
 
@@ -92,6 +114,13 @@ struct Nutrient: Decodable {
     var label:String?
     var quantity:Float?
     var unit:String?
+    
+    init(nutrientFromBase: NutrientBaseModel) {
+        
+        label = nutrientFromBase.label
+        quantity = nutrientFromBase.quantity
+        unit = nutrientFromBase.unit
+    }
 
 }
 

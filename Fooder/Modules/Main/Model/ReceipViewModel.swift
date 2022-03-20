@@ -37,6 +37,12 @@ struct ReceipViewModel {
         })
     }
     
+    init<S: Sequence>(_ objects: S) {
+        objects.forEach({ object in
+            cells.append(Cell(recipeFromBase: object as? RecipeBaseModel))
+        })
+    }
+    
 }
 
 struct Cell: CellViewModelProtocol {
@@ -65,6 +71,40 @@ struct Cell: CellViewModelProtocol {
         mealType = recipe?.mealType
         dishType = recipe?.dishType
         totalNutrients = recipe?.totalNutrients
+    }
+    
+    init(recipeFromBase: RecipeBaseModel?) {
+        imageUrlString = recipeFromBase?.imageUrlString
+        name = recipeFromBase?.name
+        recipeFromBase?.dietLabels.forEach({ str in
+            dietLabels?.append(str)
+        })
+        recipeFromBase?.healthLabels.forEach({ str in
+            healthLabels?.append(str)
+        })
+        
+        recipeFromBase?.cautions.forEach({ str in
+            cautions?.append(str)
+        })
+        
+        recipeFromBase?.ingredients.forEach({ ingr in
+            ingredients?.append(Ingredient(ingredientFromBase: ingr))
+        })
+        
+        totalWeight = recipeFromBase?.totalWeight
+        recipeFromBase?.cuisineType.forEach({ str in
+            cuisineType?.append(str)
+        })
+        
+        recipeFromBase?.mealType.forEach({ str in
+            mealType?.append(str)
+        })
+        
+        recipeFromBase?.dishType.forEach({ str in
+            dishType?.append(str)
+        })
+        
+        totalNutrients = Nutrients(nutrientsFromBase: (recipeFromBase?.totalNutrients)!)
     }
 }
 

@@ -19,6 +19,7 @@ class DetailRecipeViewController: UIViewController {
     var ingredients: [Ingredient]?
     var nutrients: Nutrients?
     var isChecked = true
+    var isInBase = false
     
     
     
@@ -186,8 +187,15 @@ class DetailRecipeViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .systemRed
-        button.setTitle("Add to favourite", for: .normal)
+        button.addTarget(self, action: #selector(saveFavourite), for: .touchUpInside)
+        button.startAnimatingPressActions()
         button.titleLabel?.font = DetailRecipeViewControllerConstants.nutrientsCollectionAllLabelsFont
+        
+        if self.isInBase {
+            button.setTitle("Delete from favourite", for: .normal)
+        } else {
+            button.setTitle("Add to favourite", for: .normal)
+        }
         
         return button
     }()
@@ -419,6 +427,18 @@ class DetailRecipeViewController: UIViewController {
             }
         }
    }
+    
+    @objc func saveFavourite(sender: UIButton!) {
+        UIView.animate(withDuration: 0.3) {
+            self.isInBase = !self.isInBase
+            if self.isInBase {
+                sender.setTitle("Delete from favourite", for: .normal)
+            } else {
+                sender.setTitle("Add to favourite", for: .normal)
+            }
+            self.presenter?.favourite(ifWeWriteToBase: self.isInBase)
+        }
+    }
     
     private func setItemsForCautions() {
         

@@ -12,8 +12,8 @@ class FavouriteViewControllerCell: UITableViewCell {
     
     static let reuseId = "FavouriteCell"
     
-    private lazy var imageFavourite: UIImageView = {
-        let imageView = UIImageView()
+    private lazy var imageFavourite: WebImageView = {
+        let imageView = WebImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .systemGray
@@ -35,7 +35,7 @@ class FavouriteViewControllerCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.numberOfLines = 0
-        label.text = "OloloOloloOloloOloloOloloOloloOloloOloloOloloOloloOloloOloloOloloOloloOloloOloloOloloOloloOlolofdgdgdgdgfdfdfdfegfergergergerger"
+        label.text = "No text"
         label.font = ArticlesViewControllerConstants.lableArticleFont
         return label
     } ()
@@ -55,14 +55,14 @@ class FavouriteViewControllerCell: UITableViewCell {
         
     }
     
-//    func setCell(model: FourthCell?) {
-//        guard let model = model else { return }
-//        guard let imageName = model.imageUrlString, let url = URL(string: imageName) else { return }
-//        imageArticle.kf.setImage(with: url)
-//        guard let labelText = model.name else { return }
-//        labelArticle.text = labelText
-//
-//    }
+    func setCell(model: FavouriteCell?) {
+        guard let model = model else { return }
+        guard let imageUrl = model.imageUrlString else { return }
+        imageFavourite.set(imageURL: imageUrl)
+        guard let labelText = model.name else { return }
+        labelFavourite.text = labelText
+
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -81,7 +81,7 @@ class FavouriteViewControllerCell: UITableViewCell {
             imageFavourite.widthAnchor.constraint(equalToConstant: FavouriteViewControllerConstants.imageWidth),
             imageFavourite.heightAnchor.constraint(equalToConstant: FavouriteViewControllerConstants.imageHeight),
            
-            labelFavourite.leadingAnchor.constraint(equalTo: imageFavourite.trailingAnchor, constant: 5),
+            labelFavourite.leadingAnchor.constraint(equalTo: imageFavourite.trailingAnchor, constant: 10),
             labelFavourite.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             labelFavourite.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
             labelFavourite.heightAnchor.constraint(equalToConstant: FavouriteViewControllerConstants.imageHeight - 30),

@@ -92,6 +92,9 @@
 		F057DC9F27E37B640097A616 /* FavouriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DC9E27E37B640097A616 /* FavouriteModel.swift */; };
 		F057DCA227E380BD0097A616 /* RealmInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DCA127E380BD0097A616 /* RealmInit.swift */; };
 		F057DCA427E380C70097A616 /* RealmModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DCA327E380C70097A616 /* RealmModels.swift */; };
+		F057DCA627E779C30097A616 /* ButtonPressed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DCA527E779C30097A616 /* ButtonPressed.swift */; };
+		F057DCA827E78D070097A616 /* CascadeDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DCA727E78D070097A616 /* CascadeDelete.swift */; };
+		F057DCAA27E7ACF30097A616 /* WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057DCA927E7ACF30097A616 /* WebImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -184,6 +187,9 @@
 		F057DC9E27E37B640097A616 /* FavouriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteModel.swift; sourceTree = "<group>"; };
 		F057DCA127E380BD0097A616 /* RealmInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmInit.swift; sourceTree = "<group>"; };
 		F057DCA327E380C70097A616 /* RealmModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModels.swift; sourceTree = "<group>"; };
+		F057DCA527E779C30097A616 /* ButtonPressed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPressed.swift; sourceTree = "<group>"; };
+		F057DCA727E78D070097A616 /* CascadeDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CascadeDelete.swift; sourceTree = "<group>"; };
+		F057DCA927E7ACF30097A616 /* WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +302,8 @@
 				F057DBC727BA7CF90097A616 /* Shadows.swift */,
 				F057DBD827BB14B00097A616 /* RandomString.swift */,
 				F057DBDA27BC01170097A616 /* CapitalizedLetter.swift */,
+				F057DCA527E779C30097A616 /* ButtonPressed.swift */,
+				F057DCA927E7ACF30097A616 /* WebImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -753,6 +761,7 @@
 			children = (
 				F057DCA127E380BD0097A616 /* RealmInit.swift */,
 				F057DCA327E380C70097A616 /* RealmModels.swift */,
+				F057DCA727E78D070097A616 /* CascadeDelete.swift */,
 			);
 			path = RealmBase;
 			sourceTree = "<group>";
@@ -915,6 +924,7 @@
 				1C470B2C27B2FE80000B3EF9 /* MainServices.swift in Sources */,
 				F0164AB127B466BB008CBA53 /* ArticlesViewOutput.swift in Sources */,
 				F057DBBD27BA72D70097A616 /* SearchPresenter.swift in Sources */,
+				F057DCA627E779C30097A616 /* ButtonPressed.swift in Sources */,
 				F057DBC327BA786C0097A616 /* SearchViewOutput.swift in Sources */,
 				F057DBB827BA6D700097A616 /* ArticlesViewControllerConstants.swift in Sources */,
 				F0164ABF27B52934008CBA53 /* FirstCollectionView.swift in Sources */,
@@ -925,6 +935,7 @@
 				F057DBCF27BA80FD0097A616 /* FavouriteViewController.swift in Sources */,
 				F057DBC627BA790D0097A616 /* SearchModuleConfigurator.swift in Sources */,
 				F057DBDB27BC01170097A616 /* CapitalizedLetter.swift in Sources */,
+				F057DCAA27E7ACF30097A616 /* WebImage.swift in Sources */,
 				F0164AE427B9BB99008CBA53 /* SixthCollectionViewCell.swift in Sources */,
 				F0164AB627B467E7008CBA53 /* ArticlesConfigurator.swift in Sources */,
 				F057DCA227E380BD0097A616 /* RealmInit.swift in Sources */,
@@ -935,6 +946,7 @@
 				1C470B2227B2EC76000B3EF9 /* MainViewOutput.swift in Sources */,
 				F0164AD827B678C7008CBA53 /* FourthCollectionViewCell.swift in Sources */,
 				F057DC9F27E37B640097A616 /* FavouriteModel.swift in Sources */,
+				F057DCA827E78D070097A616 /* CascadeDelete.swift in Sources */,
 				F057DBDF27BC506B0097A616 /* FavouriteViewControllerConstants.swift in Sources */,
 				F057DBFA27BD44300097A616 /* DetailTableModuleConfigurator.swift in Sources */,
 				F057DC0627BD459D0097A616 /* DetailTableViewControllerCell.swift in Sources */,

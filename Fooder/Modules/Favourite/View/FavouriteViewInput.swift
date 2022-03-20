@@ -11,4 +11,5 @@ import Foundation
 import UIKit
 protocol FavouriteViewInput: AnyObject {
     
+    func updateTable()
 }

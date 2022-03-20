@@ -7,7 +7,7 @@
 
 import UIKit
 protocol DetailRecipeViewOutput: AnyObject {
-    var detailRecipeViewModel: CellViewModelProtocol? { get set}
-
+    var detailRecipeViewModel: CellViewModelProtocol? { get set }
+    func favourite(ifWeWriteToBase: Bool)
     func viewLoaded()
 }
