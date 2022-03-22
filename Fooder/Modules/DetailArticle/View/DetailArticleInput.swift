@@ -7,5 +7,7 @@
 
 import UIKit
 protocol DetailArticleInput: AnyObject {
+    
+    var isInBase: Bool { get set }
     func setupInfo()
 }

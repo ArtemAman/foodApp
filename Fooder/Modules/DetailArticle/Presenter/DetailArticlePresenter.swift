@@ -33,10 +33,20 @@ class DetailArticlePresenter {
 }
 
 extension DetailArticlePresenter: DetailArticleOutput {
+    
+    func favourite(ifWeWriteToBase: Bool) {
+        guard let detailArticleModel = detailArticleModel else { return }
+        if ifWeWriteToBase == true {
+            let base = ArticleBaseModel(model: detailArticleModel)
+            RealmBase.saveData(base)
+        } else {
+            RealmBase.deleteOne(detailArticleModel.imageUrlString!, requestedModel: .articles)
+        }
+    }
+    
     func viewLoaded() {
         guard let url = cell.urlToFull else { return }
         getArticle(requestingUrl: url)
-        
-
+    
     }
 }

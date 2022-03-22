@@ -23,8 +23,8 @@ class ThirdCollectionViewCell: UICollectionViewCell {
         return view
     }()
 
-    private lazy var imageView: UIImageView = {
-        let imageView = UIImageView()
+    private lazy var imageView: WebImageView = {
+        let imageView = WebImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .systemGray
@@ -84,8 +84,8 @@ class ThirdCollectionViewCell: UICollectionViewCell {
     
     func setCell(model: Cell?) {
         guard let model = model else { return }
-        guard let imageName = model.imageUrlString, let url = URL(string: imageName) else { return }
-        imageView.kf.setImage(with: url)
+        guard let imageUrlString = model.imageUrlString else { return }
+        imageView.set(imageURL: imageUrlString)
         guard let labelText = model.name else { return }
         botLabel.text = labelText
         

@@ -22,8 +22,8 @@ class SeventhCollectionViewCell: UICollectionViewCell {
         return view
     }()
 
-    private lazy var imageView: UIImageView = {
-        let imageView = UIImageView()
+    private lazy var imageView: WebImageView = {
+        let imageView = WebImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .systemGray
@@ -82,8 +82,8 @@ class SeventhCollectionViewCell: UICollectionViewCell {
     
     func setCell(model: Cell?) {
         guard let model = model else { return }
-        guard let imageName = model.ingredients?.first?.image, let url = URL(string: imageName) else { return }
-        imageView.kf.setImage(with: url)
+        guard let imageUrl = model.ingredients?.first?.image else { return }
+        imageView.set(imageURL: imageUrl)
         guard let labelText = model.ingredients?.first?.food else { return }
         botLabel.text = labelText.captalizeFirstCharacter()
         

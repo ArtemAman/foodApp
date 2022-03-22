@@ -12,6 +12,7 @@ class FavouriteViewController: UIViewController {
     
     var presenter: FavouritePresenter?
     var recipeCells: ReceipViewModel?
+    var articleCells: [DetailArticleViewModel]?
     
     private lazy var segmetedControl: UISegmentedControl = {
         let items = ["Favourite recipes", "Favourite articles"]
@@ -81,6 +82,7 @@ class FavouriteViewController: UIViewController {
 extension FavouriteViewController: FavouriteViewInput {
     func updateTable() {
         recipeCells = presenter?.favouriteRecipeModel
+        articleCells = presenter?.favouriteArticleModel
         tableView.reloadData()
     }
     
@@ -94,7 +96,7 @@ extension FavouriteViewController: UITableViewDataSource, UITableViewDelegate {
         case 0:
             return recipeCells?.cells.count ?? 0
         case 1:
-            return 4
+            return articleCells?.count ?? 0
         default:
             return 0
             
@@ -111,6 +113,9 @@ extension FavouriteViewController: UITableViewDataSource, UITableViewDelegate {
             cell.setCell(model: model)
             return cell
         case 1:
+            let articleModel = articleCells?[indexPath.row]
+            let model = FavouriteCell(article: articleModel)
+            cell.setCell(model: model)
             return cell
         default:
             return cell

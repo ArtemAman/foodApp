@@ -11,6 +11,7 @@ class DetailArticleViewController: UIViewController {
     
     var presenter: DetailArticleOutput?
     var articleModel: DetailArticleViewModelProtocol?
+    var isInBase: Bool = false
     
     private lazy var scroll: UIScrollView = {
         let scroll = UIScrollView()
@@ -42,7 +43,7 @@ class DetailArticleViewController: UIViewController {
         label.textColor = .black
         label.text = ""
         label.numberOfLines = 0
-        label.font = DetailRecipeViewControllerConstants.nutrientsCollectionTopLabelFont
+        label.font = .systemFont(ofSize: 20, weight: .bold)
         
         return label
     } ()
@@ -66,7 +67,9 @@ class DetailArticleViewController: UIViewController {
         button.layer.cornerRadius = 20
         button.layer.masksToBounds = true
         button.titleLabel?.font = DetailRecipeViewControllerConstants.nutrientsCollectionAllLabelsFont
-        
+        button.isHidden = true
+        button.addTarget(self, action: #selector(saveFavourite), for: .touchUpInside)
+        button.startAnimatingPressActions()
         return button
     }()
     
@@ -122,6 +125,19 @@ class DetailArticleViewController: UIViewController {
             likeButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
         ])
     }
+    
+    @objc func saveFavourite(sender: UIButton!) {
+        UIView.animate(withDuration: 0.3) {
+            self.isInBase = !self.isInBase
+            if self.isInBase {
+                sender.setTitle("Delete from favourite", for: .normal)
+            } else {
+                sender.setTitle("Add to favourite", for: .normal)
+            }
+            self.presenter?.favourite(ifWeWriteToBase: self.isInBase)
+        }
+    }
+    
 }
 
 extension DetailArticleViewController: DetailArticleInput{
@@ -133,5 +149,6 @@ extension DetailArticleViewController: DetailArticleInput{
         imageView.kf.setImage(with: url)
         nameLabel.text = model.name
         mainTextLabel.text = model.articleText
+        likeButton.isHidden = false
     }
 }

@@ -185,6 +185,5 @@ struct FourthCell: FourthCellViewModelProtocol {
         self.imageUrlString = article?.imageUrlString
         self.name = article?.name
         self.urlToFull = article?.urlToFull
-        
     }
 }

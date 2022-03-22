@@ -8,5 +8,6 @@
 import UIKit
 protocol DetailArticleOutput: AnyObject {
     func viewLoaded()
+    func favourite(ifWeWriteToBase: Bool)
     var detailArticleModel: DetailArticleViewModelProtocol? { get }
 }

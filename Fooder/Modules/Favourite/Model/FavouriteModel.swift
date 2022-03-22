@@ -25,7 +25,7 @@ struct FavouriteCell: FavouriteCellViewModelProtocol {
         name = recipe?.name
     }
     
-    init(article: FourthCellViewModelProtocol?) {
+    init(article: DetailArticleViewModel?) {
         
         imageUrlString = article?.imageUrlString
         name = article?.name

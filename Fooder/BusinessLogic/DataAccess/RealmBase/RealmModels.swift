@@ -118,3 +118,18 @@ class NutrientBaseModel: Object {
         
     }
 }
+
+class ArticleBaseModel: Object {
+        
+    @objc dynamic var imageUrlString: String = ""
+    @objc dynamic var name: String = ""
+    @objc dynamic var articleText: String = ""
+    
+    convenience init(model: DetailArticleViewModelProtocol?) {
+        self.init()
+        self.imageUrlString = model?.imageUrlString ?? ""
+        self.name = model?.name ?? ""
+        self.articleText = model?.articleText ?? ""
+        
+    }
+}

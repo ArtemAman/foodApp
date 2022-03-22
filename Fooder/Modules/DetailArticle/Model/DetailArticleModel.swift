@@ -26,4 +26,11 @@ struct DetailArticleViewModel: DetailArticleViewModelProtocol {
         self.articleText = text
         
     }
+    
+    init(articleFromBase: ArticleBaseModel?) {
+        self.imageUrlString = articleFromBase?.imageUrlString
+        self.name = articleFromBase?.name
+        self.articleText = articleFromBase?.articleText
+        
+    }
 }

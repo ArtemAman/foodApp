@@ -7,15 +7,22 @@
 
 import UIKit
 import RealmSwift
+import CoreAudio
 
 let realm = try! Realm()
 
 
 class RealmBase {
     
-   static func saveData(_ recipe: RecipeBaseModel) {
+    enum RequestedModel: String {
+        case recipes
+        case articles
+        
+    }
+    
+    static func saveData<T:Object>(_ object: T) {
         try! realm.write {
-            realm.add(recipe)
+            realm.add(object)
         }
     }
     
@@ -25,26 +32,42 @@ class RealmBase {
         }
     }
     
-    static func getAll() -> Results<RecipeBaseModel> {
+    static func getAllRecipes() -> Results<RecipeBaseModel> {
+        
         let result = realm.objects(RecipeBaseModel.self)
         return result
     }
     
-    static func deleteOne(_ imageUrlString: String) {
+    static func getAllArticles() -> Results<ArticleBaseModel> {
+        
+        let result = realm.objects(ArticleBaseModel.self)
+        return result
+    }
+    
+    static func deleteOne(_ imageUrlString: String, requestedModel: RequestedModel) {
+        var result: Object?
         try! realm.write {
-            let result = realm.objects(RecipeBaseModel.self).filter("imageUrlString = '\(imageUrlString)'").first
+            switch requestedModel {
+            case .recipes:
+                result = realm.objects(RecipeBaseModel.self).filter("imageUrlString = '\(imageUrlString)'").first
+            case .articles:
+                result = realm.objects(ArticleBaseModel.self).filter("imageUrlString = '\(imageUrlString)'").first
+            }
+            
             guard let result = result else { return }
             realm.delete(result, cascading: true)
         }
     }
     
-    static func checkOne(_ recipe: RecipeBaseModel) -> Bool {
+    static func checkOneRecipe(_ recipe: RecipeBaseModel) -> Bool {
         
         let result = realm.objects(RecipeBaseModel.self).filter("imageUrlString = '\(recipe.imageUrlString)'")
-        if result.count > 0 {
-            return true
-        } else {
-            return false
-        }
+        return result.count > 0
+    }
+    
+    static func checkOneArticle(_ article: ArticleBaseModel) -> Bool {
+        
+        let result = realm.objects(ArticleBaseModel.self).filter("imageUrlString = '\(article.imageUrlString)'")
+        return result.count > 0
     }
 }

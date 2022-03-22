@@ -12,8 +12,8 @@ class ArrticleVCTableViewCell: UITableViewCell {
     
     static let reuseId = "ArticleCell"
     
-    private lazy var imageArticle: UIImageView = {
-        let imageView = UIImageView()
+    private lazy var imageArticle: WebImageView = {
+        let imageView = WebImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .systemGray
@@ -46,8 +46,8 @@ class ArrticleVCTableViewCell: UITableViewCell {
     
     func setCell(model: FourthCell?) {
         guard let model = model else { return }
-        guard let imageName = model.imageUrlString, let url = URL(string: imageName) else { return }
-        imageArticle.kf.setImage(with: url)
+        guard let imageUrl = model.imageUrlString else { return }
+        imageArticle.set(imageURL: imageUrl)
         guard let labelText = model.name else { return }
         labelArticle.text = labelText
         

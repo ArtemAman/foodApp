@@ -27,7 +27,7 @@ extension DetailRecipePresenter: DetailRecipeViewOutput {
             let base = RecipeBaseModel(model: detailRecipeViewModel)
             RealmBase.saveData(base)
         } else {
-            RealmBase.deleteOne(detailRecipeViewModel.imageUrlString!)
+            RealmBase.deleteOne(detailRecipeViewModel.imageUrlString!, requestedModel: .recipes)
         }
     }
    
@@ -35,7 +35,7 @@ extension DetailRecipePresenter: DetailRecipeViewOutput {
 //        RealmBase.deleteAll()
         guard detailRecipeViewModel != nil else { return }
         let base = RecipeBaseModel(model: detailRecipeViewModel!)
-        let checkTheBase = RealmBase.checkOne(base)
+        let checkTheBase = RealmBase.checkOneRecipe(base)
         if checkTheBase {
             view?.isInBase = true
         }

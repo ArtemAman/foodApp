@@ -12,13 +12,23 @@ import UIKit
 class FavouritePresenter {
     
     var favouriteRecipeModel: ReceipViewModel?
+    var favouriteArticleModel: [DetailArticleViewModel]?
     weak var view: FavouriteViewInput?
     
     private func prepareRecipeModel() {
         
-        let infoFromBase = RealmBase.getAll()
+        let infoFromBase = RealmBase.getAllRecipes()
         favouriteRecipeModel = ReceipViewModel(infoFromBase)
-        view?.updateTable()
+        
+    }
+    
+    private func prepareArticleModel() {
+        
+        let infoFromBase = RealmBase.getAllArticles()
+        favouriteArticleModel = infoFromBase.map({ model in
+            DetailArticleViewModel(articleFromBase: model)
+        })
+        
     }
 }
 
@@ -28,6 +38,8 @@ extension FavouritePresenter: FavouriteOutput {
     
     func viewLoaded() {
         prepareRecipeModel()
+        prepareArticleModel()
+        view?.updateTable()
     }
     
 }
